@@ -39,9 +39,9 @@ import com.vsphone.activities.main.fragments.MasterFragment
 import com.vsphone.activities.main.viewmodels.DialogViewModel
 import com.vsphone.activities.navigateToConferenceScheduling
 import com.vsphone.activities.navigateToConferenceWaitingRoom
+import com.vsphone.databinding.ConferencesScheduledFragmentBinding
 import com.vsphone.utils.*
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ConferencesScheduledFragmentBinding
 
 class ScheduledConferencesFragment :
     MasterFragment<ConferencesScheduledFragmentBinding, ScheduledConferencesAdapter>() {

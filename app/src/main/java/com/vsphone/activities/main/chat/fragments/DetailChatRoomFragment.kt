@@ -54,13 +54,13 @@ import com.vsphone.activities.main.chat.views.RichEditTextSendListener
 import com.vsphone.activities.main.fragments.MasterFragment
 import com.vsphone.activities.main.viewmodels.DialogViewModel
 import com.vsphone.compatibility.Compatibility
+import com.vsphone.databinding.ChatRoomDetailFragmentBinding
 import com.vsphone.utils.*
 import com.vsphone.utils.Event
 import java.io.File
 import kotlinx.coroutines.*
 import org.linphone.core.*
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ChatRoomDetailFragmentBinding
 
 class DetailChatRoomFragment :
     MasterFragment<ChatRoomDetailFragmentBinding, ChatMessagesListAdapter>() {
@@ -921,7 +921,7 @@ class DetailChatRoomFragment :
     }
 
     private fun showPopupMenu(chatRoom: ChatRoom) {
-        val popupView: org.linphone.databinding.ChatRoomMenuBindingImpl = DataBindingUtil.inflate(
+        val popupView: com.vsphone.databinding.ChatRoomMenuBindingImpl = DataBindingUtil.inflate(
             LayoutInflater.from(context),
             R.layout.chat_room_menu, null, false
         )

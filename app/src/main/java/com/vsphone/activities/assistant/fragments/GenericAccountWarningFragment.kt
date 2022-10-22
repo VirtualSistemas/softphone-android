@@ -24,7 +24,7 @@ import android.view.View
 import com.vsphone.R
 import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.navigateToGenericLogin
-import org.linphone.databinding.AssistantGenericAccountWarningFragmentBinding
+import com.vsphone.databinding.AssistantGenericAccountWarningFragmentBinding
 
 class GenericAccountWarningFragment :
     GenericFragment<AssistantGenericAccountWarningFragmentBinding>() {

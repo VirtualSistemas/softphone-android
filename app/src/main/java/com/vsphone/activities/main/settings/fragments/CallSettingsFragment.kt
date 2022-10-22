@@ -31,9 +31,9 @@ import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.main.settings.viewmodels.CallSettingsViewModel
 import com.vsphone.compatibility.Compatibility
+import com.vsphone.databinding.SettingsCallFragmentBinding
 import com.vsphone.telecom.TelecomHelper
 import org.linphone.core.tools.Log
-import org.linphone.databinding.SettingsCallFragmentBinding
 import org.linphone.mediastream.Version
 
 class CallSettingsFragment : GenericSettingFragment<SettingsCallFragmentBinding>() {

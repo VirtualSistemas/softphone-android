@@ -31,11 +31,11 @@ import com.vsphone.activities.main.fragments.MasterFragment
 import com.vsphone.activities.main.recordings.adapters.RecordingsListAdapter
 import com.vsphone.activities.main.recordings.data.RecordingData
 import com.vsphone.activities.main.recordings.viewmodels.RecordingsViewModel
+import com.vsphone.databinding.RecordingsFragmentBinding
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.FileUtils
 import com.vsphone.utils.RecyclerViewHeaderDecoration
 import org.linphone.core.tools.Log
-import org.linphone.databinding.RecordingsFragmentBinding
 
 class RecordingsFragment : MasterFragment<RecordingsFragmentBinding, RecordingsListAdapter>() {
     private lateinit var viewModel: RecordingsViewModel

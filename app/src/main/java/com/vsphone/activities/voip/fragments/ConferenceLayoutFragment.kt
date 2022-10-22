@@ -28,7 +28,7 @@ import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.activities.voip.ConferenceDisplayMode
 import com.vsphone.activities.voip.viewmodels.ConferenceViewModel
 import com.vsphone.activities.voip.viewmodels.ControlsViewModel
-import org.linphone.databinding.VoipConferenceLayoutFragmentBinding
+import com.vsphone.databinding.VoipConferenceLayoutFragmentBinding
 
 class ConferenceLayoutFragment :
     GenericVideoPreviewFragment<VoipConferenceLayoutFragmentBinding>() {

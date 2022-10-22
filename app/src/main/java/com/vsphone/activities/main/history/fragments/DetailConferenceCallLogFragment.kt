@@ -26,8 +26,8 @@ import com.vsphone.R
 import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.main.MainActivity
 import com.vsphone.activities.main.history.viewmodels.CallLogViewModel
+import com.vsphone.databinding.HistoryConfDetailFragmentBinding
 import org.linphone.core.tools.Log
-import org.linphone.databinding.HistoryConfDetailFragmentBinding
 
 class DetailConferenceCallLogFragment : GenericFragment<HistoryConfDetailFragmentBinding>() {
     private lateinit var viewModel: CallLogViewModel

@@ -28,7 +28,7 @@ import com.vsphone.activities.assistant.viewmodels.PhoneAccountCreationViewModel
 import com.vsphone.activities.assistant.viewmodels.PhoneAccountCreationViewModelFactory
 import com.vsphone.activities.assistant.viewmodels.SharedAssistantViewModel
 import com.vsphone.activities.navigateToPhoneAccountValidation
-import org.linphone.databinding.AssistantPhoneAccountCreationFragmentBinding
+import com.vsphone.databinding.AssistantPhoneAccountCreationFragmentBinding
 
 class PhoneAccountCreationFragment :
     AbstractPhoneFragment<AssistantPhoneAccountCreationFragmentBinding>() {

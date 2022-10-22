@@ -36,12 +36,12 @@ import com.vsphone.activities.main.fragments.SecureFragment
 import com.vsphone.activities.main.viewmodels.DialogViewModel
 import com.vsphone.activities.navigateToChatRoom
 import com.vsphone.activities.navigateToChatRoomCreation
+import com.vsphone.databinding.ChatRoomGroupInfoFragmentBinding
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.DialogUtils
 import org.linphone.core.Address
 import org.linphone.core.ChatRoom
 import org.linphone.core.ChatRoomCapabilities
-import org.linphone.databinding.ChatRoomGroupInfoFragmentBinding
 
 class GroupInfoFragment : SecureFragment<ChatRoomGroupInfoFragmentBinding>() {
     private lateinit var viewModel: GroupInfoViewModel

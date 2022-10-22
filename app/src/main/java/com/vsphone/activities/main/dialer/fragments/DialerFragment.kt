@@ -46,13 +46,13 @@ import com.vsphone.activities.navigateToConferenceScheduling
 import com.vsphone.activities.navigateToConfigFileViewer
 import com.vsphone.activities.navigateToContacts
 import com.vsphone.compatibility.Compatibility
+import com.vsphone.databinding.DialerFragmentBinding
 import com.vsphone.telecom.TelecomHelper
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.DialogUtils
 import com.vsphone.utils.Event
 import com.vsphone.utils.PermissionHelper
 import org.linphone.core.tools.Log
-import org.linphone.databinding.DialerFragmentBinding
 import org.linphone.mediastream.Version
 
 class DialerFragment : SecureFragment<DialerFragmentBinding>() {
@@ -333,7 +333,7 @@ class DialerFragment : SecureFragment<DialerFragmentBinding>() {
         val currentTimeStamp = System.currentTimeMillis().toInt()
         val interval: Int = corePreferences.checkUpdateAvailableInterval
         if (lastTimestamp == 0 || currentTimeStamp - lastTimestamp >= interval) {
-            val currentVersion = org.linphone.BuildConfig.VERSION_NAME
+            val currentVersion = com.vsphone.BuildConfig.VERSION_NAME
             Log.i("[Dialer] Checking for update using current version [$currentVersion]")
             coreContext.core.checkForUpdate(currentVersion)
             corePreferences.lastUpdateAvailableCheckTimestamp = currentTimeStamp

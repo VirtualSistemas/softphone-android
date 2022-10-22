@@ -26,6 +26,7 @@ import com.vsphone.R
 import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.SnackBarActivity
 import com.vsphone.compatibility.Compatibility
+import com.vsphone.databinding.FileViewerTopBarFragmentBinding
 import com.vsphone.utils.FileUtils
 import com.vsphone.utils.PermissionHelper
 import kotlinx.coroutines.Dispatchers
@@ -34,7 +35,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.linphone.core.Content
 import org.linphone.core.tools.Log
-import org.linphone.databinding.FileViewerTopBarFragmentBinding
 
 class TopBarFragment : GenericFragment<FileViewerTopBarFragmentBinding>() {
     private var content: Content? = null

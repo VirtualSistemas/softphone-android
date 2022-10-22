@@ -40,13 +40,13 @@ import com.vsphone.activities.main.chat.data.ChatMessageData
 import com.vsphone.activities.main.chat.viewmodels.*
 import com.vsphone.activities.main.viewmodels.ListTopBarViewModel
 import com.vsphone.compatibility.Compatibility
+import com.vsphone.databinding.VoipChatFragmentBinding
 import com.vsphone.utils.FileUtils
 import com.vsphone.utils.PermissionHelper
 import kotlinx.coroutines.launch
 import org.linphone.core.ChatRoom
 import org.linphone.core.Factory
 import org.linphone.core.tools.Log
-import org.linphone.databinding.VoipChatFragmentBinding
 
 class ChatFragment : GenericFragment<VoipChatFragmentBinding>() {
     private lateinit var adapter: ChatMessagesListAdapter

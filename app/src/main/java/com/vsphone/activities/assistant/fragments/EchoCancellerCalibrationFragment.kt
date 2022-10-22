@@ -26,9 +26,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.vsphone.R
 import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.assistant.viewmodels.EchoCancellerCalibrationViewModel
+import com.vsphone.databinding.AssistantEchoCancellerCalibrationFragmentBinding
 import com.vsphone.utils.PermissionHelper
 import org.linphone.core.tools.Log
-import org.linphone.databinding.AssistantEchoCancellerCalibrationFragmentBinding
 
 class EchoCancellerCalibrationFragment :
     GenericFragment<AssistantEchoCancellerCalibrationFragmentBinding>() {

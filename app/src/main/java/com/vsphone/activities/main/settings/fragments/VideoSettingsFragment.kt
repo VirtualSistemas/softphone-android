@@ -30,9 +30,9 @@ import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.activities.main.settings.SettingListenerStub
 import com.vsphone.activities.main.settings.viewmodels.VideoSettingsViewModel
+import com.vsphone.databinding.SettingsVideoFragmentBinding
 import com.vsphone.utils.PermissionHelper
 import org.linphone.core.tools.Log
-import org.linphone.databinding.SettingsVideoFragmentBinding
 
 class VideoSettingsFragment : GenericSettingFragment<SettingsVideoFragmentBinding>() {
     private lateinit var viewModel: VideoSettingsViewModel
@@ -82,14 +82,14 @@ class VideoSettingsFragment : GenericSettingFragment<SettingsVideoFragmentBindin
                 null,
                 false
             )
-            binding.setVariable(org.linphone.BR.switch_title, payload.mimeType)
-            binding.setVariable(org.linphone.BR.switch_subtitle, "")
-            binding.setVariable(org.linphone.BR.text_title, "recv-fmtp")
-            binding.setVariable(org.linphone.BR.text_subtitle, "")
-            binding.setVariable(org.linphone.BR.defaultValue, payload.recvFmtp)
-            binding.setVariable(org.linphone.BR.checked, payload.enabled())
+            binding.setVariable(com.vsphone.BR.switch_title, payload.mimeType)
+            binding.setVariable(com.vsphone.BR.switch_subtitle, "")
+            binding.setVariable(com.vsphone.BR.text_title, "recv-fmtp")
+            binding.setVariable(com.vsphone.BR.text_subtitle, "")
+            binding.setVariable(com.vsphone.BR.defaultValue, payload.recvFmtp)
+            binding.setVariable(com.vsphone.BR.checked, payload.enabled())
             binding.setVariable(
-                org.linphone.BR.listener,
+                com.vsphone.BR.listener,
                 object : SettingListenerStub() {
                     override fun onBoolValueChanged(newValue: Boolean) {
                         payload.enable(newValue)

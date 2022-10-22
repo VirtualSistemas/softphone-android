@@ -29,11 +29,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
+import com.vsphone.databinding.ContactSelectionCellBinding
 import com.vsphone.utils.Event
 import org.linphone.core.Address
 import org.linphone.core.FriendCapability
 import org.linphone.core.SearchResult
-import org.linphone.databinding.ContactSelectionCellBinding
 
 class ContactsSelectionAdapter(
     private val viewLifecycleOwner: LifecycleOwner

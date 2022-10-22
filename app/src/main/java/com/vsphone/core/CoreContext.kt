@@ -93,9 +93,9 @@ class CoreContext(
     var screenHeight: Float = 0f
 
     val appVersion: String by lazy {
-        val appVersion = org.linphone.BuildConfig.VERSION_NAME
+        val appVersion = com.vsphone.BuildConfig.VERSION_NAME
         val appBranch = context.getString(R.string.linphone_app_branch)
-        val appBuildType = org.linphone.BuildConfig.BUILD_TYPE
+        val appBuildType = com.vsphone.BuildConfig.BUILD_TYPE
         "$appVersion ($appBranch, $appBuildType)"
     }
 
@@ -293,9 +293,9 @@ class CoreContext(
 
         Log.i("=========================================")
         Log.i("==== VSPhone-android information dump ====")
-        Log.i("VERSION=${org.linphone.BuildConfig.VERSION_NAME} / ${org.linphone.BuildConfig.VERSION_CODE}")
-        Log.i("PACKAGE=${org.linphone.BuildConfig.APPLICATION_ID}")
-        Log.i("BUILD TYPE=${org.linphone.BuildConfig.BUILD_TYPE}")
+        Log.i("VERSION=${com.vsphone.BuildConfig.VERSION_NAME} / ${com.vsphone.BuildConfig.VERSION_CODE}")
+        Log.i("PACKAGE=${com.vsphone.BuildConfig.APPLICATION_ID}")
+        Log.i("BUILD TYPE=${com.vsphone.BuildConfig.BUILD_TYPE}")
         Log.i("=========================================")
 
         if (service != null) {
@@ -469,7 +469,7 @@ class CoreContext(
     private fun computeUserAgent() {
         val deviceName: String = corePreferences.deviceName
         val appName: String = context.resources.getString(R.string.user_agent_app_name)
-        val androidVersion = org.linphone.BuildConfig.VERSION_NAME
+        val androidVersion = com.vsphone.BuildConfig.VERSION_NAME
         val userAgent = "$appName/$androidVersion ($deviceName) VSPhoneSDK"
         val sdkVersion = context.getString(R.string.linphone_sdk_version)
         val sdkBranch = context.getString(R.string.linphone_sdk_branch)

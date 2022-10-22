@@ -33,11 +33,11 @@ import com.vsphone.activities.main.fragments.SecureFragment
 import com.vsphone.activities.navigateToChatRoom
 import com.vsphone.activities.navigateToGroupInfo
 import com.vsphone.contact.ContactsSelectionAdapter
+import com.vsphone.databinding.ChatRoomCreationFragmentBinding
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.PermissionHelper
 import com.vsphone.utils.VSPhoneUtils
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ChatRoomCreationFragmentBinding
 
 class ChatRoomCreationFragment : SecureFragment<ChatRoomCreationFragmentBinding>() {
     private lateinit var viewModel: ChatRoomCreationViewModel

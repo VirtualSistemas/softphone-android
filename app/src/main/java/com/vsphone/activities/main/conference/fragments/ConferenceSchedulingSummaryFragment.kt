@@ -28,7 +28,7 @@ import com.vsphone.activities.main.MainActivity
 import com.vsphone.activities.main.conference.viewmodels.ConferenceSchedulingViewModel
 import com.vsphone.activities.navigateToDialer
 import com.vsphone.activities.navigateToScheduledConferences
-import org.linphone.databinding.ConferenceSchedulingSummaryFragmentBinding
+import com.vsphone.databinding.ConferenceSchedulingSummaryFragmentBinding
 
 class ConferenceSchedulingSummaryFragment :
     GenericFragment<ConferenceSchedulingSummaryFragmentBinding>() {

@@ -46,10 +46,10 @@ import com.vsphone.activities.voip.viewmodels.ConferenceViewModel
 import com.vsphone.activities.voip.viewmodels.ControlsViewModel
 import com.vsphone.activities.voip.viewmodels.StatisticsListViewModel
 import com.vsphone.activities.voip.views.RoundCornersTextureView
+import com.vsphone.databinding.VoipConferenceCallFragmentBinding
 import org.linphone.core.Conference
 import org.linphone.core.StreamType
 import org.linphone.core.tools.Log
-import org.linphone.databinding.VoipConferenceCallFragmentBinding
 
 class ConferenceCallFragment : GenericFragment<VoipConferenceCallFragmentBinding>() {
     private val controlsViewModel: ControlsViewModel by navGraphViewModels(R.id.call_nav_graph)

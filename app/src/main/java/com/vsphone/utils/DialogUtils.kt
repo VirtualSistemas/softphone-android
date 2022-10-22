@@ -30,8 +30,8 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.vsphone.R
 import com.vsphone.activities.main.viewmodels.DialogViewModel
-import org.linphone.databinding.DialogBinding
-import org.linphone.databinding.VoipDialogBinding
+import com.vsphone.databinding.DialogBinding
+import com.vsphone.databinding.VoipDialogBinding
 
 class DialogUtils {
     companion object {

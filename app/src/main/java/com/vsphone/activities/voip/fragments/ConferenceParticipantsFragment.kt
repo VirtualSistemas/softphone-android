@@ -28,8 +28,8 @@ import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.activities.navigateToAddParticipants
 import com.vsphone.activities.voip.viewmodels.ConferenceViewModel
 import com.vsphone.activities.voip.viewmodels.ControlsViewModel
+import com.vsphone.databinding.VoipConferenceParticipantsFragmentBinding
 import org.linphone.core.tools.Log
-import org.linphone.databinding.VoipConferenceParticipantsFragmentBinding
 
 class ConferenceParticipantsFragment :
     GenericVideoPreviewFragment<VoipConferenceParticipantsFragmentBinding>() {

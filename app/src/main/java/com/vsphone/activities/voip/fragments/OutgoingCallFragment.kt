@@ -29,7 +29,7 @@ import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.activities.navigateToActiveCall
 import com.vsphone.activities.voip.viewmodels.CallsViewModel
 import com.vsphone.activities.voip.viewmodels.ControlsViewModel
-import org.linphone.databinding.VoipCallOutgoingFragmentBinding
+import com.vsphone.databinding.VoipCallOutgoingFragmentBinding
 
 class OutgoingCallFragment : GenericVideoPreviewFragment<VoipCallOutgoingFragmentBinding>() {
     private val controlsViewModel: ControlsViewModel by navGraphViewModels(R.id.call_nav_graph)

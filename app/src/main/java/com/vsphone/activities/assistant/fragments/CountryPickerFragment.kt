@@ -28,8 +28,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.vsphone.R
 import com.vsphone.activities.assistant.adapters.CountryPickerAdapter
+import com.vsphone.databinding.AssistantCountryPickerFragmentBinding
 import org.linphone.core.DialPlan
-import org.linphone.databinding.AssistantCountryPickerFragmentBinding
 
 class CountryPickerFragment(private val listener: CountryPickedListener) : DialogFragment() {
     private var _binding: AssistantCountryPickerFragmentBinding? = null

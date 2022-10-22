@@ -30,8 +30,8 @@ import com.vsphone.activities.main.MainActivity
 import com.vsphone.activities.main.files.viewmodels.VideoFileViewModel
 import com.vsphone.activities.main.files.viewmodels.VideoFileViewModelFactory
 import com.vsphone.compatibility.Compatibility
+import com.vsphone.databinding.FileVideoViewerFragmentBinding
 import org.linphone.core.tools.Log
-import org.linphone.databinding.FileVideoViewerFragmentBinding
 
 class VideoViewerFragment : GenericViewerFragment<FileVideoViewerFragmentBinding>() {
     private lateinit var viewModel: VideoFileViewModel

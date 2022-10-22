@@ -33,8 +33,8 @@ import com.vsphone.activities.assistant.viewmodels.GenericLoginViewModelFactory
 import com.vsphone.activities.assistant.viewmodels.SharedAssistantViewModel
 import com.vsphone.activities.main.viewmodels.DialogViewModel
 import com.vsphone.activities.navigateToEchoCancellerCalibration
+import com.vsphone.databinding.AssistantGenericAccountLoginFragmentBinding
 import com.vsphone.utils.DialogUtils
-import org.linphone.databinding.AssistantGenericAccountLoginFragmentBinding
 
 class GenericAccountLoginFragment : GenericFragment<AssistantGenericAccountLoginFragmentBinding>() {
     private lateinit var sharedAssistantViewModel: SharedAssistantViewModel

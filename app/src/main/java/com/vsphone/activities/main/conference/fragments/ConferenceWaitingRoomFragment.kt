@@ -30,9 +30,9 @@ import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.main.MainActivity
 import com.vsphone.activities.main.conference.viewmodels.ConferenceWaitingRoomViewModel
 import com.vsphone.compatibility.Compatibility
+import com.vsphone.databinding.ConferenceWaitingRoomFragmentBinding
 import com.vsphone.utils.PermissionHelper
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ConferenceWaitingRoomFragmentBinding
 import org.linphone.mediastream.Version
 
 class ConferenceWaitingRoomFragment : GenericFragment<ConferenceWaitingRoomFragmentBinding>() {

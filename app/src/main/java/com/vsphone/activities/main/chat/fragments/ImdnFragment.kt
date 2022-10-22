@@ -29,10 +29,10 @@ import com.vsphone.activities.main.chat.adapters.ImdnAdapter
 import com.vsphone.activities.main.chat.viewmodels.ImdnViewModel
 import com.vsphone.activities.main.chat.viewmodels.ImdnViewModelFactory
 import com.vsphone.activities.main.fragments.SecureFragment
+import com.vsphone.databinding.ChatRoomImdnFragmentBinding
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.RecyclerViewHeaderDecoration
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ChatRoomImdnFragmentBinding
 
 class ImdnFragment : SecureFragment<ChatRoomImdnFragmentBinding>() {
     private lateinit var viewModel: ImdnViewModel

@@ -36,10 +36,10 @@ import com.vsphone.activities.main.viewmodels.DialogViewModel
 import com.vsphone.activities.navigateToChatRoom
 import com.vsphone.activities.navigateToContactEditor
 import com.vsphone.activities.navigateToDialer
+import com.vsphone.databinding.ContactDetailFragmentBinding
 import com.vsphone.utils.DialogUtils
 import com.vsphone.utils.Event
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ContactDetailFragmentBinding
 
 class DetailContactFragment : GenericFragment<ContactDetailFragmentBinding>() {
     private lateinit var viewModel: ContactViewModel

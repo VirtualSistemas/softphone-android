@@ -30,9 +30,9 @@ import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.activities.main.settings.SettingListenerStub
 import com.vsphone.activities.main.settings.viewmodels.AudioSettingsViewModel
+import com.vsphone.databinding.SettingsAudioFragmentBinding
 import com.vsphone.utils.PermissionHelper
 import org.linphone.core.tools.Log
-import org.linphone.databinding.SettingsAudioFragmentBinding
 
 class AudioSettingsFragment : GenericSettingFragment<SettingsAudioFragmentBinding>() {
     private lateinit var viewModel: AudioSettingsViewModel
@@ -103,11 +103,11 @@ class AudioSettingsFragment : GenericSettingFragment<SettingsAudioFragmentBindin
                 null,
                 false
             )
-            binding.setVariable(org.linphone.BR.title, payload.mimeType)
-            binding.setVariable(org.linphone.BR.subtitle, "${payload.clockRate} Hz")
-            binding.setVariable(org.linphone.BR.checked, payload.enabled())
+            binding.setVariable(com.vsphone.BR.title, payload.mimeType)
+            binding.setVariable(com.vsphone.BR.subtitle, "${payload.clockRate} Hz")
+            binding.setVariable(com.vsphone.BR.checked, payload.enabled())
             binding.setVariable(
-                org.linphone.BR.listener,
+                com.vsphone.BR.listener,
                 object : SettingListenerStub() {
                     override fun onBoolValueChanged(newValue: Boolean) {
                         payload.enable(newValue)

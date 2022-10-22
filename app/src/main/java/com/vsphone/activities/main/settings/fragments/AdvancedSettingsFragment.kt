@@ -30,11 +30,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.vsphone.R
 import com.vsphone.activities.main.MainActivity
 import com.vsphone.activities.main.settings.viewmodels.AdvancedSettingsViewModel
+import com.vsphone.databinding.SettingsAdvancedFragmentBinding
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.PowerManagerUtils
 import org.linphone.core.tools.Log
 import org.linphone.core.tools.compatibility.DeviceUtils
-import org.linphone.databinding.SettingsAdvancedFragmentBinding
 
 class AdvancedSettingsFragment : GenericSettingFragment<SettingsAdvancedFragmentBinding>() {
     private lateinit var viewModel: AdvancedSettingsViewModel

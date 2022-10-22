@@ -25,8 +25,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.vsphone.R
 import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.main.viewmodels.ListTopBarViewModel
+import com.vsphone.databinding.ListEditTopBarFragmentBinding
 import com.vsphone.utils.Event
-import org.linphone.databinding.ListEditTopBarFragmentBinding
 
 class ListTopBarFragment : GenericFragment<ListEditTopBarFragmentBinding>() {
     private lateinit var viewModel: ListTopBarViewModel

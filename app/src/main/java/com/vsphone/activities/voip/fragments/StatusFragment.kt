@@ -29,11 +29,11 @@ import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.main.viewmodels.DialogViewModel
 import com.vsphone.activities.voip.viewmodels.ControlsViewModel
 import com.vsphone.activities.voip.viewmodels.StatusViewModel
+import com.vsphone.databinding.VoipStatusFragmentBinding
 import com.vsphone.utils.DialogUtils
 import java.util.*
 import org.linphone.core.Call
 import org.linphone.core.tools.Log
-import org.linphone.databinding.VoipStatusFragmentBinding
 
 class StatusFragment : GenericFragment<VoipStatusFragmentBinding>() {
     private lateinit var viewModel: StatusViewModel

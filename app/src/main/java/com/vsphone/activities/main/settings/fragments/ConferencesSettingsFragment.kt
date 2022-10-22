@@ -24,7 +24,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.vsphone.R
 import com.vsphone.activities.main.settings.viewmodels.ConferencesSettingsViewModel
-import org.linphone.databinding.SettingsConferencesFragmentBinding
+import com.vsphone.databinding.SettingsConferencesFragmentBinding
 
 class ConferencesSettingsFragment : GenericSettingFragment<SettingsConferencesFragmentBinding>() {
     private lateinit var viewModel: ConferencesSettingsViewModel

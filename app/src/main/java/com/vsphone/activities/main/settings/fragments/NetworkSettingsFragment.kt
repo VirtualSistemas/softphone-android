@@ -24,7 +24,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.vsphone.R
 import com.vsphone.activities.main.settings.viewmodels.NetworkSettingsViewModel
-import org.linphone.databinding.SettingsNetworkFragmentBinding
+import com.vsphone.databinding.SettingsNetworkFragmentBinding
 
 class NetworkSettingsFragment : GenericSettingFragment<SettingsNetworkFragmentBinding>() {
     private lateinit var viewModel: NetworkSettingsViewModel

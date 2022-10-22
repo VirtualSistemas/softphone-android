@@ -27,9 +27,9 @@ import com.vsphone.R
 import com.vsphone.activities.main.settings.viewmodels.AccountSettingsViewModel
 import com.vsphone.activities.main.settings.viewmodels.AccountSettingsViewModelFactory
 import com.vsphone.activities.navigateToPhoneLinking
+import com.vsphone.databinding.SettingsAccountFragmentBinding
 import com.vsphone.utils.Event
 import org.linphone.core.tools.Log
-import org.linphone.databinding.SettingsAccountFragmentBinding
 
 class AccountSettingsFragment : GenericSettingFragment<SettingsAccountFragmentBinding>() {
     private lateinit var viewModel: AccountSettingsViewModel

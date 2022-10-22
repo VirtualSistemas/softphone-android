@@ -34,6 +34,7 @@ import com.vsphone.activities.main.MainActivity
 import com.vsphone.activities.main.chat.adapters.ChatMessagesListAdapter
 import com.vsphone.activities.main.chat.viewmodels.*
 import com.vsphone.activities.main.viewmodels.ListTopBarViewModel
+import com.vsphone.databinding.ChatBubbleActivityBinding
 import com.vsphone.utils.FileUtils
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -42,7 +43,6 @@ import org.linphone.core.ChatRoomListenerStub
 import org.linphone.core.EventLog
 import org.linphone.core.Factory
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ChatBubbleActivityBinding
 
 class ChatBubbleActivity : GenericActivity() {
     private lateinit var binding: ChatBubbleActivityBinding

@@ -38,10 +38,10 @@ import com.vsphone.activities.voip.viewmodels.ConferenceViewModel
 import com.vsphone.activities.voip.viewmodels.ControlsViewModel
 import com.vsphone.activities.voip.viewmodels.StatisticsListViewModel
 import com.vsphone.compatibility.Compatibility
+import com.vsphone.databinding.VoipActivityBinding
 import com.vsphone.utils.PermissionHelper
 import org.linphone.core.Call
 import org.linphone.core.tools.Log
-import org.linphone.databinding.VoipActivityBinding
 import org.linphone.mediastream.Version
 
 class CallActivity : ProximitySensorActivity() {

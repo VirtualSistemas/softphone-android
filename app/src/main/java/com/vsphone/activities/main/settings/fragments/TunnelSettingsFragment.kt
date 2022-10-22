@@ -24,7 +24,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.vsphone.R
 import com.vsphone.activities.main.settings.viewmodels.TunnelSettingsViewModel
-import org.linphone.databinding.SettingsTunnelFragmentBinding
+import com.vsphone.databinding.SettingsTunnelFragmentBinding
 
 class TunnelSettingsFragment : GenericSettingFragment<SettingsTunnelFragmentBinding>() {
     private lateinit var viewModel: TunnelSettingsViewModel

@@ -32,9 +32,9 @@ import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.*
 import com.vsphone.activities.assistant.viewmodels.WelcomeViewModel
+import com.vsphone.databinding.AssistantWelcomeFragmentBinding
 import java.util.regex.Pattern
 import org.linphone.core.tools.Log
-import org.linphone.databinding.AssistantWelcomeFragmentBinding
 
 class WelcomeFragment : GenericFragment<AssistantWelcomeFragmentBinding>() {
     private lateinit var viewModel: WelcomeViewModel

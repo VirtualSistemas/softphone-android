@@ -53,13 +53,13 @@ import com.vsphone.activities.main.viewmodels.SharedMainViewModel
 import com.vsphone.compatibility.Compatibility
 import com.vsphone.contact.ContactsUpdatedListenerStub
 import com.vsphone.core.CorePreferences
+import com.vsphone.databinding.MainActivityBinding
 import com.vsphone.utils.*
 import java.io.UnsupportedEncodingException
 import java.net.URLDecoder
 import kotlin.math.abs
 import kotlinx.coroutines.*
 import org.linphone.core.tools.Log
-import org.linphone.databinding.MainActivityBinding
 
 class MainActivity :
     GenericActivity(),

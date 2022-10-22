@@ -36,12 +36,12 @@ import com.vsphone.activities.main.MainActivity
 import com.vsphone.activities.main.contact.data.NumberOrAddressEditorData
 import com.vsphone.activities.main.contact.viewmodels.*
 import com.vsphone.activities.navigateToContact
+import com.vsphone.databinding.ContactEditorFragmentBinding
 import com.vsphone.utils.FileUtils
 import com.vsphone.utils.PermissionHelper
 import java.io.File
 import kotlinx.coroutines.launch
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ContactEditorFragmentBinding
 
 class ContactEditorFragment :
     GenericFragment<ContactEditorFragmentBinding>(),

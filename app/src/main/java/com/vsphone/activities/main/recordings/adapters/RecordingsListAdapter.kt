@@ -32,10 +32,10 @@ import com.vsphone.R
 import com.vsphone.activities.main.adapters.SelectionListAdapter
 import com.vsphone.activities.main.recordings.data.RecordingData
 import com.vsphone.activities.main.viewmodels.ListTopBarViewModel
+import com.vsphone.databinding.GenericListHeaderBinding
+import com.vsphone.databinding.RecordingListCellBinding
 import com.vsphone.utils.HeaderAdapter
 import com.vsphone.utils.TimestampUtils
-import org.linphone.databinding.GenericListHeaderBinding
-import org.linphone.databinding.RecordingListCellBinding
 
 class RecordingsListAdapter(
     selectionVM: ListTopBarViewModel,

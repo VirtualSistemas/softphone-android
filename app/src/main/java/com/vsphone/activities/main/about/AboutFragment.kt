@@ -26,8 +26,8 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.vsphone.R
 import com.vsphone.activities.main.fragments.SecureFragment
+import com.vsphone.databinding.AboutFragmentBinding
 import org.linphone.core.tools.Log
-import org.linphone.databinding.AboutFragmentBinding
 
 class AboutFragment : SecureFragment<AboutFragmentBinding>() {
     private lateinit var viewModel: AboutViewModel

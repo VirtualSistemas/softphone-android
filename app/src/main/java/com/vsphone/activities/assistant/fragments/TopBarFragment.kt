@@ -23,7 +23,7 @@ import android.os.Bundle
 import android.view.View
 import com.vsphone.R
 import com.vsphone.activities.GenericFragment
-import org.linphone.databinding.AssistantTopBarFragmentBinding
+import com.vsphone.databinding.AssistantTopBarFragmentBinding
 
 class TopBarFragment : GenericFragment<AssistantTopBarFragmentBinding>() {
     override fun getLayoutId(): Int = R.layout.assistant_top_bar_fragment

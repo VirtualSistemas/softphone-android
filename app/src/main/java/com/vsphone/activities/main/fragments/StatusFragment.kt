@@ -26,9 +26,9 @@ import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.main.viewmodels.StatusViewModel
+import com.vsphone.databinding.StatusFragmentBinding
 import com.vsphone.utils.Event
 import org.linphone.core.tools.Log
-import org.linphone.databinding.StatusFragmentBinding
 
 class StatusFragment : GenericFragment<StatusFragmentBinding>() {
     private lateinit var viewModel: StatusViewModel

@@ -43,11 +43,11 @@ import com.vsphone.activities.main.fragments.MasterFragment
 import com.vsphone.activities.main.viewmodels.DialogViewModel
 import com.vsphone.activities.navigateToChatRoom
 import com.vsphone.activities.navigateToChatRoomCreation
+import com.vsphone.databinding.ChatRoomMasterFragmentBinding
 import com.vsphone.utils.*
 import org.linphone.core.ChatRoom
 import org.linphone.core.Factory
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ChatRoomMasterFragmentBinding
 
 class MasterChatRoomsFragment :
     MasterFragment<ChatRoomMasterFragmentBinding, ChatRoomsListAdapter>() {

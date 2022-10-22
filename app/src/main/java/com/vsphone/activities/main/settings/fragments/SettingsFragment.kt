@@ -33,8 +33,8 @@ import com.vsphone.activities.main.fragments.MasterFragment
 import com.vsphone.activities.main.fragments.SecureFragment
 import com.vsphone.activities.main.settings.SettingListenerStub
 import com.vsphone.activities.main.settings.viewmodels.SettingsViewModel
+import com.vsphone.databinding.SettingsFragmentBinding
 import org.linphone.core.tools.Log
-import org.linphone.databinding.SettingsFragmentBinding
 
 class SettingsFragment : SecureFragment<SettingsFragmentBinding>() {
     private lateinit var viewModel: SettingsViewModel

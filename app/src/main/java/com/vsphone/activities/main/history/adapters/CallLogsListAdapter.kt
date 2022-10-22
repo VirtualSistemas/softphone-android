@@ -32,11 +32,11 @@ import com.vsphone.R
 import com.vsphone.activities.main.adapters.SelectionListAdapter
 import com.vsphone.activities.main.history.data.GroupedCallLogData
 import com.vsphone.activities.main.viewmodels.ListTopBarViewModel
+import com.vsphone.databinding.GenericListHeaderBinding
+import com.vsphone.databinding.HistoryListCellBinding
 import com.vsphone.utils.Event
 import com.vsphone.utils.HeaderAdapter
 import com.vsphone.utils.TimestampUtils
-import org.linphone.databinding.GenericListHeaderBinding
-import org.linphone.databinding.HistoryListCellBinding
 
 class CallLogsListAdapter(
     selectionVM: ListTopBarViewModel,

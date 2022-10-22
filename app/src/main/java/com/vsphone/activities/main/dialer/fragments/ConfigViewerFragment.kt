@@ -27,8 +27,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.vsphone.R
 import com.vsphone.activities.main.dialer.viewmodels.ConfigFileViewModel
 import com.vsphone.activities.main.fragments.SecureFragment
+import com.vsphone.databinding.FileConfigViewerFragmentBinding
 import org.linphone.core.tools.Log
-import org.linphone.databinding.FileConfigViewerFragmentBinding
 
 class ConfigViewerFragment : SecureFragment<FileConfigViewerFragmentBinding>() {
     private lateinit var viewModel: ConfigFileViewModel

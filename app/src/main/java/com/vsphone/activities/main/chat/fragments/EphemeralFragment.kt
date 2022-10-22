@@ -27,9 +27,9 @@ import com.vsphone.R
 import com.vsphone.activities.main.chat.viewmodels.EphemeralViewModel
 import com.vsphone.activities.main.chat.viewmodels.EphemeralViewModelFactory
 import com.vsphone.activities.main.fragments.SecureFragment
+import com.vsphone.databinding.ChatRoomEphemeralFragmentBinding
 import com.vsphone.utils.Event
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ChatRoomEphemeralFragmentBinding
 
 class EphemeralFragment : SecureFragment<ChatRoomEphemeralFragmentBinding>() {
     private lateinit var viewModel: EphemeralViewModel

@@ -264,9 +264,9 @@ private fun <T> setEntries(
                 viewGroup,
                 false
             )
-            binding.setVariable(org.linphone.BR.data, entry)
-            binding.setVariable(org.linphone.BR.longClickListener, onLongClick)
-            binding.setVariable(org.linphone.BR.parent, parent)
+            binding.setVariable(com.vsphone.BR.data, entry)
+            binding.setVariable(com.vsphone.BR.longClickListener, onLongClick)
+            binding.setVariable(com.vsphone.BR.parent, parent)
 
             // This is a bit hacky...
             binding.lifecycleOwner = viewGroup.context as GenericActivity

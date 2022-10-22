@@ -34,8 +34,8 @@ import com.vsphone.activities.assistant.viewmodels.PhoneAccountValidationViewMod
 import com.vsphone.activities.assistant.viewmodels.SharedAssistantViewModel
 import com.vsphone.activities.navigateToAccountSettings
 import com.vsphone.activities.navigateToEchoCancellerCalibration
+import com.vsphone.databinding.AssistantPhoneAccountValidationFragmentBinding
 import org.linphone.core.tools.Log
-import org.linphone.databinding.AssistantPhoneAccountValidationFragmentBinding
 
 class PhoneAccountValidationFragment :
     GenericFragment<AssistantPhoneAccountValidationFragmentBinding>() {

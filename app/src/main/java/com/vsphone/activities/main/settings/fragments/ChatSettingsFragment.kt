@@ -28,8 +28,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.vsphone.R
 import com.vsphone.activities.main.chat.viewmodels.ChatRoomsListViewModel
 import com.vsphone.activities.main.settings.viewmodels.ChatSettingsViewModel
+import com.vsphone.databinding.SettingsChatFragmentBinding
 import com.vsphone.utils.ShortcutsHelper
-import org.linphone.databinding.SettingsChatFragmentBinding
 import org.linphone.mediastream.Version
 
 class ChatSettingsFragment : GenericSettingFragment<SettingsChatFragmentBinding>() {

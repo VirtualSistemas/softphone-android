@@ -43,11 +43,11 @@ import com.vsphone.activities.main.fragments.MasterFragment
 import com.vsphone.activities.main.viewmodels.DialogViewModel
 import com.vsphone.activities.navigateToContact
 import com.vsphone.activities.navigateToContactEditor
+import com.vsphone.databinding.ContactMasterFragmentBinding
 import com.vsphone.utils.*
 import org.linphone.core.Factory
 import org.linphone.core.Friend
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ContactMasterFragmentBinding
 
 class MasterContactsFragment : MasterFragment<ContactMasterFragmentBinding, ContactsListAdapter>() {
     override val dialogConfirmationMessageBeforeRemoval = R.plurals.contact_delete_dialog

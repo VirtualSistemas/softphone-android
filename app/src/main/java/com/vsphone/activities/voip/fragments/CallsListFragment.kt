@@ -34,8 +34,8 @@ import com.vsphone.activities.voip.data.CallData
 import com.vsphone.activities.voip.viewmodels.CallsViewModel
 import com.vsphone.activities.voip.viewmodels.ConferenceViewModel
 import com.vsphone.activities.voip.viewmodels.ControlsViewModel
+import com.vsphone.databinding.VoipCallsListFragmentBinding
 import com.vsphone.utils.AppUtils
-import org.linphone.databinding.VoipCallsListFragmentBinding
 
 class CallsListFragment : GenericVideoPreviewFragment<VoipCallsListFragmentBinding>() {
     private val callsViewModel: CallsViewModel by navGraphViewModels(R.id.call_nav_graph)
@@ -97,7 +97,7 @@ class CallsListFragment : GenericVideoPreviewFragment<VoipCallsListFragmentBindi
     }
 
     private fun showCallMenu(anchor: View, callData: CallData) {
-        val popupView: org.linphone.databinding.VoipCallContextMenuBindingImpl =
+        val popupView: com.vsphone.databinding.VoipCallContextMenuBindingImpl =
             DataBindingUtil.inflate(
                 LayoutInflater.from(requireContext()),
                 R.layout.voip_call_context_menu, null, false

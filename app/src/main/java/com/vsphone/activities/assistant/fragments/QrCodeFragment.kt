@@ -29,9 +29,9 @@ import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.assistant.viewmodels.QrCodeViewModel
 import com.vsphone.activities.assistant.viewmodels.SharedAssistantViewModel
+import com.vsphone.databinding.AssistantQrCodeFragmentBinding
 import com.vsphone.utils.PermissionHelper
 import org.linphone.core.tools.Log
-import org.linphone.databinding.AssistantQrCodeFragmentBinding
 
 class QrCodeFragment : GenericFragment<AssistantQrCodeFragmentBinding>() {
     companion object {

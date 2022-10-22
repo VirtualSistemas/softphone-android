@@ -30,8 +30,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.vsphone.R
 import com.vsphone.activities.main.chat.GroupChatRoomMember
 import com.vsphone.activities.main.chat.data.GroupInfoParticipantData
+import com.vsphone.databinding.ChatRoomGroupInfoParticipantCellBinding
 import com.vsphone.utils.Event
-import org.linphone.databinding.ChatRoomGroupInfoParticipantCellBinding
 
 class GroupInfoParticipantsAdapter(
     private val viewLifecycleOwner: LifecycleOwner,

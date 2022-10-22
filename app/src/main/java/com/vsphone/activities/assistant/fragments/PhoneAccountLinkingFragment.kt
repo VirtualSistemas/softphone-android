@@ -30,8 +30,8 @@ import com.vsphone.activities.assistant.viewmodels.PhoneAccountLinkingViewModelF
 import com.vsphone.activities.assistant.viewmodels.SharedAssistantViewModel
 import com.vsphone.activities.navigateToEchoCancellerCalibration
 import com.vsphone.activities.navigateToPhoneAccountValidation
+import com.vsphone.databinding.AssistantPhoneAccountLinkingFragmentBinding
 import org.linphone.core.tools.Log
-import org.linphone.databinding.AssistantPhoneAccountLinkingFragmentBinding
 
 class PhoneAccountLinkingFragment :
     AbstractPhoneFragment<AssistantPhoneAccountLinkingFragmentBinding>() {

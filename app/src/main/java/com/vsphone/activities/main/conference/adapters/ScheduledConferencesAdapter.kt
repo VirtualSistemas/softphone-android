@@ -32,11 +32,11 @@ import com.vsphone.R
 import com.vsphone.activities.main.adapters.SelectionListAdapter
 import com.vsphone.activities.main.conference.data.ScheduledConferenceData
 import com.vsphone.activities.main.viewmodels.ListTopBarViewModel
+import com.vsphone.databinding.ConferenceScheduleCellBinding
+import com.vsphone.databinding.ConferenceScheduleListHeaderBinding
 import com.vsphone.utils.Event
 import com.vsphone.utils.HeaderAdapter
 import com.vsphone.utils.TimestampUtils
-import org.linphone.databinding.ConferenceScheduleCellBinding
-import org.linphone.databinding.ConferenceScheduleListHeaderBinding
 
 class ScheduledConferencesAdapter(
     selectionVM: ListTopBarViewModel,

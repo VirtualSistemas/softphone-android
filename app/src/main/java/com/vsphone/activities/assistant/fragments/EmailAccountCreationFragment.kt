@@ -29,7 +29,7 @@ import com.vsphone.activities.assistant.viewmodels.EmailAccountCreationViewModel
 import com.vsphone.activities.assistant.viewmodels.EmailAccountCreationViewModelFactory
 import com.vsphone.activities.assistant.viewmodels.SharedAssistantViewModel
 import com.vsphone.activities.navigateToEmailAccountValidation
-import org.linphone.databinding.AssistantEmailAccountCreationFragmentBinding
+import com.vsphone.databinding.AssistantEmailAccountCreationFragmentBinding
 
 class EmailAccountCreationFragment :
     GenericFragment<AssistantEmailAccountCreationFragmentBinding>() {

@@ -29,8 +29,8 @@ import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.*
 import com.vsphone.activities.main.viewmodels.TabsViewModel
+import com.vsphone.databinding.TabsFragmentBinding
 import com.vsphone.utils.Event
-import org.linphone.databinding.TabsFragmentBinding
 
 class TabsFragment :
     GenericFragment<TabsFragmentBinding>(),

@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
-import org.linphone.R
 
 class SyncAccountAdapter : BaseAdapter() {
     private var accounts: ArrayList<Triple<String, String, Drawable?>> = arrayListOf()

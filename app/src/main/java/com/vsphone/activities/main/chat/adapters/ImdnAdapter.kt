@@ -30,10 +30,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.vsphone.R
 import com.vsphone.activities.main.chat.data.ImdnParticipantData
+import com.vsphone.databinding.ChatRoomImdnParticipantCellBinding
+import com.vsphone.databinding.ImdnListHeaderBinding
 import com.vsphone.utils.HeaderAdapter
 import org.linphone.core.ChatMessage
-import org.linphone.databinding.ChatRoomImdnParticipantCellBinding
-import org.linphone.databinding.ImdnListHeaderBinding
 
 class ImdnAdapter(
     private val viewLifecycleOwner: LifecycleOwner

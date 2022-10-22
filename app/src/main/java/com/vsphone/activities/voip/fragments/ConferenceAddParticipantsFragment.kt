@@ -32,10 +32,10 @@ import com.vsphone.activities.voip.viewmodels.ConferenceParticipantsViewModel
 import com.vsphone.activities.voip.viewmodels.ConferenceParticipantsViewModelFactory
 import com.vsphone.activities.voip.viewmodels.ConferenceViewModel
 import com.vsphone.contact.ContactsSelectionAdapter
+import com.vsphone.databinding.VoipConferenceParticipantsAddFragmentBinding
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.PermissionHelper
 import org.linphone.core.tools.Log
-import org.linphone.databinding.VoipConferenceParticipantsAddFragmentBinding
 
 class ConferenceAddParticipantsFragment :
     GenericFragment<VoipConferenceParticipantsAddFragmentBinding>() {

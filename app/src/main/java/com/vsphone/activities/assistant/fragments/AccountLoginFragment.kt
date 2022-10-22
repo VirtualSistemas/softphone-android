@@ -34,8 +34,8 @@ import com.vsphone.activities.assistant.viewmodels.SharedAssistantViewModel
 import com.vsphone.activities.main.viewmodels.DialogViewModel
 import com.vsphone.activities.navigateToEchoCancellerCalibration
 import com.vsphone.activities.navigateToPhoneAccountValidation
+import com.vsphone.databinding.AssistantAccountLoginFragmentBinding
 import com.vsphone.utils.DialogUtils
-import org.linphone.databinding.AssistantAccountLoginFragmentBinding
 
 class AccountLoginFragment : AbstractPhoneFragment<AssistantAccountLoginFragmentBinding>() {
     override lateinit var viewModel: AccountLoginViewModel

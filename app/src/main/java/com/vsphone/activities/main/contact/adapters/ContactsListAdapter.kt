@@ -32,12 +32,12 @@ import com.vsphone.R
 import com.vsphone.activities.main.adapters.SelectionListAdapter
 import com.vsphone.activities.main.contact.viewmodels.ContactViewModel
 import com.vsphone.activities.main.viewmodels.ListTopBarViewModel
+import com.vsphone.databinding.ContactListCellBinding
+import com.vsphone.databinding.GenericListHeaderBinding
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.Event
 import com.vsphone.utils.HeaderAdapter
 import org.linphone.core.Friend
-import org.linphone.databinding.ContactListCellBinding
-import org.linphone.databinding.GenericListHeaderBinding
 
 class ContactsListAdapter(
     selectionVM: ListTopBarViewModel,

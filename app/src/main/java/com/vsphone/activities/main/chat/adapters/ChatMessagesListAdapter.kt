@@ -40,6 +40,9 @@ import com.vsphone.activities.main.chat.data.EventData
 import com.vsphone.activities.main.chat.data.EventLogData
 import com.vsphone.activities.main.chat.data.OnContentClickedListener
 import com.vsphone.activities.main.viewmodels.ListTopBarViewModel
+import com.vsphone.databinding.ChatEventListCellBinding
+import com.vsphone.databinding.ChatMessageListCellBinding
+import com.vsphone.databinding.ChatUnreadMessagesListHeaderBinding
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.Event
 import com.vsphone.utils.HeaderAdapter
@@ -48,9 +51,6 @@ import org.linphone.core.ChatRoomCapabilities
 import org.linphone.core.Content
 import org.linphone.core.EventLog
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ChatEventListCellBinding
-import org.linphone.databinding.ChatMessageListCellBinding
-import org.linphone.databinding.ChatUnreadMessagesListHeaderBinding
 
 class ChatMessagesListAdapter(
     selectionVM: ListTopBarViewModel,
@@ -315,7 +315,7 @@ class ChatMessagesListAdapter(
                     executePendingBindings()
 
                     setContextMenuClickListener {
-                        val popupView: org.linphone.databinding.ChatMessageLongPressMenuBindingImpl =
+                        val popupView: com.vsphone.databinding.ChatMessageLongPressMenuBindingImpl =
                             DataBindingUtil.inflate(
                                 LayoutInflater.from(root.context),
                                 R.layout.chat_message_long_press_menu, null, false

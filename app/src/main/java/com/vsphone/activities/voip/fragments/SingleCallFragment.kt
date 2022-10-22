@@ -39,11 +39,11 @@ import com.vsphone.activities.voip.viewmodels.CallsViewModel
 import com.vsphone.activities.voip.viewmodels.ConferenceViewModel
 import com.vsphone.activities.voip.viewmodels.ControlsViewModel
 import com.vsphone.activities.voip.viewmodels.StatisticsListViewModel
+import com.vsphone.databinding.VoipSingleCallFragmentBinding
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.DialogUtils
 import org.linphone.core.Call
 import org.linphone.core.tools.Log
-import org.linphone.databinding.VoipSingleCallFragmentBinding
 
 class SingleCallFragment : GenericVideoPreviewFragment<VoipSingleCallFragmentBinding>() {
     private val controlsViewModel: ControlsViewModel by navGraphViewModels(R.id.call_nav_graph)

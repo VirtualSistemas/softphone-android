@@ -31,10 +31,10 @@ import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.main.conference.viewmodels.ConferenceSchedulingViewModel
 import com.vsphone.activities.navigateToSummary
 import com.vsphone.contact.ContactsSelectionAdapter
+import com.vsphone.databinding.ConferenceSchedulingParticipantsListFragmentBinding
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.PermissionHelper
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ConferenceSchedulingParticipantsListFragmentBinding
 
 class ConferenceSchedulingParticipantsListFragment :
     GenericFragment<ConferenceSchedulingParticipantsListFragmentBinding>() {

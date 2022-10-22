@@ -30,7 +30,7 @@ import com.vsphone.activities.assistant.viewmodels.RemoteProvisioningViewModel
 import com.vsphone.activities.assistant.viewmodels.SharedAssistantViewModel
 import com.vsphone.activities.navigateToEchoCancellerCalibration
 import com.vsphone.activities.navigateToQrCode
-import org.linphone.databinding.AssistantRemoteProvisioningFragmentBinding
+import com.vsphone.databinding.AssistantRemoteProvisioningFragmentBinding
 
 class RemoteProvisioningFragment : GenericFragment<AssistantRemoteProvisioningFragmentBinding>() {
     private lateinit var sharedAssistantViewModel: SharedAssistantViewModel

@@ -34,13 +34,13 @@ import com.vsphone.activities.*
 import com.vsphone.activities.assistant.AssistantActivity
 import com.vsphone.activities.main.settings.SettingListenerStub
 import com.vsphone.activities.main.sidemenu.viewmodels.SideMenuViewModel
+import com.vsphone.databinding.SideMenuFragmentBinding
 import com.vsphone.utils.Event
 import com.vsphone.utils.FileUtils
 import com.vsphone.utils.PermissionHelper
 import java.io.File
 import kotlinx.coroutines.launch
 import org.linphone.core.tools.Log
-import org.linphone.databinding.SideMenuFragmentBinding
 
 class SideMenuFragment : GenericFragment<SideMenuFragmentBinding>() {
     private lateinit var viewModel: SideMenuViewModel

@@ -41,10 +41,10 @@ import com.vsphone.activities.main.history.data.GroupedCallLogData
 import com.vsphone.activities.main.history.viewmodels.CallLogsListViewModel
 import com.vsphone.activities.main.viewmodels.DialogViewModel
 import com.vsphone.activities.main.viewmodels.TabsViewModel
+import com.vsphone.databinding.HistoryMasterFragmentBinding
 import com.vsphone.utils.*
 import org.linphone.core.ConferenceInfo
 import org.linphone.core.tools.Log
-import org.linphone.databinding.HistoryMasterFragmentBinding
 
 class MasterCallLogsFragment : MasterFragment<HistoryMasterFragmentBinding, CallLogsListAdapter>() {
     override val dialogConfirmationMessageBeforeRemoval = R.plurals.history_delete_dialog

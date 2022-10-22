@@ -29,8 +29,8 @@ import androidx.navigation.fragment.findNavController
 import com.vsphone.R
 import com.vsphone.activities.main.files.viewmodels.AudioFileViewModel
 import com.vsphone.activities.main.files.viewmodels.AudioFileViewModelFactory
+import com.vsphone.databinding.FileAudioViewerFragmentBinding
 import org.linphone.core.tools.Log
-import org.linphone.databinding.FileAudioViewerFragmentBinding
 
 class AudioViewerFragment : GenericViewerFragment<FileAudioViewerFragmentBinding>() {
     private lateinit var viewModel: AudioFileViewModel

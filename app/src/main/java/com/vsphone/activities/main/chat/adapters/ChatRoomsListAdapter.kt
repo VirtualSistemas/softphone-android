@@ -30,9 +30,9 @@ import com.vsphone.R
 import com.vsphone.activities.main.adapters.SelectionListAdapter
 import com.vsphone.activities.main.chat.data.ChatRoomData
 import com.vsphone.activities.main.viewmodels.ListTopBarViewModel
+import com.vsphone.databinding.ChatRoomListCellBinding
 import com.vsphone.utils.Event
 import org.linphone.core.ChatRoom
-import org.linphone.databinding.ChatRoomListCellBinding
 
 class ChatRoomsListAdapter(
     selectionVM: ListTopBarViewModel,

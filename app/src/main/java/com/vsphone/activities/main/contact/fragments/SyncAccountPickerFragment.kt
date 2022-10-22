@@ -26,8 +26,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.vsphone.R
 import com.vsphone.activities.main.contact.adapters.SyncAccountAdapter
+import com.vsphone.databinding.ContactSyncAccountPickerFragmentBinding
 import org.linphone.core.tools.Log
-import org.linphone.databinding.ContactSyncAccountPickerFragmentBinding
 
 class SyncAccountPickerFragment(private val listener: SyncAccountPickedListener) :
     DialogFragment() {

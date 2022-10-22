@@ -29,10 +29,10 @@ import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.main.settings.SettingListenerStub
 import com.vsphone.activities.main.settings.viewmodels.ContactsSettingsViewModel
 import com.vsphone.activities.navigateToLdapSettings
+import com.vsphone.databinding.SettingsContactsFragmentBinding
 import com.vsphone.utils.PermissionHelper
 import com.vsphone.utils.ShortcutsHelper
 import org.linphone.core.tools.Log
-import org.linphone.databinding.SettingsContactsFragmentBinding
 
 class ContactsSettingsFragment : GenericSettingFragment<SettingsContactsFragmentBinding>() {
     private lateinit var viewModel: ContactsSettingsViewModel
