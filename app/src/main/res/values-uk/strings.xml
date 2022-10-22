@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE resources [
-<!ENTITY appName "Linphone">
-]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Linphone">]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="service_description">Це потрібно для отримання дзвінків у фоновому режимі</string>
     <string name="sync_account_name">&appName; контакти</string>
@@ -118,7 +115,8 @@
     <string name="conference_schedule_date">Дата</string>
     <string name="conference_schedule_time">Час</string>
     <string name="conference_schedule_timezone">Часовий пояс</string>
-    <string name="conference_schedule_send_invite_chat_summary">Запрошення буде надіслано з мого &appName; акаунту</string>
+    <string name="conference_schedule_send_invite_chat_summary">Запрошення буде надіслано з мого &appName;
+        акаунту</string>
     <string name="conference_group_call_summary">Інформація про груповий дзвінок</string>
     <string name="conference_schedule_start">Призначити зустріч</string>
     <string name="conference_group_call_create">Розпочати груповий виклик</string>
@@ -201,7 +199,8 @@
     <string name="assistant_error_passwords_dont_match">Паролі не співпадають</string>
     <string name="assistant_error_invalid_email_address">Адреса електронної пошти недійсна</string>
     <string name="assistant_error_username_too_long">Ім\'я користувача містить забагато символів</string>
-    <string name="assistant_linphone_login_desc">Введіть своє ім’я користувача та пароль для &appName; акаунту</string>
+    <string name="assistant_linphone_login_desc">Введіть своє ім’я користувача та пароль для &appName;
+        акаунту</string>
     <string name="assistant_login_forgotten_password">Забули свій пароль\?</string>
     <string name="assistant_login">Логін</string>
     <string name="assistant_confirmation_code">Код підтвердження</string>
@@ -338,9 +337,11 @@
     <string name="assistant_phone_number_link_info_content">"
 \nВаші друзі знайдуть вас легше, якщо ви прив’яжете обліковий запис до свого номера телефону
 \n
-\n Ви побачите у своїй адресній книзі, хто використовує &appName;  і ваші друзі знатимуть, що вони можуть зв’язатися з вами на &appName; так само.
+\n Ви побачите у своїй адресній книзі, хто використовує &appName; і ваші друзі знатимуть, що вони можуть зв’язатися з вами на &appName;
+        так само.
 \n"</string>
-    <string name="assistant_phone_number_link_info_content_already_account">Ви можете використовувати свій номер телефону лише з одним &appName; акаунтом.
+    <string name="assistant_phone_number_link_info_content_already_account">Ви можете використовувати свій номер телефону лише з одним &appName;
+        акаунтом.
 \n
 \n Якщо ви вже прив’язали свій номер до іншого облікового запису, але бажаєте використовувати цей, просто прив’яжіть його зараз, і ваш номер буде автоматично переміщено до цього облікового запису.</string>
     <string name="assistant_privacy_policy">політика конфіденційності</string>
@@ -357,7 +358,8 @@
     <string name="assistant_login_with_username">Використовуйте своє ім\'я користувача та пароль замість свого номера телефону</string>
     <string name="assistant_finish">Завершіть налаштування</string>
     <string name="assistant_generic_account">Використовуйте обліковий запис SIP</string>
-    <string name="assistant_create_account_part_email">Введіть ім’я користувача, електронну адресу та пароль для &appName; акаунт</string>
+    <string name="assistant_create_account_part_email">Введіть ім’я користувача, електронну адресу та пароль для &appName;
+        акаунт</string>
     <string name="assistant_validate_account_1">Ваш обліковий запис створено. Перевірте свою електронну пошту, щоб підтвердити обліковий запис:</string>
     <string name="assistant_create_account_part_2">Ми надіслали вам SMS із кодом підтвердження на ваш номер телефону:</string>
     <string name="assistant_link_phone_number">Ви пов’яжете зі своїм номером телефону таке ім’я користувача:</string>

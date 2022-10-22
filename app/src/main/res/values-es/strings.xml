@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE resources [
-<!ENTITY appName "Linphone">
-]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Linphone">]>
 <resources>
     <string name="service_name">&appName; Servicio</string>
     <string name="service_auto_start_description">&appName; se ha iniciado automáticamente</string>
@@ -217,7 +214,8 @@
     <string name="content_description_show_call_details">Ir a los detalles de la llamada</string>
     <string name="assistant_error_invalid_credentials">La cuenta no existe o la contraseña no coincide</string>
     <string name="assistant_create_account_part_1">Por favor, confirme el código de su país e introduzca su número de teléfono</string>
-    <string name="assistant_create_account_part_email">Por favor, introduzca un nombre de usuario, correo electrónico y contraseña para su &appName; cuenta</string>
+    <string name="assistant_create_account_part_email">Por favor, introduzca un nombre de usuario, correo electrónico y contraseña para su &appName;
+        cuenta</string>
     <string name="assistant_create_account_part_2">Te hemos enviado un SMS con un código de validación a tu número de teléfono:</string>
     <string name="assistant_link_phone_number">Vinculará con su número de teléfono el siguiente nombre de usuario:</string>
     <string name="assistant_remote_provisioning_failure">No se descargó o aplicó el perfil de aprovisionamiento remoto…</string>
@@ -246,7 +244,8 @@
     <string name="chat_settings_hide_notification_content_summary">Sólo se mostrará el nombre del remitente</string>
     <string name="chat_settings_launcher_shortcuts_title">Crear atajos para las salas de chat en el lanzador</string>
     <string name="chat_settings_hide_rooms_removed_proxies_title">Esconder las salas de chat de las configuraciones de proxy eliminadas</string>
-    <string name="contacts_settings_native_presence_summary">Insertar atajos de información desde el &appName; contacto en los contactos nativos de Android</string>
+    <string name="contacts_settings_native_presence_summary">Insertar atajos de información desde el &appName;
+        contacto en los contactos nativos de Android</string>
     <string name="contacts_settings_show_new_contact_account_dialog_summary">Si el contacto es deshabilitado se almacena localmente</string>
     <string name="advanced_settings_device_name_title">Nombre de dispositivo</string>
     <string name="advanced_settings_device_name_summary">Los cambios se aplicarán en la próxima puesta en marcha</string>
@@ -341,14 +340,16 @@
     <string name="assistant_remote_provisioning">Buscar la configuración remota</string>
     <string name="assistant_ec_calibration">Calibración del cancelador de eco en curso</string>
     <string name="assistant_phone_number_info_title">Para qué se usará mi número de teléfono\?</string>
-    <string name="assistant_phone_number_link_info_content">\nGracias a tu número de teléfono, tus amigos te encontrarán más fácilmente.\n\n Verás en tu libreta de direcciones quién está usando &appName; y tus amigos sabrán que pueden contactarte en &appName; también.\n</string>
+    <string name="assistant_phone_number_link_info_content">\nGracias a tu número de teléfono, tus amigos te encontrarán más fácilmente.\n\n Verás en tu libreta de direcciones quién está usando &appName;
+        y tus amigos sabrán que pueden contactarte en &appName; también.\n</string>
     <string name="assistant_error_phone_number_invalid_characters">Solo digítos</string>
     <string name="assistant_error_username_invalid_characters">Caracteres inválidos encontrados</string>
     <string name="assistant_error_passwords_dont_match">Las contraseñas no coinciden</string>
     <string name="assistant_error_invalid_email_address">La dirección de correo electrónico es inválida</string>
     <string name="assistant_error_username_too_long">El nombre de usuario tiene demasiados caracteres</string>
     <string name="assistant_linphone_account">Use su &appName; cuenta</string>
-    <string name="assistant_linphone_login_desc">Por favor, introduzca su nombre de usuario y contraseña de &appName; cuenta</string>
+    <string name="assistant_linphone_login_desc">Por favor, introduzca su nombre de usuario y contraseña de &appName;
+        cuenta</string>
     <string name="assistant_login_with_username">Usa tu nombre de usuario y contraseña en lugar de tu número de teléfono</string>
     <string name="assistant_login_forgotten_password">Olvidaste tu contraseña\?</string>
     <string name="assistant_login">Ingresar</string>

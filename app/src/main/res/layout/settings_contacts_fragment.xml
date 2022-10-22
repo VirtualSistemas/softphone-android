@@ -3,13 +3,16 @@
     xmlns:linphone="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.settings.viewmodels.ContactsSettingsViewModel"/>
+            type="com.vsphone.activities.main.settings.viewmodels.ContactsSettingsViewModel" />
+
         <variable
             name="sharedMainViewModel"
-            type="org.linphone.activities.main.viewmodels.SharedMainViewModel" />
+            type="com.vsphone.activities.main.viewmodels.SharedMainViewModel" />
     </data>
 
     <RelativeLayout
@@ -26,25 +29,25 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
-                android:src="@drawable/back" />
+                android:src="@drawable/back"
+                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}" />
 
             <TextView
                 style="@style/accent_colored_title_font"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:gravity="center"
-                android:singleLine="true"
                 android:ellipsize="end"
+                android:gravity="center"
                 android:padding="15dp"
-                android:text="@string/settings_contacts_title"/>
+                android:singleLine="true"
+                android:text="@string/settings_contacts_title" />
 
             <View
                 android:layout_width="0dp"
@@ -66,64 +69,64 @@
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/contacts_settings_friendlist_subscribe_title}"
-                    linphone:listener="@{viewModel.friendListSubscribeListener}"
                     linphone:checked="@={viewModel.friendListSubscribe}"
-                    linphone:enabled="@{viewModel.readContactsPermissionGranted &amp;&amp; viewModel.rlsAddressAvailable}"/>
+                    linphone:enabled="@{viewModel.readContactsPermissionGranted &amp;&amp; viewModel.rlsAddressAvailable}"
+                    linphone:listener="@{viewModel.friendListSubscribeListener}"
+                    linphone:title="@{@string/contacts_settings_friendlist_subscribe_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/contacts_settings_show_new_contact_account_dialog_title}"
-                    linphone:subtitle="@{@string/contacts_settings_show_new_contact_account_dialog_summary}"
-                    linphone:listener="@{viewModel.showNewContactAccountDialogListener}"
                     linphone:checked="@={viewModel.showNewContactAccountDialog}"
-                    linphone:enabled="@{viewModel.readContactsPermissionGranted}"/>
+                    linphone:enabled="@{viewModel.readContactsPermissionGranted}"
+                    linphone:listener="@{viewModel.showNewContactAccountDialogListener}"
+                    linphone:subtitle="@{@string/contacts_settings_show_new_contact_account_dialog_summary}"
+                    linphone:title="@{@string/contacts_settings_show_new_contact_account_dialog_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/contacts_settings_native_presence_title}"
-                    linphone:subtitle="@{@string/contacts_settings_native_presence_summary}"
-                    linphone:listener="@{viewModel.nativePresenceListener}"
                     linphone:checked="@={viewModel.nativePresence}"
-                    linphone:enabled="@{viewModel.readContactsPermissionGranted &amp;&amp; viewModel.friendListSubscribe}"/>
+                    linphone:enabled="@{viewModel.readContactsPermissionGranted &amp;&amp; viewModel.friendListSubscribe}"
+                    linphone:listener="@{viewModel.nativePresenceListener}"
+                    linphone:subtitle="@{@string/contacts_settings_native_presence_summary}"
+                    linphone:title="@{@string/contacts_settings_native_presence_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/contacts_settings_show_organization_title}"
-                    linphone:listener="@{viewModel.showOrganizationListener}"
                     linphone:checked="@={viewModel.showOrganization}"
-                    linphone:enabled="@{viewModel.readContactsPermissionGranted}"/>
+                    linphone:enabled="@{viewModel.readContactsPermissionGranted}"
+                    linphone:listener="@{viewModel.showOrganizationListener}"
+                    linphone:title="@{@string/contacts_settings_show_organization_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
                     android:visibility="gone"
-                    linphone:title="@{@string/contacts_settings_launcher_shortcuts_title}"
-                    linphone:subtitle="@{@string/contacts_settings_launcher_shortcuts_summary}"
-                    linphone:listener="@{viewModel.launcherShortcutsListener}"
                     linphone:checked="@={viewModel.launcherShortcuts}"
-                    linphone:enabled="@{viewModel.readContactsPermissionGranted}"/>
+                    linphone:enabled="@{viewModel.readContactsPermissionGranted}"
+                    linphone:listener="@{viewModel.launcherShortcutsListener}"
+                    linphone:subtitle="@{@string/contacts_settings_launcher_shortcuts_summary}"
+                    linphone:title="@{@string/contacts_settings_launcher_shortcuts_title}" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="@{viewModel.ldapAvailable ? View.VISIBLE : View.GONE}"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.ldapAvailable ? View.VISIBLE : View.GONE}">
 
                     <TextView
                         style="@style/settings_category_font"
-                        android:text="@string/contacts_settings_ldap_title"
-                        android:paddingTop="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:paddingTop="15dp"
+                        android:text="@string/contacts_settings_ldap_title" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         linphone:entries="@{viewModel.ldapConfigurations}"
-                        linphone:layout="@{@layout/settings_ldap_cell}"/>
+                        linphone:layout="@{@layout/settings_ldap_cell}" />
 
                     <include
                         layout="@layout/settings_widget_basic"

@@ -2,7 +2,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
     </data>
 
     <LinearLayout
@@ -15,11 +16,11 @@
 
         <ImageView
             android:id="@+id/back"
-            android:contentDescription="@string/content_description_go_back"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.2"
             android:background="?attr/button_background_drawable"
+            android:contentDescription="@string/content_description_go_back"
             android:padding="18dp"
             android:src="@drawable/back" />
 
@@ -28,11 +29,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.6"
-            android:gravity="center"
-            android:singleLine="true"
             android:ellipsize="end"
+            android:gravity="center"
             android:padding="15dp"
-            android:text="@string/assistant"/>
+            android:singleLine="true"
+            android:text="@string/assistant" />
 
         <View
             android:layout_width="0dp"

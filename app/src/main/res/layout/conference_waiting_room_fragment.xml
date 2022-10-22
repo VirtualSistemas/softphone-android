@@ -6,11 +6,11 @@
 
         <import type="android.view.View" />
 
-        <import type="org.linphone.activities.voip.ConferenceDisplayMode" />
+        <import type="com.vsphone.activities.voip.ConferenceDisplayMode" />
 
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.conference.viewmodels.ConferenceWaitingRoomViewModel" />
+            type="com.vsphone.activities.main.conference.viewmodels.ConferenceWaitingRoomViewModel" />
     </data>
 
     <RelativeLayout
@@ -48,7 +48,7 @@
             android:background="@drawable/shape_remote_video_background"
             android:visibility="@{viewModel.isVideoEnabled ? View.VISIBLE : View.GONE, default=gone}">
 
-            <org.linphone.activities.voip.views.RoundCornersTextureView
+            <com.vsphone.activities.voip.views.RoundCornersTextureView
                 android:id="@+id/local_preview_video_surface"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -102,7 +102,7 @@
                 app:layout_constraintEnd_toStartOf="@id/start"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_max="@dimen/conference_waiting_room_buttons_max_width"/>
+                app:layout_constraintWidth_max="@dimen/conference_waiting_room_buttons_max_width" />
 
             <TextView
                 android:id="@+id/start"
@@ -123,9 +123,9 @@
                 android:text="@string/conference_waiting_room_start_call"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintStart_toEndOf="@id/cancel"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintWidth_max="@dimen/conference_waiting_room_buttons_max_width" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -137,8 +137,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:background="@drawable/shape_audio_routes_background"
-            android:translationY="@{viewModel.audioRoutesMenuTranslateY, default=@dimen/voip_audio_routes_menu_translate_y}"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:translationY="@{viewModel.audioRoutesMenuTranslateY, default=@dimen/voip_audio_routes_menu_translate_y}">
 
             <ImageView
                 android:layout_width="@dimen/voip_call_button_size"
@@ -180,8 +180,8 @@
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/shape_audio_routes_background"
-            android:translationY="@{viewModel.conferenceLayoutMenuTranslateY, default=@dimen/voip_audio_routes_menu_translate_y}"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:translationY="@{viewModel.conferenceLayoutMenuTranslateY, default=@dimen/voip_audio_routes_menu_translate_y}">
 
             <ImageView
                 android:layout_width="@dimen/voip_call_button_size"

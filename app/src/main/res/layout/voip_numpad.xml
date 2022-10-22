@@ -3,10 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="controlsViewModel"
-            type="org.linphone.activities.voip.viewmodels.ControlsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.ControlsViewModel" />
+
         <variable
             name="inflatedVisibility"
             type="Integer" />
@@ -14,12 +17,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/numpad_layout"
+        inflatedLifecycleOwner="@{true}"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/voip_translucent_popup_background"
         android:clickable="true"
-        android:visibility="@{inflatedVisibility}"
-        inflatedLifecycleOwner="@{true}">
+        android:visibility="@{inflatedVisibility}">
 
         <View
             android:id="@+id/background"

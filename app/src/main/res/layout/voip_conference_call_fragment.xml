@@ -7,25 +7,25 @@
 
         <import type="android.view.View" />
 
-        <import type="org.linphone.activities.voip.ConferenceDisplayMode" />
+        <import type="com.vsphone.activities.voip.ConferenceDisplayMode" />
 
         <import type="com.google.android.flexbox.FlexDirection" />
 
         <variable
             name="controlsViewModel"
-            type="org.linphone.activities.voip.viewmodels.ControlsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.ControlsViewModel" />
 
         <variable
             name="callsViewModel"
-            type="org.linphone.activities.voip.viewmodels.CallsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.CallsViewModel" />
 
         <variable
             name="conferenceViewModel"
-            type="org.linphone.activities.voip.viewmodels.ConferenceViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.ConferenceViewModel" />
 
         <variable
             name="statsViewModel"
-            type="org.linphone.activities.voip.viewmodels.StatisticsListViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.StatisticsListViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE resources [
-<!ENTITY appName "Linphone">
-]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Linphone">]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="call_stats_video">Vidéo</string>
     <string name="assistant_remote_provisioning_failure">Erreur durant le téléchargement ou l\'application de la configuration distante…</string>
@@ -246,7 +243,8 @@
     <string name="chat_settings_launcher_shortcuts_title">Créer des raccourcis vers les conversations dans le lanceur d\'application</string>
     <string name="chat_settings_hide_rooms_removed_proxies_summary">S\'il vous manque des conversations, essayez de décocher ce paramètre</string>
     <string name="contacts_settings_friendlist_subscribe_title">Souscrire à la liste d\'amis</string>
-    <string name="contacts_settings_native_presence_summary">Ajouter un raccourci vers le contact &appName; dans le carnet d\'adresses natif</string>
+    <string name="contacts_settings_native_presence_summary">Ajouter un raccourci vers le contact &appName;
+        dans le carnet d\'adresses natif</string>
     <string name="tunnel_settings_dual_mode_title">Mode double activé</string>
     <string name="tunnel_settings_dual_hostname_url_title">Nom d\'hôte du second serveur</string>
     <string name="tunnel_settings_dual_hostname_url_summary">Requis par le mode double</string>
@@ -498,7 +496,8 @@
     <string name="call_stats_ice">Connectivité ICE :</string>
     <string name="call_stats_video_resolution_sent">Résolution vidéo envoyée :</string>
     <string name="assistant_welcome_desc">Cet assistant va vous aider à configurer et utiliser votre compte SIP.</string>
-    <string name="assistant_phone_number_link_info_content">\nVos amis pourront vous joindre plus facilement si vous associez votre compte à votre numéro de téléphone.\n\nVous verrez dans votre carnet d\'adresses les contacts qui utilisent &appName; et vos amis sauront qu\'ils peuvent vous contacter.\n</string>
+    <string name="assistant_phone_number_link_info_content">\nVos amis pourront vous joindre plus facilement si vous associez votre compte à votre numéro de téléphone.\n\nVous verrez dans votre carnet d\'adresses les contacts qui utilisent &appName;
+        et vos amis sauront qu\'ils peuvent vous contacter.\n</string>
     <string name="assistant_error_invalid_credentials">Le compte n\'existe pas ou les mots de passe ne correspondent pas</string>
     <string name="assistant_linphone_login_desc">Veuillez saisir le nom d\'utilisateur et mot de passe de votre compte &appName;</string>
     <string name="assistant_display_name_optional">Nom d\'affichage (optionnel)</string>

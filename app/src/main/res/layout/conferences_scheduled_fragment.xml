@@ -3,20 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="newConferenceClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.conference.viewmodels.ScheduledConferencesViewModel" />
+            type="com.vsphone.activities.main.conference.viewmodels.ScheduledConferencesViewModel" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="?attr/voipBackgroundBWColor">
+        android:background="?attr/voipBackgroundBWColor"
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/top_bar"
@@ -28,10 +31,10 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
                 android:src="@drawable/back" />
 
@@ -40,18 +43,18 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:gravity="center"
-                android:singleLine="true"
                 android:ellipsize="end"
+                android:gravity="center"
                 android:padding="15dp"
-                android:text="@string/conference_scheduled"/>
+                android:singleLine="true"
+                android:text="@string/conference_scheduled" />
 
             <ImageView
-                android:onClick="@{newConferenceClickListener}"
-                android:contentDescription="@string/content_description_create_conference"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
+                android:contentDescription="@string/content_description_create_conference"
+                android:onClick="@{newConferenceClickListener}"
                 android:padding="5dp"
                 android:src="@drawable/icon_video_conf_new" />
 
@@ -59,7 +62,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/list_edit_top_bar_fragment"
-            android:name="org.linphone.activities.main.fragments.ListTopBarFragment"
+            android:name="com.vsphone.activities.main.fragments.ListTopBarFragment"
             android:layout_width="match_parent"
             android:layout_height="@dimen/main_activity_top_bar_size"
             android:layout_alignTop="@id/top_bar"
@@ -77,33 +80,33 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onCheckedChanged="@{() -> viewModel.applyFilter()}"
                 android:checked="@={viewModel.showTerminated, default=false}"
+                android:onCheckedChanged="@{() -> viewModel.applyFilter()}"
                 android:text="@string/conference_scheduled_terminated_filter" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onCheckedChanged="@{() -> viewModel.applyFilter()}"
                 android:checked="@={!viewModel.showTerminated, default=true}"
+                android:onCheckedChanged="@{() -> viewModel.applyFilter()}"
                 android:text="@string/conference_scheduled_future_filter" />
 
         </com.google.android.material.chip.ChipGroup>
 
         <View
             android:id="@+id/divider"
-            android:layout_below="@id/chips"
             android:layout_width="wrap_content"
             android:layout_height="1dp"
+            android:layout_below="@id/chips"
             android:background="?attr/dividerColor" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/conference_info_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
-            android:layout_below="@id/divider" />
+            android:layout_below="@id/divider"
+            android:layout_marginBottom="10dp" />
 
         <TextView
             style="@style/empty_list_font"

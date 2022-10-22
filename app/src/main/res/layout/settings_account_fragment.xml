@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:linphone="http://schemas.android.com/apk/res-auto"
-    xmlns:bind="http://schemas.android.com/tools">
+    xmlns:bind="http://schemas.android.com/tools"
+    xmlns:linphone="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
-        <import type="android.text.InputType"/>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.InputType" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.settings.viewmodels.AccountSettingsViewModel"/>
+            type="com.vsphone.activities.main.settings.viewmodels.AccountSettingsViewModel" />
+
         <variable
             name="sharedMainViewModel"
-            type="org.linphone.activities.main.viewmodels.SharedMainViewModel" />
+            type="com.vsphone.activities.main.viewmodels.SharedMainViewModel" />
     </data>
 
     <RelativeLayout
@@ -28,25 +32,25 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
-                android:src="@drawable/back" />
+                android:src="@drawable/back"
+                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}" />
 
             <TextView
                 style="@style/accent_colored_title_font"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:gravity="center"
-                android:singleLine="true"
                 android:ellipsize="end"
+                android:gravity="center"
                 android:padding="15dp"
-                android:text="@string/settings_accounts_title"/>
+                android:singleLine="true"
+                android:text="@string/settings_accounts_title" />
 
             <View
                 android:layout_width="0dp"
@@ -68,194 +72,194 @@
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_settings_user_name_title}"
-                    linphone:subtitle="@{@string/account_settings_user_name_summary}"
-                    linphone:listener="@{viewModel.userNameListener}"
                     linphone:defaultValue="@{viewModel.userName}"
-                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_PERSON_NAME}"/>
+                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_PERSON_NAME}"
+                    linphone:listener="@{viewModel.userNameListener}"
+                    linphone:subtitle="@{@string/account_settings_user_name_summary}"
+                    linphone:title="@{@string/account_settings_user_name_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_settings_user_id_title}"
-                    linphone:subtitle="@{@string/account_settings_user_id_summary}"
-                    linphone:listener="@{viewModel.userIdListener}"
                     linphone:defaultValue="@{viewModel.userId}"
-                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_PERSON_NAME}"/>
+                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_PERSON_NAME}"
+                    linphone:listener="@{viewModel.userIdListener}"
+                    linphone:subtitle="@{@string/account_settings_user_id_summary}"
+                    linphone:title="@{@string/account_settings_user_id_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_settings_password_title}"
-                    linphone:subtitle="@{@string/account_settings_password_summary}"
-                    linphone:listener="@{viewModel.passwordListener}"
                     linphone:defaultValue="@{viewModel.password}"
-                    linphone:inputType="@{InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD}"/>
+                    linphone:inputType="@{InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD}"
+                    linphone:listener="@{viewModel.passwordListener}"
+                    linphone:subtitle="@{@string/account_settings_password_summary}"
+                    linphone:title="@{@string/account_settings_password_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_settings_domain_title}"
-                    linphone:subtitle="@{@string/account_settings_domain_summary}"
-                    linphone:listener="@{viewModel.domainListener}"
                     linphone:defaultValue="@{viewModel.domain}"
-                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS}"/>
+                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS}"
+                    linphone:listener="@{viewModel.domainListener}"
+                    linphone:subtitle="@{@string/account_settings_domain_summary}"
+                    linphone:title="@{@string/account_settings_domain_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_settings_display_name_title}"
-                    linphone:listener="@{viewModel.displayNameListener}"
                     linphone:defaultValue="@{viewModel.displayName}"
-                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_PERSON_NAME}"/>
+                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_PERSON_NAME}"
+                    linphone:listener="@{viewModel.displayNameListener}"
+                    linphone:title="@{@string/account_settings_display_name_title}" />
 
                 <TextView
                     style="@style/settings_category_font"
-                    android:text="@string/account_settings_manage_title"
-                    android:paddingTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:paddingTop="15dp"
+                    android:text="@string/account_settings_manage_title" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/account_settings_disable_title}"
+                    linphone:checked="@={viewModel.disable}"
                     linphone:listener="@{viewModel.disableListener}"
-                    linphone:checked="@={viewModel.disable}"/>
+                    linphone:title="@{@string/account_settings_disable_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/account_settings_default_title}"
-                    linphone:listener="@{viewModel.isDefaultListener}"
                     linphone:checked="@={viewModel.isDefault}"
-                    linphone:enabled="@{!viewModel.isDefault}"/>
+                    linphone:enabled="@{!viewModel.isDefault}"
+                    linphone:listener="@{viewModel.isDefaultListener}"
+                    linphone:title="@{@string/account_settings_default_title}" />
 
                 <include
                     layout="@layout/settings_widget_basic"
-                    linphone:title="@{@string/account_settings_link_phone_number_title}"
-                    linphone:listener="@{viewModel.linkPhoneNumberListener}"/>
+                    linphone:listener="@{viewModel.linkPhoneNumberListener}"
+                    linphone:title="@{@string/account_settings_link_phone_number_title}" />
 
                 <include
                     layout="@layout/settings_widget_basic"
-                    linphone:title="@{@string/account_settings_delete_title}"
-                    linphone:listener="@{viewModel.deleteListener}"/>
+                    linphone:listener="@{viewModel.deleteListener}"
+                    linphone:title="@{@string/account_settings_delete_title}" />
 
                 <TextView
                     style="@style/settings_category_font"
-                    android:text="@string/account_settings_advanced_title"
-                    android:paddingTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:paddingTop="15dp"
+                    android:text="@string/account_settings_advanced_title" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/account_settings_push_notification_title}"
-                    linphone:subtitle="@{@string/account_settings_push_notification_summary}"
-                    linphone:listener="@{viewModel.pushNotificationListener}"
+                    android:visibility="@{viewModel.pushNotificationsAvailable ? View.VISIBLE : View.GONE}"
                     linphone:checked="@={viewModel.pushNotification}"
-                    android:visibility="@{viewModel.pushNotificationsAvailable ? View.VISIBLE : View.GONE}"/>
+                    linphone:listener="@{viewModel.pushNotificationListener}"
+                    linphone:subtitle="@{@string/account_settings_push_notification_summary}"
+                    linphone:title="@{@string/account_settings_push_notification_title}" />
 
                 <include
                     layout="@layout/settings_widget_list"
-                    linphone:title="@{@string/account_settings_transport_title}"
+                    linphone:labels="@{viewModel.transportLabels}"
                     linphone:listener="@{viewModel.transportListener}"
                     linphone:selectedIndex="@{viewModel.transportIndex}"
-                    linphone:labels="@{viewModel.transportLabels}"/>
+                    linphone:title="@{@string/account_settings_transport_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_settings_proxy_title}"
-                    linphone:listener="@{viewModel.proxyListener}"
                     linphone:defaultValue="@{viewModel.proxy}"
-                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_URI}"/>
+                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_URI}"
+                    linphone:listener="@{viewModel.proxyListener}"
+                    linphone:title="@{@string/account_settings_proxy_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/account_settings_outbound_proxy_title}"
-                    linphone:subtitle="@{@string/account_settings_outbound_proxy_summary}"
+                    linphone:checked="@={viewModel.outboundProxy}"
                     linphone:listener="@{viewModel.outboundProxyListener}"
-                    linphone:checked="@={viewModel.outboundProxy}"/>
+                    linphone:subtitle="@{@string/account_settings_outbound_proxy_summary}"
+                    linphone:title="@{@string/account_settings_outbound_proxy_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_settings_stun_server_title}"
-                    linphone:listener="@{viewModel.stunServerListener}"
                     linphone:defaultValue="@{viewModel.stunServer}"
-                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_URI}"/>
+                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_URI}"
+                    linphone:listener="@{viewModel.stunServerListener}"
+                    linphone:title="@{@string/account_settings_stun_server_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/account_settings_ice_title}"
-                    linphone:listener="@{viewModel.iceListener}"
                     linphone:checked="@={viewModel.ice}"
-                    linphone:enabled="@{viewModel.stunServer.length() > 0}"/>
+                    linphone:enabled="@{viewModel.stunServer.length() > 0}"
+                    linphone:listener="@{viewModel.iceListener}"
+                    linphone:title="@{@string/account_settings_ice_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/account_settings_avpf_title}"
+                    linphone:checked="@={viewModel.avpf}"
                     linphone:listener="@{viewModel.avpfListener}"
-                    linphone:checked="@={viewModel.avpf}"/>
+                    linphone:title="@{@string/account_settings_avpf_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_settings_avpf_rr_interval_title}"
-                    linphone:subtitle="@{@string/account_settings_avpf_rr_interval_summary}"
-                    linphone:listener="@{viewModel.avpfRrIntervalListener}"
                     linphone:defaultValue="@{viewModel.avpfRrInterval.toString()}"
+                    linphone:enabled="@{viewModel.avpf}"
                     linphone:inputType="@{InputType.TYPE_CLASS_NUMBER}"
-                    linphone:enabled="@{viewModel.avpf}"/>
+                    linphone:listener="@{viewModel.avpfRrIntervalListener}"
+                    linphone:subtitle="@{@string/account_settings_avpf_rr_interval_summary}"
+                    linphone:title="@{@string/account_settings_avpf_rr_interval_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_settings_expires_title}"
-                    linphone:subtitle="@{@string/account_settings_expires_summary}"
-                    linphone:listener="@{viewModel.expiresListener}"
                     linphone:defaultValue="@{viewModel.expires.toString()}"
-                    linphone:inputType="@{InputType.TYPE_CLASS_NUMBER}"/>
+                    linphone:inputType="@{InputType.TYPE_CLASS_NUMBER}"
+                    linphone:listener="@{viewModel.expiresListener}"
+                    linphone:subtitle="@{@string/account_settings_expires_summary}"
+                    linphone:title="@{@string/account_settings_expires_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_settings_prefix_title}"
-                    linphone:subtitle="@{@string/account_settings_prefix_summary}"
-                    linphone:listener="@{viewModel.prefixListener}"
                     linphone:defaultValue="@{viewModel.prefix}"
-                    linphone:inputType="@{InputType.TYPE_CLASS_NUMBER}"/>
+                    linphone:inputType="@{InputType.TYPE_CLASS_NUMBER}"
+                    linphone:listener="@{viewModel.prefixListener}"
+                    linphone:subtitle="@{@string/account_settings_prefix_summary}"
+                    linphone:title="@{@string/account_settings_prefix_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/account_settings_apply_prefix_for_calls_title}"
-                    linphone:subtitle="@{@string/account_settings_apply_prefix_for_calls_summary}"
+                    linphone:checked="@={viewModel.dialPrefix}"
                     linphone:listener="@{viewModel.dialPrefixListener}"
-                    linphone:checked="@={viewModel.dialPrefix}"/>
+                    linphone:subtitle="@{@string/account_settings_apply_prefix_for_calls_summary}"
+                    linphone:title="@{@string/account_settings_apply_prefix_for_calls_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/account_settings_escape_plus_title}"
+                    linphone:checked="@={viewModel.escapePlus}"
                     linphone:listener="@{viewModel.escapePlusListener}"
-                    linphone:checked="@={viewModel.escapePlus}"/>
+                    linphone:title="@{@string/account_settings_escape_plus_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_setting_conference_factory_address}"
-                    linphone:listener="@{viewModel.conferenceFactoryUriListener}"
+                    android:visibility="gone"
                     linphone:defaultValue="@{viewModel.conferenceFactoryUri}"
-                    android:visibility="gone"
-                    linphone:inputType="@{InputType.TYPE_CLASS_TEXT}"/>
+                    linphone:inputType="@{InputType.TYPE_CLASS_TEXT}"
+                    linphone:listener="@{viewModel.conferenceFactoryUriListener}"
+                    linphone:title="@{@string/account_setting_conference_factory_address}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_setting_audio_video_conference_factory_address}"
-                    linphone:listener="@{viewModel.audioVideoConferenceFactoryUriListener}"
+                    android:visibility="gone"
                     linphone:defaultValue="@{viewModel.audioVideoConferenceFactoryUri}"
-                    android:visibility="gone"
-                    linphone:inputType="@{InputType.TYPE_CLASS_TEXT}"/>
+                    linphone:inputType="@{InputType.TYPE_CLASS_TEXT}"
+                    linphone:listener="@{viewModel.audioVideoConferenceFactoryUriListener}"
+                    linphone:title="@{@string/account_setting_audio_video_conference_factory_address}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/account_setting_end_to_end_encryption_keys_server_url}"
-                    linphone:listener="@{viewModel.limeServerUrlListener}"
-                    linphone:defaultValue="@{viewModel.limeServerUrl}"
                     android:visibility="gone"
-                    linphone:inputType="@{InputType.TYPE_CLASS_TEXT}"/>
+                    linphone:defaultValue="@{viewModel.limeServerUrl}"
+                    linphone:inputType="@{InputType.TYPE_CLASS_TEXT}"
+                    linphone:listener="@{viewModel.limeServerUrlListener}"
+                    linphone:title="@{@string/account_setting_end_to_end_encryption_keys_server_url}" />
 
             </LinearLayout>
 
@@ -263,7 +267,7 @@
 
         <include
             layout="@layout/wait_layout"
-            bind:visibility="@{viewModel.waitForUnregister}"/>
+            bind:visibility="@{viewModel.waitForUnregister}" />
 
     </RelativeLayout>
 

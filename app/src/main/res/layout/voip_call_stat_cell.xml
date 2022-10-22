@@ -2,10 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="data"
-            type="org.linphone.activities.voip.data.StatItemData" />
+            type="com.vsphone.activities.voip.data.StatItemData" />
     </data>
 
     <LinearLayout
@@ -15,21 +17,21 @@
         android:orientation="horizontal">
 
         <TextView
-            android:text="@{data.type.nameResource}"
             style="@style/call_stats_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:gravity="center"
+            android:text="@{data.type.nameResource}" />
 
         <TextView
-            android:text="@{data.value}"
             style="@style/call_stats_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:maxLines="1"
             android:ellipsize="end"
-            android:gravity="center" />
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@{data.value}" />
 
     </LinearLayout>
 

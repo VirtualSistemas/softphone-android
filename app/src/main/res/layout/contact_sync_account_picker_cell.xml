@@ -10,8 +10,8 @@
         android:id="@+id/account_icon"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:contentDescription="@null"
-        android:adjustViewBounds="true"/>
+        android:adjustViewBounds="true"
+        android:contentDescription="@null" />
 
     <TextView
         android:id="@+id/account_name"

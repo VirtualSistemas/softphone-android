@@ -8,11 +8,11 @@
 
         <variable
             name="callsViewModel"
-            type="org.linphone.activities.voip.viewmodels.CallsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.CallsViewModel" />
 
         <variable
             name="controlsViewModel"
-            type="org.linphone.activities.voip.viewmodels.ControlsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.ControlsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

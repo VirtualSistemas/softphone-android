@@ -8,11 +8,11 @@
 
         <variable
             name="callsViewModel"
-            type="org.linphone.activities.voip.viewmodels.CallsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.CallsViewModel" />
 
         <variable
             name="controlsViewModel"
-            type="org.linphone.activities.voip.viewmodels.ControlsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.ControlsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -73,9 +73,9 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="10dp"
+            android:background="@drawable/generated_avatar_bg"
             android:contentDescription="@null"
             android:src="@drawable/icon_multiple_contacts_avatar"
-            android:background="@drawable/generated_avatar_bg"
             android:visibility="@{callsViewModel.currentCallData.isConferenceCall ? View.VISIBLE : View.GONE, default=gone}"
             app:layout_constraintBottom_toTopOf="@id/callee_name"
             app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +127,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintWidth_max="@dimen/voip_buttons_max_width" />
 
-        <org.linphone.activities.voip.views.RoundCornersTextureView
+        <com.vsphone.activities.voip.views.RoundCornersTextureView
             android:id="@+id/local_preview_video_surface"
             android:layout_width="0dp"
             android:layout_height="0dp"

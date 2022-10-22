@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE resources [
-<!ENTITY appName "Linphone">
-]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Linphone">]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="service_description">Необходимо для приема звонков в фоновом режиме</string>
     <string name="sync_account_name">&appName;-контакты</string>
@@ -280,7 +277,8 @@
     <string name="network_settings_random_ports_title">Использовать случайные порты</string>
     <string name="network_settings_sip_port_title">SIP-порт для использования</string>
     <string name="contacts_settings_friendlist_subscribe_title">Подписка на список друзей</string>
-    <string name="contacts_settings_native_presence_summary">Вставка информационных ярлыков из контакта &appName; в родные контакты Android</string>
+    <string name="contacts_settings_native_presence_summary">Вставка информационных ярлыков из контакта &appName;
+        в родные контакты Android</string>
     <string name="contacts_settings_show_organization_title">Отображать контактную организацию</string>
     <string name="contacts_settings_launcher_shortcuts_summary">Заменяет ярлыки чат-комнаты, если таковые имеются</string>
     <string name="contacts_settings_show_new_contact_account_dialog_title">Всегда спрашивать, в каком аккаунте сохранять вновь созданный контакт</string>

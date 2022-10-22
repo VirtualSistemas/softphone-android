@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <variable
             name="title"
             type="String" />
@@ -14,11 +15,11 @@
         android:orientation="vertical">
 
         <TextView
-            android:text="@{title}"
             style="@style/accent_colored_title_font"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:gravity="center" />
+            android:gravity="center"
+            android:text="@{title}" />
 
         <View
             android:layout_width="match_parent"

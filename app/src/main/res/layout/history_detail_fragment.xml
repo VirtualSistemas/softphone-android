@@ -4,19 +4,24 @@
     xmlns:bind="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="newContactClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="contactClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.history.viewmodels.CallLogViewModel" />
+            type="com.vsphone.activities.main.history.viewmodels.CallLogViewModel" />
+
         <variable
             name="sharedMainViewModel"
-            type="org.linphone.activities.main.viewmodels.SharedMainViewModel" />
+            type="com.vsphone.activities.main.viewmodels.SharedMainViewModel" />
     </data>
 
     <RelativeLayout
@@ -32,14 +37,14 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
-                android:src="@drawable/back" />
+                android:src="@drawable/back"
+                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}" />
 
             <View
                 android:layout_width="0dp"
@@ -47,26 +52,26 @@
                 android:layout_weight="0.6" />
 
             <ImageView
-                android:onClick="@{newContactClickListener}"
-                android:visibility="@{viewModel.contact != null ? View.GONE : View.VISIBLE}"
-                android:contentDescription="@string/content_description_add_contact"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_add_contact"
+                android:onClick="@{newContactClickListener}"
                 android:padding="15dp"
-                android:src="@drawable/contact_add" />
+                android:src="@drawable/contact_add"
+                android:visibility="@{viewModel.contact != null ? View.GONE : View.VISIBLE}" />
 
             <ImageView
-                android:onClick="@{contactClickListener}"
-                android:visibility="@{viewModel.contact == null || viewModel.contact.refKey == null ? View.GONE : View.VISIBLE}"
-                android:contentDescription="@string/content_description_go_to_contact"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_to_contact"
+                android:onClick="@{contactClickListener}"
                 android:padding="15dp"
-                android:src="@drawable/contact" />
+                android:src="@drawable/contact"
+                android:visibility="@{viewModel.contact == null || viewModel.contact.refKey == null ? View.GONE : View.VISIBLE}" />
 
         </LinearLayout>
 
@@ -85,26 +90,26 @@
 
                 <ImageView
                     android:id="@+id/avatar"
-                    android:layout_marginTop="10dp"
+                    coilContactBig="@{viewModel}"
                     android:layout_width="@dimen/contact_avatar_big_size"
                     android:layout_height="@dimen/contact_avatar_big_size"
-                    coilContactBig="@{viewModel}"
+                    android:layout_marginTop="10dp"
                     android:contentDescription="@null" />
 
                 <TextView
-                    android:text="@{viewModel.contact.name ?? viewModel.displayName}"
                     style="@style/big_contact_name_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal" />
+                    android:gravity="center_horizontal"
+                    android:text="@{viewModel.contact.name ?? viewModel.displayName}" />
 
-                <org.linphone.views.MarqueeTextView
-                    android:text="@{viewModel.peerSipUri}"
-                    android:textIsSelectable="true"
+                <com.vsphone.views.MarqueeTextView
                     style="@style/sip_uri_font"
-                    android:singleLine="true"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{viewModel.peerSipUri}"
+                    android:textIsSelectable="true" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -113,12 +118,12 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:onClick="@{() -> viewModel.startCall()}"
-                        android:contentDescription="@string/content_description_start_call"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_margin="10dp"
                         android:background="@drawable/round_orange_button_background"
+                        android:contentDescription="@string/content_description_start_call"
+                        android:onClick="@{() -> viewModel.startCall()}"
                         android:src="@drawable/call_start_default" />
 
                     <ImageView
@@ -132,11 +137,11 @@
                         android:visibility="@{viewModel.chatAllowed &amp;&amp; !viewModel.hidePlainChat ? View.VISIBLE : View.GONE}" />
 
                     <RelativeLayout
-                        android:onClick="@{() -> viewModel.startChat(true)}"
-                        android:visibility="@{viewModel.chatAllowed &amp;&amp; viewModel.secureChatAllowed ? View.VISIBLE : View.GONE}"
                         android:layout_width="70dp"
                         android:layout_height="60dp"
-                        android:layout_margin="10dp">
+                        android:layout_margin="10dp"
+                        android:onClick="@{() -> viewModel.startChat(true)}"
+                        android:visibility="@{viewModel.chatAllowed &amp;&amp; viewModel.secureChatAllowed ? View.VISIBLE : View.GONE}">
 
                         <ImageView
                             android:layout_width="60dp"
@@ -150,9 +155,9 @@
                         <ImageView
                             android:layout_width="21dp"
                             android:layout_height="21dp"
-                            android:layout_marginTop="4dp"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentRight="true"
+                            android:layout_marginTop="4dp"
                             android:contentDescription="@string/content_description_start_encrypted_chat"
                             android:src="@drawable/security_toggle_icon_green" />
 
@@ -179,7 +184,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:entries="@{viewModel.relatedCallLogs}"
-                    app:layout="@{@layout/history_detail_cell}"/>
+                    app:layout="@{@layout/history_detail_cell}" />
 
             </LinearLayout>
 

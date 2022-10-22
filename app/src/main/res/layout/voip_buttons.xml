@@ -6,19 +6,19 @@
 
         <import type="android.view.View" />
 
-        <import type="org.linphone.activities.voip.ConferenceDisplayMode" />
+        <import type="com.vsphone.activities.voip.ConferenceDisplayMode" />
 
         <variable
             name="controlsViewModel"
-            type="org.linphone.activities.voip.viewmodels.ControlsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.ControlsViewModel" />
 
         <variable
             name="callsViewModel"
-            type="org.linphone.activities.voip.viewmodels.CallsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.CallsViewModel" />
 
         <variable
             name="conferenceViewModel"
-            type="org.linphone.activities.voip.viewmodels.ConferenceViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.ConferenceViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

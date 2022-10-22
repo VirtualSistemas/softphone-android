@@ -3,14 +3,18 @@
     xmlns:linphone="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
-        <import type="android.text.InputType"/>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.InputType" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.settings.viewmodels.AudioSettingsViewModel"/>
+            type="com.vsphone.activities.main.settings.viewmodels.AudioSettingsViewModel" />
+
         <variable
             name="sharedMainViewModel"
-            type="org.linphone.activities.main.viewmodels.SharedMainViewModel" />
+            type="com.vsphone.activities.main.viewmodels.SharedMainViewModel" />
     </data>
 
     <RelativeLayout
@@ -27,25 +31,25 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
-                android:src="@drawable/back" />
+                android:src="@drawable/back"
+                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}" />
 
             <TextView
                 style="@style/accent_colored_title_font"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:gravity="center"
-                android:singleLine="true"
                 android:ellipsize="end"
+                android:gravity="center"
                 android:padding="15dp"
-                android:text="@string/settings_audio_title"/>
+                android:singleLine="true"
+                android:text="@string/settings_audio_title" />
 
             <View
                 android:layout_width="0dp"
@@ -67,89 +71,89 @@
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/audio_settings_echo_cancellation_title}"
-                    linphone:subtitle="@{@string/audio_settings_echo_cancellation_summary}"
+                    linphone:checked="@={viewModel.echoCancellation}"
                     linphone:listener="@{viewModel.echoCancellationListener}"
-                    linphone:checked="@={viewModel.echoCancellation}"/>
+                    linphone:subtitle="@{@string/audio_settings_echo_cancellation_summary}"
+                    linphone:title="@{@string/audio_settings_echo_cancellation_title}" />
 
                 <include
                     layout="@layout/settings_widget_basic"
-                    linphone:title="@{@string/audio_settings_echo_canceller_calibration_title}"
+                    linphone:listener="@{viewModel.echoCancellerCalibrationListener}"
                     linphone:subtitle="@{viewModel.echoCalibration}"
-                    linphone:listener="@{viewModel.echoCancellerCalibrationListener}"/>
+                    linphone:title="@{@string/audio_settings_echo_canceller_calibration_title}" />
 
                 <include
                     layout="@layout/settings_widget_basic"
-                    linphone:title="@{@string/audio_settings_echo_tester_title}"
+                    linphone:listener="@{viewModel.echoTesterListener}"
                     linphone:subtitle="@{viewModel.echoTesterStatus}"
-                    linphone:listener="@{viewModel.echoTesterListener}"/>
+                    linphone:title="@{@string/audio_settings_echo_tester_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/audio_settings_adaptive_rate_control_title}"
+                    linphone:checked="@={viewModel.adaptiveRateControl}"
                     linphone:listener="@{viewModel.adaptiveRateControlListener}"
-                    linphone:checked="@={viewModel.adaptiveRateControl}"/>
+                    linphone:title="@{@string/audio_settings_adaptive_rate_control_title}" />
 
                 <include
                     layout="@layout/settings_widget_list"
-                    linphone:title="@{@string/audio_settings_input_device_title}"
-                    linphone:subtitle="@{@string/audio_settings_input_device_summary}"
+                    linphone:labels="@{viewModel.inputAudioDeviceLabels}"
                     linphone:listener="@{viewModel.inputAudioDeviceListener}"
                     linphone:selectedIndex="@{viewModel.inputAudioDeviceIndex}"
-                    linphone:labels="@{viewModel.inputAudioDeviceLabels}"/>
+                    linphone:subtitle="@{@string/audio_settings_input_device_summary}"
+                    linphone:title="@{@string/audio_settings_input_device_title}" />
 
                 <include
                     layout="@layout/settings_widget_list"
-                    linphone:title="@{@string/audio_settings_output_device_title}"
-                    linphone:subtitle="@{@string/audio_settings_output_device_summary}"
+                    linphone:labels="@{viewModel.outputAudioDeviceLabels}"
                     linphone:listener="@{viewModel.outputAudioDeviceListener}"
                     linphone:selectedIndex="@{viewModel.outputAudioDeviceIndex}"
-                    linphone:labels="@{viewModel.outputAudioDeviceLabels}"/>
+                    linphone:subtitle="@{@string/audio_settings_output_device_summary}"
+                    linphone:title="@{@string/audio_settings_output_device_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/audio_settings_prefer_bluetooth_devices_title}"
+                    linphone:checked="@={viewModel.preferBluetoothDevices}"
                     linphone:listener="@{viewModel.preferBluetoothDevicesListener}"
-                    linphone:checked="@={viewModel.preferBluetoothDevices}"/>
+                    linphone:title="@{@string/audio_settings_prefer_bluetooth_devices_title}" />
 
                 <include
                     layout="@layout/settings_widget_list"
-                    linphone:title="@{@string/audio_settings_codec_bitrate_title}"
+                    linphone:labels="@{viewModel.codecBitrateLabels}"
                     linphone:listener="@{viewModel.codecBitrateListener}"
                     linphone:selectedIndex="@{viewModel.codecBitrateIndex}"
-                    linphone:labels="@{viewModel.codecBitrateLabels}"/>
+                    linphone:title="@{@string/audio_settings_codec_bitrate_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/audio_settings_microphone_gain_title}"
-                    linphone:subtitle="@{@string/audio_settings_microphone_gain_summary}"
-                    linphone:listener="@{viewModel.microphoneGainListener}"
                     linphone:defaultValue="@{viewModel.microphoneGain.toString()}"
-                    linphone:inputType="@{InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED |  InputType.TYPE_NUMBER_FLAG_DECIMAL}"/>
+                    linphone:inputType="@{InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED |  InputType.TYPE_NUMBER_FLAG_DECIMAL}"
+                    linphone:listener="@{viewModel.microphoneGainListener}"
+                    linphone:subtitle="@{@string/audio_settings_microphone_gain_summary}"
+                    linphone:title="@{@string/audio_settings_microphone_gain_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/audio_settings_playback_gain_title}"
-                    linphone:subtitle="@{@string/audio_settings_playback_gain_summary}"
-                    linphone:listener="@{viewModel.playbackGainListener}"
                     linphone:defaultValue="@{viewModel.playbackGain.toString()}"
-                    linphone:inputType="@{InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL}"/>
+                    linphone:inputType="@{InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL}"
+                    linphone:listener="@{viewModel.playbackGainListener}"
+                    linphone:subtitle="@{@string/audio_settings_playback_gain_summary}"
+                    linphone:title="@{@string/audio_settings_playback_gain_title}" />
 
                 <TextView
-                    style="@style/settings_category_font"
                     android:id="@+id/pref_video_codecs_header"
-                    android:text="@string/audio_settings_codecs_title"
-                    android:paddingTop="15dp"
+                    style="@style/settings_category_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:paddingTop="15dp"
+                    android:text="@string/audio_settings_codecs_title" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    linphone:entries="@{viewModel.audioCodecs}"/>
+                    linphone:entries="@{viewModel.audioCodecs}" />
 
             </LinearLayout>
 

@@ -1,8 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
-<!DOCTYPE resources [
-    <!ENTITY appName "Linphone">
-]>
+<!DOCTYPE resources [<!ENTITY appName "Linphone">]>
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name" translatable="false">&appName;</string>
@@ -257,7 +255,8 @@
     <string name="conference_schedule_send_invite_email">Send invite via email</string>
     <string name="conference_schedule_send_updated_invite_email">Send update via email</string>
     <string name="conference_schedule_encryption">Would you like to encrypt the meeting?</string>
-    <string name="conference_schedule_send_invite_chat_summary">Invite will be sent out from my &appName; account</string>
+    <string name="conference_schedule_send_invite_chat_summary">Invite will be sent out from my &appName;
+        account</string>
     <string name="conference_schedule_participants_list">Participants list</string>
     <string name="conference_organizer">Organizer</string>
     <string name="conference_schedule_summary">Meeting info</string>
@@ -388,8 +387,10 @@
     <string name="assistant_remote_provisioning">Fetch remote configuration</string>
     <string name="assistant_ec_calibration">Echo canceler calibration in progress</string>
     <string name="assistant_phone_number_info_title">What will my phone number be used for?</string>
-    <string name="assistant_phone_number_link_info_content">\nYour friends will find you more easily if you link your account to your phone number\n\nYou will see in your address book who is using &appName; and your friends will know that they can reach you on &appName; as well.\n</string>
-    <string name="assistant_phone_number_link_info_content_already_account">You can only use your phone number with one &appName; account.\n\nIf you had already linked your number to an other account but you prefer to use this one, simply link it now and your number will automatically be moved to this account.</string>
+    <string name="assistant_phone_number_link_info_content">\nYour friends will find you more easily if you link your account to your phone number\n\nYou will see in your address book who is using &appName;
+        and your friends will know that they can reach you on &appName; as well.\n</string>
+    <string name="assistant_phone_number_link_info_content_already_account">You can only use your phone number with one &appName;
+        account.\n\nIf you had already linked your number to an other account but you prefer to use this one, simply link it now and your number will automatically be moved to this account.</string>
     <string name="assistant_general_terms_link" translatable="false">https://www.linphone.org/general-terms</string>
     <string name="assistant_privacy_policy_link" translatable="false">https://www.linphone.org/privacy-policy</string>
     <string name="assistant_general_terms">terms of use</string>
@@ -412,7 +413,8 @@
     <!-- Assistant login -->
     <string name="assistant_linphone_account">Use your &appName; account</string>
     <string name="assistant_create_account_part_1">Please confirm your country code and enter your phone number</string>
-    <string name="assistant_linphone_login_desc">Please enter your username and password of &appName; account</string>
+    <string name="assistant_linphone_login_desc">Please enter your username and password of &appName;
+        account</string>
     <string name="assistant_login_with_username">Use your username and password instead of your phone number</string>
     <string name="assistant_login_forgotten_password">Forgot your password?</string>
     <string name="assistant_forgotten_password_link" translatable="false">https://subscribe.linphone.org/</string>
@@ -427,7 +429,8 @@
     <string name="assistant_display_name_optional">Display name (optional)</string>
 
     <!-- Assistant create -->
-    <string name="assistant_create_account_part_email">Please enter a username, email and password for your &appName; account</string>
+    <string name="assistant_create_account_part_email">Please enter a username, email and password for your &appName;
+        account</string>
     <string name="assistant_confirm_password">Password confirmation</string>
     <string name="assistant_validate_account_1">Your account is created. Please check your emails to validate your account:</string>
     <string name="assistant_validate_account_2">Once it is done, come back here and click on the button.</string>
@@ -575,7 +578,8 @@
     <!-- Contacts settings -->
     <string name="contacts_settings_friendlist_subscribe_title">Friendlist subscribe</string>
     <string name="contacts_settings_native_presence_title">Presence information in native contact</string>
-    <string name="contacts_settings_native_presence_summary">Inserting information shortcuts from the &appName; contact into native Android contacts</string>
+    <string name="contacts_settings_native_presence_summary">Inserting information shortcuts from the &appName;
+        contact into native Android contacts</string>
     <string name="contacts_settings_show_organization_title">Display contact organization</string>
     <string name="contacts_settings_launcher_shortcuts_title">Create shortcuts to contacts in launcher</string>
     <string name="contacts_settings_launcher_shortcuts_summary">Will replace chat room shortcuts if any</string>
@@ -709,8 +713,10 @@
     <string name="notification_channel_incoming_call_id" translatable="false">linphone_notification_call_id</string>
     <string name="notification_channel_chat_id" translatable="false">linphone_notification_chat_id</string>
     <string name="notification_channel_service_name">&appName; service notification</string>
-    <string name="notification_channel_missed_call_name">&appName; missed calls notifications</string>
-    <string name="notification_channel_incoming_call_name">&appName; incoming calls notifications</string>
+    <string name="notification_channel_missed_call_name">&appName;
+        missed calls notifications</string>
+    <string name="notification_channel_incoming_call_name">&appName;
+        incoming calls notifications</string>
     <string name="notification_channel_chat_name">&appName; instant messages notifications</string>
     <string name="incoming_call_notification_title">Incoming call</string>
     <string name="incoming_group_call_notification_title">Incoming group call</string>

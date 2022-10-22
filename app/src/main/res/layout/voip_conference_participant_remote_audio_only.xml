@@ -8,7 +8,7 @@
 
         <variable
             name="data"
-            type="org.linphone.activities.voip.data.ConferenceParticipantDeviceData" />
+            type="com.vsphone.activities.voip.data.ConferenceParticipantDeviceData" />
     </data>
 
     <!-- Width MUST BE 0dp, otherwise column width will be broken when mute mic icon will be show! -->
@@ -44,12 +44,12 @@
 
         <ImageView
             android:id="@+id/participant_avatar"
+            coilVoipContact="@{data}"
             android:layout_width="@dimen/voip_conference_audio_only_participant_avatar_size"
             android:layout_height="@dimen/voip_conference_audio_only_participant_avatar_size"
             android:layout_marginStart="10dp"
             android:contentDescription="@null"
             android:visibility="@{data.isInConference || data.isJoining ? View.VISIBLE : View.GONE}"
-            coilVoipContact="@{data}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/paused_avatar"
             app:layout_constraintHorizontal_chainStyle="spread_inside"

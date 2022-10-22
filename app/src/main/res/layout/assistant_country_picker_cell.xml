@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:layout_gravity="center"
+    android:background="?attr/backgroundColor"
     android:orientation="horizontal"
-    android:padding="5dp"
-    android:background="?attr/backgroundColor">
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/country_name"

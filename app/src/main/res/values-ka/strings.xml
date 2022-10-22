@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE resources [
-<!ENTITY appName "Linphone">
-]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Linphone">]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="audio_settings_input_device_title">ნაგულისხმები შემავალი ხმის მოწყობილობა</string>
     <string name="audio_settings_input_device_summary">ცვლილებები შევა ძალაში შემდეგი ზარის დაწყებისას</string>
@@ -566,7 +563,8 @@
     <string name="account_settings_prefix_summary">\"+\"-ის გარეშე</string>
     <string name="account_settings_escape_plus_title">\"+\"-ის \"00\"-ით ჩანაცვლება</string>
     <string name="account_setting_conference_factory_address">კონფერენციის ქარხნის URI</string>
-    <string name="notification_channel_incoming_call_name">&appName; შემომავალი ზარების შეტყობინება</string>
+    <string name="notification_channel_incoming_call_name">&appName;
+        შემომავალი ზარების შეტყობინება</string>
     <string name="incoming_call_notification_title">შემომავალი ზარი</string>
     <string name="incoming_group_call_notification_title">შემომავალი ჯგუფური ზარი</string>
     <string name="incoming_call_notification_hangup_action_label">დაკიდება</string>
@@ -697,7 +695,8 @@
     <string name="account_setting_audio_video_conference_factory_address">აუდიო/ვიდეო კონფერენციის ქარხნის URI</string>
     <string name="conferences_settings_layout_title">ნაგულისხმევი განლაგება</string>
     <string name="notification_channel_service_name">&appName; სერვისის შეტყობინება</string>
-    <string name="notification_channel_missed_call_name">&appName; გამოტოვებული ზარების შეტყობინება</string>
+    <string name="notification_channel_missed_call_name">&appName;
+        გამოტოვებული ზარების შეტყობინება</string>
     <string name="notification_channel_chat_name">&appName; შეტყობინების შეტყობინება</string>
     <string name="missed_call_notification_body">გამოტოვებული ზარი %s-სგან</string>
     <string name="missed_calls_notification_body" tools:ignore="PluralsCandidate">%d გამოტოვებული ზარი</string>

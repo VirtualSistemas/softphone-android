@@ -1,45 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="resendClickListener"
             type="View.OnClickListener" />
+
         <variable
             name="copyTextClickListener"
             type="View.OnClickListener" />
+
         <variable
             name="forwardClickListener"
             type="View.OnClickListener" />
+
         <variable
             name="replyClickListener"
             type="View.OnClickListener" />
+
         <variable
             name="imdnClickListener"
             type="View.OnClickListener" />
+
         <variable
             name="addToContactsClickListener"
             type="View.OnClickListener" />
+
         <variable
             name="deleteClickListener"
             type="View.OnClickListener" />
+
         <variable
             name="resendHidden"
             type="Boolean" />
+
         <variable
             name="imdnHidden"
             type="Boolean" />
+
         <variable
             name="copyTextHidden"
             type="Boolean" />
+
         <variable
             name="forwardHidden"
             type="Boolean" />
+
         <variable
             name="addToContactsHidden"
             type="Boolean" />
+
         <variable
             name="replyHidden"
             type="Boolean" />
@@ -48,77 +62,77 @@
     <LinearLayout
         android:layout_width="@dimen/chat_message_popup_width"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="?attr/backgroundColor">
+        android:background="?attr/backgroundColor"
+        android:orientation="vertical">
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_message_popup_item_height"
             android:background="@drawable/menu_background"
-            android:visibility="@{resendHidden ? View.GONE : View.VISIBLE}"
             android:onClick="@{resendClickListener}"
-            style="@style/popup_item_font"
             android:text="@string/chat_message_context_menu_resend"
+            android:visibility="@{resendHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/chat_send_message" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_message_popup_item_height"
             android:background="@drawable/menu_background"
-            android:visibility="@{copyTextHidden ? View.GONE : View.VISIBLE}"
             android:onClick="@{copyTextClickListener}"
-            style="@style/popup_item_font"
             android:text="@string/chat_message_context_menu_copy_text"
+            android:visibility="@{copyTextHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/menu_copy_text" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_message_popup_item_height"
             android:background="@drawable/menu_background"
             android:onClick="@{forwardClickListener}"
-            android:visibility="@{forwardHidden ? View.GONE : View.VISIBLE}"
-            style="@style/popup_item_font"
             android:text="@string/chat_message_context_menu_forward"
+            android:visibility="@{forwardHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/menu_forward" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_message_popup_item_height"
             android:background="@drawable/menu_background"
             android:onClick="@{replyClickListener}"
-            android:visibility="@{replyHidden ? View.GONE : View.VISIBLE}"
-            style="@style/popup_item_font"
             android:text="@string/chat_message_context_menu_reply"
+            android:visibility="@{replyHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/menu_reply" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_message_popup_item_height"
             android:background="@drawable/menu_background"
-            android:visibility="@{imdnHidden ? View.GONE : View.VISIBLE}"
             android:onClick="@{imdnClickListener}"
-            style="@style/popup_item_font"
             android:text="@string/chat_message_context_menu_imdn_info"
+            android:visibility="@{imdnHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/menu_imdn_info" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_message_popup_item_height"
             android:background="@drawable/menu_background"
-            android:visibility="@{addToContactsHidden ? View.GONE : View.VISIBLE}"
             android:onClick="@{addToContactsClickListener}"
-            style="@style/popup_item_font"
             android:text="@string/chat_message_context_menu_add_to_contacts"
+            android:visibility="@{addToContactsHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/chat_room_menu_add_contact" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_message_popup_item_height"
             android:background="@drawable/menu_background"
             android:onClick="@{deleteClickListener}"
-            style="@style/popup_item_font"
-            android:textColor="@color/red_color"
             android:text="@string/chat_message_context_menu_delete"
+            android:textColor="@color/red_color"
             app:drawableRightCompat="@drawable/menu_delete" />
 
     </LinearLayout>

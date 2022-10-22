@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:linphone="http://schemas.android.com/apk/res-auto"
-    xmlns:bind="http://schemas.android.com/tools">
+    xmlns:bind="http://schemas.android.com/tools"
+    xmlns:linphone="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
-        <import type="android.text.InputType"/>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.InputType" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.settings.viewmodels.AdvancedSettingsViewModel"/>
+            type="com.vsphone.activities.main.settings.viewmodels.AdvancedSettingsViewModel" />
+
         <variable
             name="sharedMainViewModel"
-            type="org.linphone.activities.main.viewmodels.SharedMainViewModel" />
+            type="com.vsphone.activities.main.viewmodels.SharedMainViewModel" />
     </data>
 
     <RelativeLayout
@@ -28,25 +32,25 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
-                android:src="@drawable/back" />
+                android:src="@drawable/back"
+                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}" />
 
             <TextView
                 style="@style/accent_colored_title_font"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:gravity="center"
-                android:singleLine="true"
                 android:ellipsize="end"
+                android:gravity="center"
                 android:padding="15dp"
-                android:text="@string/settings_advanced_title"/>
+                android:singleLine="true"
+                android:text="@string/settings_advanced_title" />
 
             <View
                 android:layout_width="0dp"
@@ -68,113 +72,113 @@
 
                 <TextView
                     style="@style/settings_category_font"
-                    android:text="@string/advanced_settings_debug_title"
-                    android:paddingTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:paddingTop="15dp"
+                    android:text="@string/advanced_settings_debug_title" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/advanced_settings_debug_mode_title}"
+                    linphone:checked="@={viewModel.debugMode}"
                     linphone:listener="@{viewModel.debugModeListener}"
-                    linphone:checked="@={viewModel.debugMode}"/>
+                    linphone:title="@{@string/advanced_settings_debug_mode_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/advanced_settings_logs_server_url_title}"
-                    linphone:subtitle="@{@string/advanced_settings_logs_server_url_summary}"
-                    linphone:listener="@{viewModel.logsServerUrlListener}"
                     linphone:defaultValue="@{viewModel.logsServerUrl}"
+                    linphone:enabled="@{viewModel.debugMode}"
                     linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_URI}"
-                    linphone:enabled="@{viewModel.debugMode}"/>
+                    linphone:listener="@{viewModel.logsServerUrlListener}"
+                    linphone:subtitle="@{@string/advanced_settings_logs_server_url_summary}"
+                    linphone:title="@{@string/advanced_settings_logs_server_url_title}" />
 
                 <include
                     layout="@layout/settings_widget_basic"
-                    linphone:title="@{@string/advanced_settings_send_debug_logs_title}"
+                    linphone:enabled="@{viewModel.debugMode}"
                     linphone:listener="@{viewModel.sendDebugLogsListener}"
-                    linphone:enabled="@{viewModel.debugMode}"/>
+                    linphone:title="@{@string/advanced_settings_send_debug_logs_title}" />
 
                 <include
                     layout="@layout/settings_widget_basic"
-                    linphone:title="@{@string/advanced_settings_reset_debug_logs_title}"
+                    linphone:enabled="@{viewModel.debugMode}"
                     linphone:listener="@{viewModel.resetDebugLogsListener}"
-                    linphone:enabled="@{viewModel.debugMode}"/>
+                    linphone:title="@{@string/advanced_settings_reset_debug_logs_title}" />
 
                 <TextView
                     style="@style/settings_category_font"
-                    android:text="@string/advanced_settings_other_title"
-                    android:paddingTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:paddingTop="15dp"
+                    android:text="@string/advanced_settings_other_title" />
 
                 <include
                     layout="@layout/settings_widget_switch"
+                    linphone:checked="@={viewModel.backgroundMode}"
                     linphone:enabled="@{viewModel.backgroundModeEnabled}"
-                    linphone:title="@{@string/advanced_settings_background_mode_title}"
-                    linphone:subtitle="@{@string/advanced_settings_background_mode_summary}"
                     linphone:listener="@{viewModel.backgroundModeListener}"
-                    linphone:checked="@={viewModel.backgroundMode}"/>
+                    linphone:subtitle="@{@string/advanced_settings_background_mode_summary}"
+                    linphone:title="@{@string/advanced_settings_background_mode_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/advanced_settings_auto_start_title}"
+                    linphone:checked="@={viewModel.autoStart}"
                     linphone:listener="@{viewModel.autoStartListener}"
-                    linphone:checked="@={viewModel.autoStart}"/>
+                    linphone:title="@{@string/advanced_settings_auto_start_title}" />
 
                 <include
                     layout="@layout/settings_widget_list"
-                    linphone:title="@{@string/advanced_settings_dark_mode_title}"
+                    linphone:labels="@{viewModel.darkModeLabels}"
                     linphone:listener="@{viewModel.darkModeListener}"
                     linphone:selectedIndex="@{viewModel.darkModeIndex}"
-                    linphone:labels="@{viewModel.darkModeLabels}"/>
+                    linphone:title="@{@string/advanced_settings_dark_mode_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/advanced_settings_animations_title}"
+                    linphone:checked="@={viewModel.animations}"
                     linphone:listener="@{viewModel.animationsListener}"
-                    linphone:checked="@={viewModel.animations}"/>
+                    linphone:title="@{@string/advanced_settings_animations_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/advanced_settings_device_name_title}"
-                    linphone:subtitle="@{@string/advanced_settings_device_name_summary}"
+                    linphone:defaultValue="@{viewModel.deviceName}"
                     linphone:listener="@{viewModel.deviceNameListener}"
-                    linphone:defaultValue="@{viewModel.deviceName}"/>
+                    linphone:subtitle="@{@string/advanced_settings_device_name_summary}"
+                    linphone:title="@{@string/advanced_settings_device_name_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/advanced_settings_remote_provisioning_url_title}"
-                    linphone:listener="@{viewModel.remoteProvisioningUrlListener}"
                     linphone:defaultValue="@{viewModel.remoteProvisioningUrl}"
-                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_URI}"/>
+                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_URI}"
+                    linphone:listener="@{viewModel.remoteProvisioningUrlListener}"
+                    linphone:title="@{@string/advanced_settings_remote_provisioning_url_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/advanced_settings_vfs_title}"
-                    linphone:subtitle="@{@string/advanced_settings_vfs_summary}"
-                    linphone:listener="@{viewModel.vfsListener}"
                     linphone:checked="@={viewModel.vfs}"
-                    linphone:enabled="@{!viewModel.vfs}"/>
+                    linphone:enabled="@{!viewModel.vfs}"
+                    linphone:listener="@{viewModel.vfsListener}"
+                    linphone:subtitle="@{@string/advanced_settings_vfs_summary}"
+                    linphone:title="@{@string/advanced_settings_vfs_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/advanced_settings_disable_fragment_security_title}"
-                    linphone:subtitle="@{@string/advanced_settings_disable_fragment_security_summary}"
+                    linphone:checked="@={viewModel.disableSecureFragment}"
                     linphone:listener="@{viewModel.disableSecureFragmentListener}"
-                    linphone:checked="@={viewModel.disableSecureFragment}"/>
+                    linphone:subtitle="@{@string/advanced_settings_disable_fragment_security_summary}"
+                    linphone:title="@{@string/advanced_settings_disable_fragment_security_title}" />
 
                 <TextView
                     style="@style/settings_category_font"
-                    android:text="@string/advanced_settings_android_title"
-                    android:paddingTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:paddingTop="15dp"
+                    android:text="@string/advanced_settings_android_title" />
 
                 <include
                     layout="@layout/settings_widget_basic"
@@ -199,7 +203,7 @@
 
         <include
             layout="@layout/wait_layout"
-            bind:visibility="@{viewModel.uploadInProgress}"/>
+            bind:visibility="@{viewModel.uploadInProgress}" />
 
     </RelativeLayout>
 

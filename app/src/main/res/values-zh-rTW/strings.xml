@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE resources [
-<!ENTITY appName "Linphone">
-]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Linphone">]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="service_name">&appName; 服務</string>
     <string name="service_description">必須開啟此服務，才可於背景中接收來電</string>
@@ -204,7 +201,8 @@
     <string name="assistant_remote_provisioning_url">網址</string>
     <string name="assistant_remote_provisioning_wrong_format">網址格式不正確，無法下載開通設定…</string>
     <string name="assistant_welcome_desc">設定助理將會協助您設定使用您的 SIP 帳號。</string>
-    <string name="assistant_phone_number_link_info_content_already_account">您只能將電話號碼與一組 &appName; 綁定起來。
+    <string name="assistant_phone_number_link_info_content_already_account">您只能將電話號碼與一組 &appName;
+        綁定起來。
 \n
 \n如果您已經將號碼連結到其他帳號，但是您更想使用這個，只需連結您現在的帳號，號碼就會自動轉移到這個帳號。</string>
     <string name="assistant_error_invalid_credentials">帳號不存在或密碼不正確</string>
@@ -339,7 +337,8 @@
     <string name="network_settings_random_ports_title">使用隨機通訊埠</string>
     <string name="network_settings_sip_port_title">要使用的 SIP 通訊埠</string>
     <string name="contacts_settings_native_presence_title">內建通訊錄中的狀態資訊</string>
-    <string name="contacts_settings_native_presence_summary">插入 &appName; 連絡人資訊捷徑到 Android 內建通訊錄</string>
+    <string name="contacts_settings_native_presence_summary">插入 &appName;
+        連絡人資訊捷徑到 Android 內建通訊錄</string>
     <string name="contacts_settings_show_organization_title">顯示聯絡人的公司資訊</string>
     <string name="contacts_settings_launcher_shortcuts_summary">將取代聊天室捷徑（若有）</string>
     <string name="contacts_settings_show_new_contact_account_dialog_title">總是詢問要在哪個帳號中儲存新建立的聯絡人</string>

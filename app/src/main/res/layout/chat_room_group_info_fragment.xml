@@ -3,19 +3,24 @@
     xmlns:bind="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="nextClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="participantsClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="leaveClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.chat.viewmodels.GroupInfoViewModel" />
+            type="com.vsphone.activities.main.chat.viewmodels.GroupInfoViewModel" />
     </data>
 
     <RelativeLayout
@@ -23,9 +28,9 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_above="@id/leave_group"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@id/leave_group"
             android:orientation="vertical">
 
             <LinearLayout
@@ -37,36 +42,36 @@
 
                 <ImageView
                     android:id="@+id/back"
-                    android:contentDescription="@string/content_description_go_back"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
                     android:layout_weight="0.2"
                     android:background="?attr/button_background_drawable"
+                    android:contentDescription="@string/content_description_go_back"
                     android:padding="18dp"
                     android:src="@drawable/back" />
 
                 <TextView
-                    android:text="@string/chat_room_group_info_title"
                     style="@style/toolbar_small_title_font"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.4"
                     android:ellipsize="end"
                     android:gravity="center"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:text="@string/chat_room_group_info_title" />
 
                 <ImageView
-                    android:onClick="@{nextClickListener}"
-                    android:enabled="@{viewModel.isMeAdmin &amp;&amp; viewModel.participants.size() > 0 &amp;&amp; viewModel.subject.length() > 0}"
-                    android:visibility="@{viewModel.meAdmin ? View.VISIBLE : View.INVISIBLE}"
-                    android:contentDescription="@string/content_description_create_chat_room"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:background="?attr/button_background_drawable"
+                    android:contentDescription="@string/content_description_create_chat_room"
+                    android:enabled="@{viewModel.isMeAdmin &amp;&amp; viewModel.participants.size() > 0 &amp;&amp; viewModel.subject.length() > 0}"
+                    android:onClick="@{nextClickListener}"
                     android:padding="18dp"
-                    android:src="@drawable/valid" />
+                    android:src="@drawable/valid"
+                    android:visibility="@{viewModel.meAdmin ? View.VISIBLE : View.INVISIBLE}" />
 
             </LinearLayout>
 
@@ -78,50 +83,50 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingRight="5dp"
-                    android:hint="@string/chat_room_group_info_subject_hint">
+                    android:hint="@string/chat_room_group_info_subject_hint"
+                    android:paddingRight="5dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:text="@={viewModel.subject}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent_color"
                         android:enabled="@{viewModel.meAdmin}"
                         android:imeOptions="actionDone"
-                        android:singleLine="true"
                         android:inputType="textEmailSubject"
-                        android:background="@color/transparent_color"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:singleLine="true"
+                        android:text="@={viewModel.subject}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:onClick="@{participantsClickListener}"
-                android:enabled="@{viewModel.meAdmin}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/lightToolbarBackgroundColor"
+                android:enabled="@{viewModel.meAdmin}"
+                android:onClick="@{participantsClickListener}"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp">
 
                 <TextView
-                    android:text="@string/chat_room_group_info_participants"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:text="@string/chat_room_group_info_participants"
                     android:textColor="?attr/primaryTextColor"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:visibility="@{viewModel.meAdmin ? View.VISIBLE : View.GONE}"
-                    android:contentDescription="@string/content_description_add_participants"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
+                    android:contentDescription="@string/content_description_add_participants"
                     android:paddingRight="10dp"
-                    android:src="@drawable/chat_group_add" />
+                    android:src="@drawable/chat_group_add"
+                    android:visibility="@{viewModel.meAdmin ? View.VISIBLE : View.GONE}" />
 
             </RelativeLayout>
 
@@ -137,22 +142,22 @@
 
         <TextView
             android:id="@+id/leave_group"
-            android:visibility="@{viewModel.canLeaveGroup ? View.VISIBLE : View.GONE}"
-            android:onClick="@{leaveClickListener}"
+            style="@style/big_orange_button_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape_rect_orange_button"
+            android:onClick="@{leaveClickListener}"
             android:paddingLeft="20dp"
             android:paddingTop="8dp"
             android:paddingRight="20dp"
             android:paddingBottom="8dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="center"
-            android:background="@drawable/shape_rect_orange_button"
             android:text="@string/chat_room_group_info_leave"
-            style="@style/big_orange_button_font"/>
+            android:visibility="@{viewModel.canLeaveGroup ? View.VISIBLE : View.GONE}" />
 
         <include
             layout="@layout/wait_layout"

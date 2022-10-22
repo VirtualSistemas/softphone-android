@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE resources [
-<!ENTITY appName "Linphone">
-]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Linphone">]>
 <resources>
     <string name="service_description">Questo è necessario per ricevere chiamate in background</string>
     <string name="logs_upload_failure">Impossibile caricare i log!</string>

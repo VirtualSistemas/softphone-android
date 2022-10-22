@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.chat.viewmodels.ImdnViewModel" />
+            type="com.vsphone.activities.main.chat.viewmodels.ImdnViewModel" />
     </data>
 
     <LinearLayout
@@ -23,11 +25,11 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
                 android:src="@drawable/back" />
 
@@ -55,9 +57,9 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/participantsList"
-            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp" />
 
     </LinearLayout>
 

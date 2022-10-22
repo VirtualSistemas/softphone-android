@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="data"
-            type="org.linphone.activities.voip.data.CallStatisticsData" />
+            type="com.vsphone.activities.voip.data.CallStatisticsData" />
     </data>
 
     <LinearLayout
@@ -38,8 +40,8 @@
             style="@style/call_stats_title_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical|center"
             android:layout_marginTop="10dp"
+            android:gravity="center_vertical|center"
             android:text="@string/call_stats_audio"
             tools:gravity="center" />
 
@@ -47,30 +49,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start|center"
+            android:orientation="vertical"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:paddingBottom="10dp"
-            android:orientation="vertical"
             app:entries="@{data.audioStats}"
-            app:layout="@{@layout/voip_call_stat_cell}"/>
+            app:layout="@{@layout/voip_call_stat_cell}" />
 
         <TextView
-            android:visibility="@{data.isVideoEnabled ? View.VISIBLE : View.GONE, default=gone}"
             style="@style/call_stats_title_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center"
             android:text="@string/call_stats_video"
+            android:visibility="@{data.isVideoEnabled ? View.VISIBLE : View.GONE, default=gone}"
             tools:gravity="center" />
 
         <LinearLayout
-            android:visibility="@{data.isVideoEnabled ? View.VISIBLE : View.GONE, default=gone}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:paddingBottom="10dp"
+            android:visibility="@{data.isVideoEnabled ? View.VISIBLE : View.GONE, default=gone}"
             app:entries="@{data.videoStats}"
             app:layout="@{@layout/voip_call_stat_cell}" />
 

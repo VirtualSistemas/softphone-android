@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.assistant.viewmodels.EchoCancellerCalibrationViewModel" />
+            type="com.vsphone.activities.assistant.viewmodels.EchoCancellerCalibrationViewModel" />
     </data>
 
     <RelativeLayout
@@ -14,7 +15,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/top_bar_fragment"
-            android:name="org.linphone.activities.assistant.fragments.TopBarFragment"
+            android:name="com.vsphone.activities.assistant.fragments.TopBarFragment"
             android:layout_width="match_parent"
             android:layout_height="@dimen/main_activity_top_bar_size"
             android:layout_alignParentTop="true"
@@ -24,29 +25,29 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/top_bar_fragment"
-            android:padding="30dp"
+            android:background="?attr/backgroundColor"
             android:orientation="vertical"
-            android:background="?attr/backgroundColor">
+            android:padding="30dp">
 
             <TextView
-                android:text="@string/assistant_ec_calibration"
                 style="@style/standard_text_font"
-                android:textAllCaps="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:layout_centerHorizontal="true"/>
+                android:text="@string/assistant_ec_calibration"
+                android:textAllCaps="true" />
 
             <ImageView
-                android:src="@drawable/linphone_logo_tinted"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:layout_centerInParent="true"
                 android:contentDescription="@null"
-                android:layout_centerInParent="true"/>
+                android:src="@drawable/linphone_logo_tinted" />
 
             <ProgressBar
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true" />
 

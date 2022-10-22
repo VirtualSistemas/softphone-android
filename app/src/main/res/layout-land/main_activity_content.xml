@@ -18,9 +18,9 @@
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:name="androidx.navigation.fragment.NavHostFragment"
                 app:defaultNavHost="true"
                 app:navGraph="@navigation/main_nav_graph"
                 tools:layout="@layout/dialer_fragment" />
@@ -31,10 +31,10 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/tabs_fragment"
-        android:name="org.linphone.activities.main.fragments.TabsFragment"
+        android:name="com.vsphone.activities.main.fragments.TabsFragment"
         android:layout_width="@dimen/main_activity_tabs_fragment_size"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        tools:layout="@layout/tabs_fragment"/>
+        tools:layout="@layout/tabs_fragment" />
 
 </RelativeLayout>

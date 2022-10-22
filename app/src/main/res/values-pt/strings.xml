@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE resources [
-<!ENTITY appName "Linphone">
-]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Linphone">]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="service_description">Isso é necessário para receber chamadas em segundo plano</string>
     <string name="sync_account_name">contactos</string>
@@ -171,7 +168,8 @@
     <string name="assistant_login_generic">Usar conta SIP</string>
     <string name="assistant_ec_calibration">Calibração do cancelador de eco em progresso</string>
     <string name="assistant_phone_number_info_title">Para que será utilizado o meu número de telefone\?</string>
-    <string name="assistant_phone_number_link_info_content_already_account">Você só pode usar seu número de telefone com um &appName; conta.\n\nSe você já tiver ligado seu número a uma outra conta, mas você preferir usar esta, basta ligar agora e seu número será automaticamente movido para esta conta.</string>
+    <string name="assistant_phone_number_link_info_content_already_account">Você só pode usar seu número de telefone com um &appName;
+        conta.\n\nSe você já tiver ligado seu número a uma outra conta, mas você preferir usar esta, basta ligar agora e seu número será automaticamente movido para esta conta.</string>
     <string name="assistant_general_terms">termos de uso</string>
     <string name="assistant_privacy_policy">política de privacidade</string>
     <string name="assistant_read_and_agree_terms">Eu aceito Belledonne Communications\' %1$s e %2$s</string>
@@ -183,7 +181,8 @@
     <string name="assistant_error_username_too_long">O nome de usuário tem muitos caracteres</string>
     <string name="assistant_linphone_account">Usar a sua &appName; conta</string>
     <string name="assistant_create_account_part_1">Por favor, confirme seu código de país e insira seu número de telefone</string>
-    <string name="assistant_linphone_login_desc">Por favor, digite seu nome de usuário e senha do &appName; conta</string>
+    <string name="assistant_linphone_login_desc">Por favor, digite seu nome de usuário e senha do &appName;
+        conta</string>
     <string name="assistant_login_forgotten_password">Esqueceu sua senha\?</string>
     <string name="assistant_login">Login</string>
     <string name="assistant_finish">Concluir configuração</string>
@@ -364,12 +363,13 @@
     <string name="call_stats_download">Baixar largura de banda:</string>
     <string name="call_stats_video_resolution_sent">Resolução de vídeo enviada:</string>
     <string name="assistant_remote_provisioning">Buscar configuração remota</string>
-    <string name="assistant_phone_number_link_info_content">\nSeus amigos irão encontrá-lo mais facilmente se você ligar sua conta ao seu número de telefone\n\nVocê verá em seu livro de endereços que está usando &appName; e seus amigos saberão que eles podem alcançá-lo em &appName;
-        bem.\n</string>
+    <string name="assistant_phone_number_link_info_content">\nSeus amigos irão encontrá-lo mais facilmente se você ligar sua conta ao seu número de telefone\n\nVocê verá em seu livro de endereços que está usando &appName;
+        e seus amigos saberão que eles podem alcançá-lo em &appName; bem.\n</string>
     <string name="assistant_error_invalid_email_address">O endereço de e-mail é inválido</string>
     <string name="assistant_error_invalid_credentials">A conta não existe ou a senha não corresponde</string>
     <string name="assistant_login_with_username">Use seu nome de usuário e senha em vez de seu número de telefone</string>
-    <string name="assistant_create_account_part_email">Por favor, digite um nome de usuário, e-mail e senha para o seu &appName; conta</string>
+    <string name="assistant_create_account_part_email">Por favor, digite um nome de usuário, e-mail e senha para o seu &appName;
+        conta</string>
     <string name="assistant_confirm_password">Confirmação de senha</string>
     <string name="assistant_validate_account_1">Sua conta está criada. Por favor, verifique seus e-mails para validar sua conta:</string>
     <string name="assistant_create_account_part_3">Para concluir a verificação do número de telefone, digite o código de 4 dígitos abaixo:\n</string>
@@ -392,7 +392,8 @@
     <string name="chat_settings_auto_download_summary">Se deve baixar arquivos anexados em mensagens de chat recebidas automaticamente ou não</string>
     <string name="chat_settings_launcher_shortcuts_title">Criar atalhos para salas de chat no lançador</string>
     <string name="chat_settings_hide_rooms_removed_proxies_summary">Se você está faltando salas de chat, tente desmarcar esta configuração</string>
-    <string name="contacts_settings_native_presence_summary">Inserindo atalhos de informação do &appName; contacto em contactos nativos Android</string>
+    <string name="contacts_settings_native_presence_summary">Inserindo atalhos de informação do &appName;
+        contacto em contactos nativos Android</string>
     <string name="contacts_settings_show_new_contact_account_dialog_summary">Se o contacto com deficientes for armazenado localmente</string>
     <string name="advanced_settings_remote_provisioning_url_title">URL de provisionamento remoto</string>
     <string name="advanced_settings_go_to_power_manager_settings">Configurações do gerenciador de energia</string>
@@ -454,8 +455,10 @@
     <string name="account_settings_prefix_summary">sem o +</string>
     <string name="account_settings_apply_prefix_for_calls_title">Aplicar prefixo para chamadas de saída e chat</string>
     <string name="account_settings_escape_plus_title">Substituir + por 00</string>
-    <string name="notification_channel_missed_call_name">&appName; notificações de chamadas perdidas</string>
-    <string name="notification_channel_chat_name">&appName; notificações de mensagens instantâneas</string>
+    <string name="notification_channel_missed_call_name">&appName;
+        notificações de chamadas perdidas</string>
+    <string name="notification_channel_chat_name">&appName;
+        notificações de mensagens instantâneas</string>
     <string name="incoming_call_notification_title">Chamada recebida</string>
     <string name="incoming_call_notification_hangup_action_label">Desligar</string>
     <string name="incoming_call_notification_answer_action_label">Atender</string>

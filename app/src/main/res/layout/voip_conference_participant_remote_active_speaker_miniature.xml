@@ -8,7 +8,7 @@
 
         <variable
             name="data"
-            type="org.linphone.activities.voip.data.ConferenceParticipantDeviceData" />
+            type="com.vsphone.activities.voip.data.ConferenceParticipantDeviceData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,17 +21,17 @@
 
         <ImageView
             android:id="@+id/participant_avatar"
+            coilVoipContact="@{data}"
             android:layout_width="@dimen/voip_conference_active_speaker_miniature_avatar_size"
             android:layout_height="@dimen/voip_conference_active_speaker_miniature_avatar_size"
-            android:visibility="@{data.isInConference || data.isJoining ? View.VISIBLE : View.GONE}"
             android:contentDescription="@null"
-            coilVoipContact="@{data}"
+            android:visibility="@{data.isInConference || data.isJoining ? View.VISIBLE : View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <org.linphone.activities.voip.views.RoundCornersTextureView
+        <com.vsphone.activities.voip.views.RoundCornersTextureView
             android:id="@+id/participant_video_surface"
             participantTextureView="@{data}"
             android:layout_width="0dp"

@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
-        <import type="android.text.InputType"/>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.InputType" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.settings.viewmodels.SettingsViewModel" />
+            type="com.vsphone.activities.main.settings.viewmodels.SettingsViewModel" />
     </data>
 
     <androidx.slidingpanelayout.widget.SlidingPaneLayout
@@ -32,11 +35,11 @@
 
                 <ImageView
                     android:id="@+id/back"
-                    android:contentDescription="@string/content_description_go_back"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:background="?attr/button_background_drawable"
+                    android:contentDescription="@string/content_description_go_back"
                     android:padding="18dp"
                     android:src="@drawable/back" />
 
@@ -45,11 +48,11 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.6"
-                    android:gravity="center"
-                    android:singleLine="true"
                     android:ellipsize="end"
+                    android:gravity="center"
                     android:padding="15dp"
-                    android:text="@string/settings"/>
+                    android:singleLine="true"
+                    android:text="@string/settings" />
 
                 <View
                     android:layout_width="0dp"
@@ -60,50 +63,50 @@
             </LinearLayout>
 
             <androidx.core.widget.NestedScrollView
-                android:layout_below="@id/top_bar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_below="@id/top_bar">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:orientation="vertical">
+                    android:paddingBottom="5dp">
 
                     <TextView
                         style="@style/settings_category_font"
-                        android:text="@string/settings_primary_account_title"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="@{viewModel.accounts.empty ? View.VISIBLE : View.GONE}"/>
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/settings_primary_account_title"
+                        android:visibility="@{viewModel.accounts.empty ? View.VISIBLE : View.GONE}" />
 
                     <include
                         layout="@layout/settings_widget_text"
-                        linphone:title="@{@string/settings_primary_account_display_name_title}"
-                        linphone:listener="@{viewModel.primaryAccountDisplayNameListener}"
+                        android:visibility="@{viewModel.accounts.empty ? View.VISIBLE : View.GONE}"
                         linphone:defaultValue="@{viewModel.primaryAccountDisplayName}"
                         linphone:inputType="@{InputType.TYPE_CLASS_TEXT}"
-                        android:visibility="@{viewModel.accounts.empty ? View.VISIBLE : View.GONE}"/>
+                        linphone:listener="@{viewModel.primaryAccountDisplayNameListener}"
+                        linphone:title="@{@string/settings_primary_account_display_name_title}" />
 
                     <include
                         layout="@layout/settings_widget_text"
-                        linphone:title="@{@string/settings_primary_account_username_title}"
-                        linphone:listener="@{viewModel.primaryAccountUsernameListener}"
+                        android:visibility="@{viewModel.accounts.empty ? View.VISIBLE : View.GONE}"
                         linphone:defaultValue="@{viewModel.primaryAccountUsername}"
                         linphone:inputType="@{InputType.TYPE_CLASS_TEXT}"
-                        android:visibility="@{viewModel.accounts.empty ? View.VISIBLE : View.GONE}"/>
+                        linphone:listener="@{viewModel.primaryAccountUsernameListener}"
+                        linphone:title="@{@string/settings_primary_account_username_title}" />
 
                     <TextView
                         style="@style/settings_category_font"
-                        android:text="@string/settings_accounts_title"
-                        android:visibility="@{viewModel.showAccountSettings &amp;&amp; !viewModel.accounts.empty ? View.VISIBLE : View.GONE}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:text="@string/settings_accounts_title"
+                        android:visibility="@{viewModel.showAccountSettings &amp;&amp; !viewModel.accounts.empty ? View.VISIBLE : View.GONE}" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -111,78 +114,78 @@
                         android:orientation="vertical"
                         android:visibility="@{viewModel.showAccountSettings ? View.VISIBLE : View.GONE}"
                         linphone:entries="@{viewModel.accounts}"
-                        linphone:layout="@{@layout/settings_account_cell}"/>
+                        linphone:layout="@{@layout/settings_account_cell}" />
 
                     <TextView
                         style="@style/settings_category_font"
-                        android:text="@string/settings_list_title"
-                        android:paddingTop="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:paddingTop="15dp"
+                        android:text="@string/settings_list_title" />
 
                     <include
                         layout="@layout/settings_widget_basic"
-                        linphone:listener="@{viewModel.tunnelSettingsListener}"
                         android:visibility="@{viewModel.showTunnelSettings ? View.VISIBLE : View.GONE}"
+                        linphone:listener="@{viewModel.tunnelSettingsListener}"
                         linphone:title="@{@string/settings_tunnel_title}" />
 
                     <include
                         layout="@layout/settings_widget_basic"
                         android:visibility="@{viewModel.showAudioSettings ? View.VISIBLE : View.GONE}"
+                        linphone:icon="@{@drawable/settings_audio}"
                         linphone:listener="@{viewModel.audioSettingsListener}"
-                        linphone:title="@{@string/settings_audio_title}"
-                        linphone:icon="@{@drawable/settings_audio}" />
+                        linphone:title="@{@string/settings_audio_title}" />
 
                     <include
                         layout="@layout/settings_widget_basic"
                         android:visibility="@{viewModel.showVideoSettings ? View.VISIBLE : View.GONE}"
+                        linphone:icon="@{@drawable/settings_video}"
                         linphone:listener="@{viewModel.videoSettingsListener}"
-                        linphone:title="@{@string/settings_video_title}"
-                        linphone:icon="@{@drawable/settings_video}" />
+                        linphone:title="@{@string/settings_video_title}" />
 
                     <include
                         layout="@layout/settings_widget_basic"
                         android:visibility="@{viewModel.showCallSettings ? View.VISIBLE : View.GONE}"
+                        linphone:icon="@{@drawable/settings_call}"
                         linphone:listener="@{viewModel.callSettingsListener}"
-                        linphone:title="@{@string/settings_call_title}"
-                        linphone:icon="@{@drawable/settings_call}" />
+                        linphone:title="@{@string/settings_call_title}" />
 
                     <include
                         layout="@layout/settings_widget_basic"
                         android:visibility="@{viewModel.showConferencesSettings ? View.VISIBLE : View.GONE}"
+                        linphone:icon="@{@drawable/settings_conferences}"
                         linphone:listener="@{viewModel.conferencesSettingsListener}"
-                        linphone:title="@{@string/settings_conferences_title}"
-                        linphone:icon="@{@drawable/settings_conferences}" />
+                        linphone:title="@{@string/settings_conferences_title}" />
 
                     <include
                         layout="@layout/settings_widget_basic"
                         android:visibility="@{viewModel.showChatSettings ? View.VISIBLE : View.GONE}"
+                        linphone:icon="@{@drawable/settings_chat}"
                         linphone:listener="@{viewModel.chatSettingsListener}"
-                        linphone:title="@{@string/settings_chat_title}"
-                        linphone:icon="@{@drawable/settings_chat}" />
+                        linphone:title="@{@string/settings_chat_title}" />
 
                     <include
                         layout="@layout/settings_widget_basic"
                         android:visibility="@{viewModel.showNetworkSettings ? View.VISIBLE : View.GONE}"
+                        linphone:icon="@{@drawable/settings_network}"
                         linphone:listener="@{viewModel.networkSettingsListener}"
-                        linphone:title="@{@string/settings_network_title}"
-                        linphone:icon="@{@drawable/settings_network}" />
+                        linphone:title="@{@string/settings_network_title}" />
 
                     <include
                         layout="@layout/settings_widget_basic"
                         android:visibility="@{viewModel.showContactsSettings ? View.VISIBLE : View.GONE}"
+                        linphone:icon="@{@drawable/settings_contacts}"
                         linphone:listener="@{viewModel.contactsSettingsListener}"
-                        linphone:title="@{@string/settings_contacts_title}"
-                        linphone:icon="@{@drawable/settings_contacts}" />
+                        linphone:title="@{@string/settings_contacts_title}" />
 
                     <include
                         layout="@layout/settings_widget_basic"
                         android:visibility="@{viewModel.showAdvancedSettings ? View.VISIBLE : View.GONE}"
+                        linphone:icon="@{@drawable/settings_advanced}"
                         linphone:listener="@{viewModel.advancedSettingsListener}"
-                        linphone:title="@{@string/settings_advanced_title}"
-                        linphone:icon="@{@drawable/settings_advanced}" />
+                        linphone:title="@{@string/settings_advanced_title}" />
 
                 </LinearLayout>
 
@@ -203,7 +206,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             linphone:defaultNavHost="false"
-            linphone:navGraph="@navigation/settings_nav_graph"/>
+            linphone:navGraph="@navigation/settings_nav_graph" />
 
     </androidx.slidingpanelayout.widget.SlidingPaneLayout>
 

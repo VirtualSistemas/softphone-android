@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="historyClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="contactsClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="dialerClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="chatClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.viewmodels.TabsViewModel" />
+            type="com.vsphone.activities.main.viewmodels.TabsViewModel" />
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout
@@ -30,49 +35,49 @@
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineTop"
+            layout_constraintGuide_percent="@{viewModel.leftAnchor, default=0.25}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            layout_constraintGuide_percent="@{viewModel.leftAnchor, default=0.25}" />
+            android:orientation="horizontal" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineMiddle"
+            layout_constraintGuide_percent="@{viewModel.middleAnchor, default=0.5}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            layout_constraintGuide_percent="@{viewModel.middleAnchor, default=0.5}" />
+            android:orientation="horizontal" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineBottom"
+            layout_constraintGuide_percent="@{viewModel.rightAnchor, default=0.75}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            layout_constraintGuide_percent="@{viewModel.rightAnchor, default=0.75}" />
+            android:orientation="horizontal" />
 
         <ImageView
             android:id="@+id/history"
-            android:onClick="@{historyClickListener}"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_centerInParent="true"
-            android:contentDescription="@string/content_description_menu_history"
-            android:padding="15dp"
             android:background="@drawable/footer_button"
+            android:contentDescription="@string/content_description_menu_history"
+            android:onClick="@{historyClickListener}"
+            android:padding="15dp"
             android:src="@drawable/footer_history"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/guidelineTop" />
+            app:layout_constraintBottom_toTopOf="@id/guidelineTop"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/history_unread_count"
             style="@style/unread_count_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:translationY="@{viewModel.historyMissedCountTranslateY}"
+            android:layout_marginRight="5dp"
             android:background="@{viewModel.missedCallsCount == 0 ? @drawable/hidden_unread_message_count_bg : @drawable/unread_message_count_bg}"
+            android:gravity="center"
             android:text="@{viewModel.missedCallsCount == 0 ? `` : String.valueOf(viewModel.missedCallsCount)}"
+            android:translationY="@{viewModel.historyMissedCountTranslateY}"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,8 +87,8 @@
             android:layout_height="0dp"
             android:background="@drawable/footer_button"
             android:onClick="@{contactsClickListener}"
-            app:layout_constraintTop_toTopOf="@id/guidelineTop"
-            app:layout_constraintBottom_toTopOf="@id/guidelineMiddle">
+            app:layout_constraintBottom_toTopOf="@id/guidelineMiddle"
+            app:layout_constraintTop_toTopOf="@id/guidelineTop">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -101,8 +106,8 @@
             android:layout_height="0dp"
             android:background="@drawable/footer_button"
             android:onClick="@{dialerClickListener}"
-            app:layout_constraintTop_toTopOf="@id/guidelineMiddle"
-            app:layout_constraintBottom_toTopOf="@id/guidelineBottom">
+            app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
+            app:layout_constraintTop_toTopOf="@id/guidelineMiddle">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -116,28 +121,28 @@
 
         <ImageView
             android:id="@+id/chat"
-            android:onClick="@{chatClickListener}"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_centerInParent="true"
+            android:background="@drawable/footer_button"
             android:contentDescription="@string/content_description_menu_chat"
+            android:onClick="@{chatClickListener}"
             android:padding="15dp"
             android:src="@drawable/footer_chat"
-            android:background="@drawable/footer_button"
-            app:layout_constraintTop_toTopOf="@id/guidelineBottom"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guidelineBottom" />
 
         <TextView
             android:id="@+id/chat_unread_count"
             style="@style/unread_count_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:translationY="@{viewModel.chatUnreadCountTranslateY}"
+            android:layout_marginRight="5dp"
             android:background="@{viewModel.unreadMessagesCount == 0 ? @drawable/hidden_unread_message_count_bg : @drawable/unread_message_count_bg}"
+            android:gravity="center"
             android:text="@{viewModel.unreadMessagesCount == 0 ? `` : String.valueOf(viewModel.unreadMessagesCount)}"
+            android:translationY="@{viewModel.chatUnreadCountTranslateY}"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/guidelineBottom" />
 

@@ -2,16 +2,20 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="menuClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="refreshClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.viewmodels.StatusViewModel" />
+            type="com.vsphone.activities.main.viewmodels.StatusViewModel" />
     </data>
 
     <RelativeLayout
@@ -22,62 +26,62 @@
 
         <ImageView
             android:id="@+id/menu_button"
-            android:onClick="@{menuClickListener}"
-            android:contentDescription="@string/content_description_toggle_side_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
+            android:contentDescription="@string/content_description_toggle_side_menu"
+            android:onClick="@{menuClickListener}"
             android:padding="10dp"
             android:src="@drawable/menu" />
 
         <ImageView
             android:id="@+id/status_led"
-            android:background="@drawable/led_background"
-            android:src="@{viewModel.registrationStatusDrawable, default=@drawable/led_not_registered}"
-            android:onClick="@{refreshClickListener}"
-            android:contentDescription="@{viewModel.registrationStatusText}"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:padding="2dp"
             android:layout_centerInParent="true"
             android:layout_toRightOf="@id/menu_button"
-            android:adjustViewBounds="true" />
+            android:adjustViewBounds="true"
+            android:background="@drawable/led_background"
+            android:contentDescription="@{viewModel.registrationStatusText}"
+            android:onClick="@{refreshClickListener}"
+            android:padding="2dp"
+            android:src="@{viewModel.registrationStatusDrawable, default=@drawable/led_not_registered}" />
 
         <TextView
-            android:text="@{viewModel.registrationStatusText, default=@string/status_not_connected}"
-            android:onClick="@{refreshClickListener}"
-            android:textColor="?attr/accentTextColor"
-            android:textSize="15sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/status_led"
             android:gravity="center_vertical"
-            android:paddingLeft="5dp" />
+            android:onClick="@{refreshClickListener}"
+            android:paddingLeft="5dp"
+            android:text="@{viewModel.registrationStatusText, default=@string/status_not_connected}"
+            android:textColor="?attr/accentTextColor"
+            android:textSize="15sp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:contentDescription="@string/content_description_voice_mail"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/voice_mail_count"
+            android:contentDescription="@string/content_description_voice_mail"
             android:gravity="center_vertical"
             android:src="@drawable/voicemail"
             android:visibility="@{viewModel.voiceMailCount > 0 ? View.VISIBLE : View.GONE, default=gone}" />
 
         <TextView
             android:id="@+id/voice_mail_count"
-            android:text="@{viewModel.voiceMailCount.toString()}"
-            android:visibility="@{viewModel.voiceMailCount > 0 ? View.VISIBLE : View.GONE, default=gone}"
-            android:textColor="?attr/secondaryTextColor"
-            android:textSize="21sp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:gravity="center_vertical"
             android:paddingLeft="5dp"
-            android:paddingRight="10dp" />
+            android:paddingRight="10dp"
+            android:text="@{viewModel.voiceMailCount.toString()}"
+            android:textColor="?attr/secondaryTextColor"
+            android:textSize="21sp"
+            android:visibility="@{viewModel.voiceMailCount > 0 ? View.VISIBLE : View.GONE, default=gone}" />
 
     </RelativeLayout>
 

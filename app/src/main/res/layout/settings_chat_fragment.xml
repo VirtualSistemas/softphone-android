@@ -3,14 +3,18 @@
     xmlns:linphone="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
-        <import type="android.text.InputType"/>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.InputType" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.settings.viewmodels.ChatSettingsViewModel"/>
+            type="com.vsphone.activities.main.settings.viewmodels.ChatSettingsViewModel" />
+
         <variable
             name="sharedMainViewModel"
-            type="org.linphone.activities.main.viewmodels.SharedMainViewModel" />
+            type="com.vsphone.activities.main.viewmodels.SharedMainViewModel" />
     </data>
 
     <RelativeLayout
@@ -27,25 +31,25 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
-                android:src="@drawable/back" />
+                android:src="@drawable/back"
+                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}" />
 
             <TextView
                 style="@style/accent_colored_title_font"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:gravity="center"
-                android:singleLine="true"
                 android:ellipsize="end"
+                android:gravity="center"
                 android:padding="15dp"
-                android:text="@string/settings_chat_title"/>
+                android:singleLine="true"
+                android:text="@string/settings_chat_title" />
 
             <View
                 android:layout_width="0dp"
@@ -67,85 +71,85 @@
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/chat_settings_mark_as_read_notif_dismissal_title}"
+                    linphone:checked="@={viewModel.markAsReadNotifDismissal}"
                     linphone:listener="@{viewModel.markAsReadNotifDismissalListener}"
-                    linphone:checked="@={viewModel.markAsReadNotifDismissal}"/>
+                    linphone:title="@{@string/chat_settings_mark_as_read_notif_dismissal_title}" />
 
                 <include
                     layout="@layout/settings_widget_list"
-                    linphone:title="@{@string/chat_settings_auto_download_title}"
-                    linphone:subtitle="@{@string/chat_settings_auto_download_summary}"
+                    linphone:labels="@{viewModel.autoDownloadLabels}"
                     linphone:listener="@{viewModel.autoDownloadListener}"
                     linphone:selectedIndex="@{viewModel.autoDownloadIndex}"
-                    linphone:labels="@{viewModel.autoDownloadLabels}"/>
+                    linphone:subtitle="@{@string/chat_settings_auto_download_summary}"
+                    linphone:title="@{@string/chat_settings_auto_download_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/chat_settings_auto_download_max_size_title}"
-                    linphone:subtitle="@{@string/chat_settings_auto_download_max_size_summary}"
-                    linphone:listener="@{viewModel.autoDownloadMaxSizeListener}"
+                    android:visibility="@{viewModel.autoDownloadIndex == 2 ? View.VISIBLE : View.GONE}"
                     linphone:defaultValue="@{viewModel.autoDownloadMaxSize.toString()}"
-                    linphone:inputType="@{InputType.TYPE_CLASS_NUMBER}"
                     linphone:enabled="@{viewModel.autoDownloadIndex == 2}"
-                    android:visibility="@{viewModel.autoDownloadIndex == 2 ? View.VISIBLE : View.GONE}"/>
+                    linphone:inputType="@{InputType.TYPE_CLASS_NUMBER}"
+                    linphone:listener="@{viewModel.autoDownloadMaxSizeListener}"
+                    linphone:subtitle="@{@string/chat_settings_auto_download_max_size_summary}"
+                    linphone:title="@{@string/chat_settings_auto_download_max_size_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/chat_settings_auto_download_voice_recordings}"
+                    linphone:checked="@={viewModel.autoDownloadVoiceRecordings}"
                     linphone:listener="@{viewModel.autoDownloadVoiceRecordingsListener}"
-                    linphone:checked="@={viewModel.autoDownloadVoiceRecordings}"/>
+                    linphone:title="@{@string/chat_settings_auto_download_voice_recordings}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/chat_settings_downloaded_media_public_title}"
+                    linphone:checked="@={viewModel.downloadedMediaPublic}"
                     linphone:enabled="@{!viewModel.vfs &amp;&amp; viewModel.autoDownloadIndex != 1}"
-                    linphone:subtitle="@{@string/chat_settings_downloaded_media_public_summary}"
                     linphone:listener="@{viewModel.downloadedMediaPublicListener}"
-                    linphone:checked="@={viewModel.downloadedMediaPublic}"/>
+                    linphone:subtitle="@{@string/chat_settings_downloaded_media_public_summary}"
+                    linphone:title="@{@string/chat_settings_downloaded_media_public_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/chat_settings_use_in_app_file_viewer_title}"
-                    linphone:subtitle="@{@string/chat_settings_use_in_app_file_viewer_summary}"
+                    linphone:checked="@={viewModel.useInAppFileViewer}"
                     linphone:enabled="@{!viewModel.vfs}"
                     linphone:listener="@{viewModel.useInAppFileViewerListener}"
-                    linphone:checked="@={viewModel.useInAppFileViewer}"/>
+                    linphone:subtitle="@{@string/chat_settings_use_in_app_file_viewer_summary}"
+                    linphone:title="@{@string/chat_settings_use_in_app_file_viewer_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/chat_settings_hide_notification_content_title}"
-                    linphone:subtitle="@{@string/chat_settings_hide_notification_content_summary}"
+                    linphone:checked="@={viewModel.hideNotificationContent}"
                     linphone:listener="@{viewModel.hideNotificationContentListener}"
-                    linphone:checked="@={viewModel.hideNotificationContent}"/>
+                    linphone:subtitle="@{@string/chat_settings_hide_notification_content_summary}"
+                    linphone:title="@{@string/chat_settings_hide_notification_content_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
                     android:visibility="gone"
-                    linphone:title="@{@string/chat_settings_launcher_shortcuts_title}"
-                    linphone:subtitle="@{@string/chat_settings_launcher_shortcuts_summary}"
+                    linphone:checked="@={viewModel.launcherShortcuts}"
                     linphone:listener="@{viewModel.launcherShortcutsListener}"
-                    linphone:checked="@={viewModel.launcherShortcuts}"/>
+                    linphone:subtitle="@{@string/chat_settings_launcher_shortcuts_summary}"
+                    linphone:title="@{@string/chat_settings_launcher_shortcuts_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/chat_settings_hide_empty_rooms_title}"
+                    linphone:checked="@={viewModel.hideEmptyRooms}"
                     linphone:listener="@{viewModel.hideEmptyRoomsListener}"
-                    linphone:checked="@={viewModel.hideEmptyRooms}"/>
+                    linphone:title="@{@string/chat_settings_hide_empty_rooms_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/chat_settings_hide_rooms_removed_proxies_title}"
-                    linphone:subtitle="@{@string/chat_settings_hide_rooms_removed_proxies_summary}"
+                    linphone:checked="@={viewModel.hideRoomsRemovedProxies}"
                     linphone:listener="@{viewModel.hideRoomsRemovedProxiesListener}"
-                    linphone:checked="@={viewModel.hideRoomsRemovedProxies}"/>
+                    linphone:subtitle="@{@string/chat_settings_hide_rooms_removed_proxies_summary}"
+                    linphone:title="@{@string/chat_settings_hide_rooms_removed_proxies_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/chat_settings_file_sharing_url_title}"
-                    linphone:subtitle="@{@string/chat_settings_file_sharing_url_summary}"
-                    linphone:listener="@{viewModel.fileSharingUrlListener}"
                     linphone:defaultValue="@{viewModel.fileSharingUrl}"
-                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_URI}"/>
+                    linphone:inputType="@{InputType.TYPE_TEXT_VARIATION_URI}"
+                    linphone:listener="@{viewModel.fileSharingUrlListener}"
+                    linphone:subtitle="@{@string/chat_settings_file_sharing_url_summary}"
+                    linphone:title="@{@string/chat_settings_file_sharing_url_title}" />
 
                 <include
                     layout="@layout/settings_widget_basic"

@@ -2,12 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <variable
             name="title"
             type="Integer" />
+
         <variable
             name="textColor"
             type="Integer" />
+
         <variable
             name="icon"
             type="Integer" />
@@ -26,18 +29,18 @@
             android:orientation="horizontal">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@{title, default=@string/chat_message_imdn_displayed}"
                 android:textColor="@{textColor}"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
                 android:contentDescription="@{title}"
+                android:padding="5dp"
                 android:src="@{icon, default=@drawable/chat_read}" />
 
         </LinearLayout>

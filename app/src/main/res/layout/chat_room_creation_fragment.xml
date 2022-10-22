@@ -4,19 +4,24 @@
     xmlns:bind="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="allContactsToggleClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="sipContactsToggleClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="nextClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.chat.viewmodels.ChatRoomCreationViewModel" />
+            type="com.vsphone.activities.main.chat.viewmodels.ChatRoomCreationViewModel" />
     </data>
 
     <RelativeLayout
@@ -32,129 +37,129 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="left"
                 android:layout_weight="1"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
                 android:src="@drawable/back" />
 
             <LinearLayout
-                android:visibility="@{viewModel.secureChatAvailable &amp;&amp; !viewModel.secureChatMandatory ? View.VISIBLE : View.INVISIBLE}"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="2"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="@{viewModel.secureChatAvailable &amp;&amp; !viewModel.secureChatMandatory ? View.VISIBLE : View.INVISIBLE}">
 
                 <ImageView
-                    android:onClick="@{() -> viewModel.updateEncryption(false)}"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:contentDescription="@string/content_description_e2e_encryption_disabled"
-                    android:src="@drawable/security_toggle_icon_grey"/>
+                    android:onClick="@{() -> viewModel.updateEncryption(false)}"
+                    android:src="@drawable/security_toggle_icon_grey" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:checked="@={viewModel.isEncrypted}"
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
+                    android:checked="@={viewModel.isEncrypted}"
                     android:switchMinWidth="50dp"
                     android:textOff=""
-                    android:textOn=""/>
+                    android:textOn="" />
 
                 <ImageView
-                    android:onClick="@{() -> viewModel.updateEncryption(true)}"
-                    android:contentDescription="@string/content_description_e2e_encryption_enabled"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:contentDescription="@string/content_description_e2e_encryption_enabled"
+                    android:onClick="@{() -> viewModel.updateEncryption(true)}"
                     android:src="@drawable/security_toggle_icon_green" />
 
             </LinearLayout>
 
             <RelativeLayout
-                android:visibility="@{viewModel.createGroupChat ? View.GONE : View.VISIBLE}"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:visibility="@{viewModel.createGroupChat ? View.GONE : View.VISIBLE}">
 
                 <ImageView
-                    android:onClick="@{allContactsToggleClickListener}"
-                    android:enabled="@{viewModel.sipContactsSelected}"
-                    android:contentDescription="@string/content_description_show_all_contacts"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="?attr/button_background_drawable"
+                    android:contentDescription="@string/content_description_show_all_contacts"
+                    android:enabled="@{viewModel.sipContactsSelected}"
+                    android:onClick="@{allContactsToggleClickListener}"
                     android:padding="15dp"
                     android:src="@drawable/contacts_all" />
 
                 <View
-                    android:visibility="@{viewModel.sipContactsSelected ? View.GONE : View.VISIBLE}"
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
                     android:layout_alignParentBottom="true"
-                    android:background="?attr/accentColor" />
+                    android:background="?attr/accentColor"
+                    android:visibility="@{viewModel.sipContactsSelected ? View.GONE : View.VISIBLE}" />
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:visibility="@{viewModel.createGroupChat ? View.GONE : View.VISIBLE}"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:visibility="@{viewModel.createGroupChat ? View.GONE : View.VISIBLE}">
 
                 <ImageView
-                    android:onClick="@{sipContactsToggleClickListener}"
-                    android:enabled="@{!viewModel.sipContactsSelected}"
-                    android:contentDescription="@string/content_description_show_sip_contacts"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="?attr/button_background_drawable"
+                    android:contentDescription="@string/content_description_show_sip_contacts"
+                    android:enabled="@{!viewModel.sipContactsSelected}"
                     android:gravity="center"
+                    android:onClick="@{sipContactsToggleClickListener}"
                     android:padding="15dp"
                     android:src="@drawable/contacts_sip" />
 
                 <View
-                    android:visibility="@{viewModel.sipContactsSelected ? View.VISIBLE : View.GONE}"
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
                     android:layout_alignParentBottom="true"
-                    android:background="?attr/accentColor" />
+                    android:background="?attr/accentColor"
+                    android:visibility="@{viewModel.sipContactsSelected ? View.VISIBLE : View.GONE}" />
             </RelativeLayout>
 
             <ImageView
-                android:onClick="@{nextClickListener}"
-                android:enabled="@{viewModel.selectedAddresses.size() > 0}"
-                android:visibility="@{viewModel.createGroupChat ? View.VISIBLE : View.GONE}"
-                android:contentDescription="@string/content_description_continue_chat_room_creation"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="right"
                 android:layout_weight="1"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_continue_chat_room_creation"
+                android:enabled="@{viewModel.selectedAddresses.size() > 0}"
+                android:onClick="@{nextClickListener}"
                 android:padding="18dp"
-                android:src="@drawable/valid" />
+                android:src="@drawable/valid"
+                android:visibility="@{viewModel.createGroupChat ? View.VISIBLE : View.GONE}" />
 
         </LinearLayout>
 
         <EditText
             android:id="@+id/searchBar"
-            android:text="@={viewModel.filter}"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:inputType="textPersonName"
             android:layout_below="@id/top_bar"
             android:layout_margin="10dp"
-            android:drawableLeft="@drawable/search"
-            android:drawablePadding="10dp"
             android:background="@color/transparent_color"
             android:backgroundTint="@color/transparent_color"
-            android:hint="@string/contact_filter_hint"/>
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="10dp"
+            android:hint="@string/contact_filter_hint"
+            android:inputType="textPersonName"
+            android:text="@={viewModel.filter}" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -172,14 +177,14 @@
             android:background="?attr/dividerColor" />
 
         <HorizontalScrollView
-            android:visibility="@{viewModel.createGroupChat ? View.VISIBLE : View.GONE}"
             android:id="@+id/layoutContactsSelected"
-            android:layout_below="@id/searchBar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_below="@id/searchBar"
             android:background="?attr/lightToolbarBackgroundColor"
             android:fadeScrollbars="false"
-            android:lines="1">
+            android:lines="1"
+            android:visibility="@{viewModel.createGroupChat ? View.VISIBLE : View.GONE}">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -190,16 +195,16 @@
                 android:paddingRight="10dp"
                 android:scrollIndicators="bottom"
                 app:entries="@{viewModel.selectedAddresses}"
-                app:parent="@{viewModel}"
-                app:layout="@{@layout/contact_selected_cell}" />
+                app:layout="@{@layout/contact_selected_cell}"
+                app:parent="@{viewModel}" />
 
         </HorizontalScrollView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/contactsList"
-            android:layout_below="@id/layoutContactsSelected"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_below="@id/layoutContactsSelected" />
 
         <TextView
             style="@style/empty_list_font"

@@ -2,32 +2,34 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="data"
-            type="org.linphone.activities.voip.data.ConferenceInfoParticipantData" />
+            type="com.vsphone.activities.voip.data.ConferenceInfoParticipantData" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="5dp"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <org.linphone.views.MarqueeTextView
+        <com.vsphone.views.MarqueeTextView
             style="@style/call_header_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:text="@{data.contact.name ?? data.displayName, default=`Bilbo Baggins`}" />
 
-        <org.linphone.views.MarqueeTextView
+        <com.vsphone.views.MarqueeTextView
             style="@style/sip_uri_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:singleLine="true"
             android:ellipsize="end"
+            android:singleLine="true"
             android:text="@{data.sipUri, default=`sip:bilbo.baggins@sip.linphone.org`}" />
 
 

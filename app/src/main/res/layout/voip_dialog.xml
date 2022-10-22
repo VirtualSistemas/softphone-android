@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.viewmodels.DialogViewModel" />
+            type="com.vsphone.activities.main.viewmodels.DialogViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,14 +29,14 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="-10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="-20dp"
-            android:layout_marginTop="-10dp"
             android:background="@drawable/shape_dialog_background"
             app:layout_constraintBottom_toBottomOf="@id/buttons_bottom_barrier"
-            app:layout_constraintTop_toTopOf="@id/top_barrier"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/top_barrier" />
 
         <ImageView
             android:id="@+id/dialog_icon"
@@ -45,11 +47,11 @@
             android:contentDescription="@{viewModel.title}"
             android:src="@{viewModel.iconResource, default=@drawable/security_alert_indicator}"
             android:visibility="@{viewModel.showIcon ? View.VISIBLE : View.GONE}"
-            app:layout_constraintVertical_chainStyle="packed"
             app:layout_constraintBottom_toTopOf="@id/dialog_title"
             app:layout_constraintEnd_toEndOf="@id/background"
             app:layout_constraintStart_toStartOf="@id/background"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
             android:id="@+id/dialog_title"
@@ -155,11 +157,11 @@
             android:singleLine="true"
             android:text="@{viewModel.cancelLabel, default=Cancel}"
             android:visibility="@{viewModel.showCancel ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/delete_button"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="@id/background"
             app:layout_constraintTop_toBottomOf="@id/dialog_zrtp_sas_2"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintWidth_max="@dimen/voip_dialog_button_max_width" />
 
         <TextView
@@ -189,9 +191,9 @@
             style="@style/big_orange_button_font"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
             android:background="@drawable/shape_rect_green_button"
             android:ellipsize="end"
             android:gravity="center"

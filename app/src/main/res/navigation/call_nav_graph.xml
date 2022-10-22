@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/singleCallFragment"
-        android:name="org.linphone.activities.voip.fragments.SingleCallFragment"
-        tools:layout="@layout/voip_single_call_fragment"
-        android:label="SingleCallFragment" >
+        android:name="com.vsphone.activities.voip.fragments.SingleCallFragment"
+        android:label="SingleCallFragment"
+        tools:layout="@layout/voip_single_call_fragment">
         <action
             android:id="@+id/action_singleCallFragment_to_callsListFragment"
             app:destination="@id/callsListFragment" />
@@ -24,14 +24,15 @@
             app:destination="@id/conferenceLayoutFragment" />
     </fragment>
 
-    <action android:id="@+id/action_global_singleCallFragment"
-        app:destination="@id/singleCallFragment"/>
+    <action
+        android:id="@+id/action_global_singleCallFragment"
+        app:destination="@id/singleCallFragment" />
 
     <fragment
         android:id="@+id/conferenceCallFragment"
-        android:name="org.linphone.activities.voip.fragments.ConferenceCallFragment"
-        tools:layout="@layout/voip_conference_call_fragment"
-        android:label="ConferenceCallFragment" >
+        android:name="com.vsphone.activities.voip.fragments.ConferenceCallFragment"
+        android:label="ConferenceCallFragment"
+        tools:layout="@layout/voip_conference_call_fragment">
         <action
             android:id="@+id/action_conferenceCallFragment_to_callsListFragment"
             app:destination="@id/callsListFragment" />
@@ -48,19 +49,19 @@
 
     <action
         android:id="@+id/action_global_conferenceCallFragment"
-        app:destination="@id/conferenceCallFragment"/>
+        app:destination="@id/conferenceCallFragment" />
 
     <fragment
         android:id="@+id/callsListFragment"
-        android:name="org.linphone.activities.voip.fragments.CallsListFragment"
-        tools:layout="@layout/voip_calls_list_fragment"
-        android:label="CallsListFragment" />
+        android:name="com.vsphone.activities.voip.fragments.CallsListFragment"
+        android:label="CallsListFragment"
+        tools:layout="@layout/voip_calls_list_fragment" />
 
     <fragment
         android:id="@+id/conferenceParticipantsFragment"
-        android:name="org.linphone.activities.voip.fragments.ConferenceParticipantsFragment"
-        tools:layout="@layout/voip_conference_participants_fragment"
-        android:label="ConferenceParticipantsFragment" >
+        android:name="com.vsphone.activities.voip.fragments.ConferenceParticipantsFragment"
+        android:label="ConferenceParticipantsFragment"
+        tools:layout="@layout/voip_conference_participants_fragment">
         <action
             android:id="@+id/action_conferenceParticipantsFragment_to_conferenceAddParticipantsFragment"
             app:destination="@id/conferenceAddParticipantsFragment" />
@@ -68,9 +69,9 @@
 
     <fragment
         android:id="@+id/chatFragment"
-        android:name="org.linphone.activities.voip.fragments.ChatFragment"
-        tools:layout="@layout/voip_chat_fragment"
-        android:label="ChatFragment" >
+        android:name="com.vsphone.activities.voip.fragments.ChatFragment"
+        android:label="ChatFragment"
+        tools:layout="@layout/voip_chat_fragment">
         <argument
             android:name="LocalSipUri"
             app:argType="string"
@@ -83,33 +84,35 @@
 
     <fragment
         android:id="@+id/outgoingCallFragment"
-        android:name="org.linphone.activities.voip.fragments.OutgoingCallFragment"
-        tools:layout="@layout/voip_call_outgoing_fragment"
-        android:label="OutgoingCallFragment" />
+        android:name="com.vsphone.activities.voip.fragments.OutgoingCallFragment"
+        android:label="OutgoingCallFragment"
+        tools:layout="@layout/voip_call_outgoing_fragment" />
 
-    <action android:id="@+id/action_global_outgoingCallFragment"
+    <action
+        android:id="@+id/action_global_outgoingCallFragment"
         app:destination="@id/outgoingCallFragment" />
 
     <fragment
         android:id="@+id/incomingCallFragment"
-        android:name="org.linphone.activities.voip.fragments.IncomingCallFragment"
-        tools:layout="@layout/voip_call_incoming_fragment"
-        android:label="IncomingCallFragment" />
+        android:name="com.vsphone.activities.voip.fragments.IncomingCallFragment"
+        android:label="IncomingCallFragment"
+        tools:layout="@layout/voip_call_incoming_fragment" />
 
-    <action android:id="@+id/action_global_incomingCallFragment"
+    <action
+        android:id="@+id/action_global_incomingCallFragment"
         app:destination="@id/incomingCallFragment" />
 
     <fragment
         android:id="@+id/conferenceLayoutFragment"
-        android:name="org.linphone.activities.voip.fragments.ConferenceLayoutFragment"
-        tools:layout="@layout/voip_conference_layout_fragment"
-        android:label="ConferenceLayoutFragment" />
+        android:name="com.vsphone.activities.voip.fragments.ConferenceLayoutFragment"
+        android:label="ConferenceLayoutFragment"
+        tools:layout="@layout/voip_conference_layout_fragment" />
 
     <fragment
         android:id="@+id/conferenceAddParticipantsFragment"
-        android:name="org.linphone.activities.voip.fragments.ConferenceAddParticipantsFragment"
-        tools:layout="@layout/voip_conference_participants_add_fragment"
-        android:label="ConferenceAddParticipantsFragment" >
+        android:name="com.vsphone.activities.voip.fragments.ConferenceAddParticipantsFragment"
+        android:label="ConferenceAddParticipantsFragment"
+        tools:layout="@layout/voip_conference_participants_add_fragment">
         <action
             android:id="@+id/action_conferenceAddParticipantsFragment_to_conferenceParticipantsFragment"
             app:destination="@id/conferenceParticipantsFragment" />

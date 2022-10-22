@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE resources [
-<!ENTITY appName "Linphone">
-]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Linphone">]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="logs_upload_failure">Nem sikerült feltölteni a naplókat!</string>
     <string name="logs_reset_complete">A naplók törlésre kerültek</string>
@@ -357,7 +354,8 @@
     <string name="no_call_history">Nem találhatók híváselőzmények</string>
     <string name="history_delete_one_dialog">Törli ezt a rekordot\?</string>
     <string name="no_sip_contact">Nincs SIP-névjegy a címjegyzékben.</string>
-    <string name="contact_send_sms_invite_text">Üdvözöljük! Csatlakozzon a(z) &appName; alkalmazáshoz! Ingyenesen letöltheti a(z) %s webhelyről</string>
+    <string name="contact_send_sms_invite_text">Üdvözöljük! Csatlakozzon a(z) &appName;
+        alkalmazáshoz! Ingyenesen letöltheti a(z) %s webhelyről</string>
     <string name="chat_event_conference_created">Csatlakozott a csoporthoz</string>
     <string name="chat_room_group_info_leave">Kilépés ebből a csoportból</string>
     <string name="chat_room_group_info_you_are_no_longer_admin">Ön már nem felügyelő</string>
@@ -387,7 +385,8 @@
     <string name="content_description_e2e_encryption_enabled">Végpontok közötti titkosítás engedélyezve</string>
     <string name="audio_settings_echo_canceller_calibration_summary">Kattintson a visszhangkioltás beállításának megkezdéséhez</string>
     <string name="audio_settings_echo_tester_summary">Kattintson a visszhang ellenőrzés indításához</string>
-    <string name="assistant_phone_number_link_info_content">\nAz ismerősei könnyebben megtalálja Önt, ha összekapcsolja fiókját a telefonszámával.\n\nA címjegyzékében látni fogja, hogy ki használja a(z) &appName; és az ismerősök tudni fogják, hogy elérhetik Önt a(z) &appName; is.\n</string>
+    <string name="assistant_phone_number_link_info_content">\nAz ismerősei könnyebben megtalálja Önt, ha összekapcsolja fiókját a telefonszámával.\n\nA címjegyzékében látni fogja, hogy ki használja a(z) &appName;
+        és az ismerősök tudni fogják, hogy elérhetik Önt a(z) &appName; is.\n</string>
     <string name="contacts_settings_friendlist_subscribe_title">Ismerőslista feliratkozása</string>
     <string name="assistant_linphone_login_desc">Kérjük, adja meg a(z) &appName;-fiókjának felhasználónevét és jelszavát</string>
     <string name="account_settings_prefix_title">Országának nemzetközi előhívószáma</string>
@@ -438,7 +437,8 @@
     <string name="dialog_default_delete_one">Biztosan törli ezt az elemet\?</string>
     <string name="content_description_add_sip_address_field">Egy SIP-cím mező hozzáadása</string>
     <string name="content_description_disable_speaker">Hang átirányítása a fülhallgatóhoz</string>
-    <string name="contacts_settings_native_presence_summary">Információs parancsikonok beszúrása a &appName; névjegyből a natív Android névjegyekbe</string>
+    <string name="contacts_settings_native_presence_summary">Információs parancsikonok beszúrása a &appName;
+        névjegyből a natív Android névjegyekbe</string>
     <string name="chat_settings_auto_download_summary">Akár fájlok letöltéséhez csatolt beérkezett csevegő üzenetek önműködően vagy sem</string>
     <string name="call_error_server_timeout">Kiszolgálói időtúllépés</string>
     <string name="call_error_temporarily_unavailable">Átmenetileg nem érhető el</string>
@@ -468,7 +468,8 @@
     <string name="account_settings_avpf_rr_interval_title">AVPF rendszeres RTCP intervallum</string>
     <string name="account_settings_escape_plus_title">Cserélje a „+”-ot „00”-ra</string>
     <string name="notification_channel_service_name">&appName; szolgáltatási értesítés</string>
-    <string name="notification_channel_missed_call_name">&appName; nem fogadott hívások értesítései</string>
+    <string name="notification_channel_missed_call_name">&appName;
+        nem fogadott hívások értesítései</string>
     <string name="notification_channel_incoming_call_name">&appName; bejövő hívásokról szóló értesítései</string>
     <string name="missed_calls_notification_body" tools:ignore="PluralsCandidate">%d nem fogadott hívás</string>
     <string name="zrtp_dialog_title">Kommunikációs biztonság</string>

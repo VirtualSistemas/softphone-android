@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.files.viewmodels.PdfFileViewModel" />
+            type="com.vsphone.activities.main.files.viewmodels.PdfFileViewModel" />
     </data>
 
     <RelativeLayout
@@ -17,7 +19,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/top_bar_fragment"
-            android:name="org.linphone.activities.main.files.fragments.TopBarFragment"
+            android:name="com.vsphone.activities.main.files.fragments.TopBarFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -27,12 +29,12 @@
             android:id="@+id/pdf_view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_below="@id/top_bar_fragment" />
+            android:layout_below="@id/top_bar_fragment"
+            android:orientation="vertical" />
 
         <include
             layout="@layout/wait_layout"
-            bind:visibility="@{viewModel.operationInProgress}"/>
+            bind:visibility="@{viewModel.operationInProgress}" />
 
     </RelativeLayout>
 

@@ -3,22 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="addCallClickListener"
             type="android.view.View.OnClickListener" />
+
         <variable
             name="cancelClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="callsViewModel"
-            type="org.linphone.activities.voip.viewmodels.CallsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.CallsViewModel" />
+
         <variable
             name="conferenceViewModel"
-            type="org.linphone.activities.voip.viewmodels.ConferenceViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.ConferenceViewModel" />
+
         <variable
             name="controlsViewModel"
-            type="org.linphone.activities.voip.viewmodels.ControlsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.ControlsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,24 +39,24 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
+                style="@style/calls_list_header_font"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
                 android:layout_marginStart="20dp"
+                android:gravity="center_vertical"
                 android:text="@string/call_action_calls_list"
-                style="@style/calls_list_header_font"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:onClick="@{cancelClickListener}"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/cancel"
+                android:onClick="@{cancelClickListener}"
                 android:padding="10dp"
                 android:src="@drawable/icon_cancel"
-                android:contentDescription="@string/cancel"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -58,15 +64,15 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="?attr/voipBackgroundBWColor"
-            app:layout_constraintTop_toBottomOf="@id/top_bar"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_bar">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:entries="@{callsViewModel.callsData}"
-                app:layout="@{@layout/voip_calls_cell}"/>
+                app:layout="@{@layout/voip_calls_cell}" />
 
         </androidx.core.widget.NestedScrollView>
 
@@ -75,45 +81,45 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
+                android:layout_width="@dimen/voip_floating_button_size"
+                android:layout_height="@dimen/voip_floating_button_size"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_round_background"
+                android:contentDescription="@string/cancel"
                 android:onClick="@{addCallClickListener}"
-                android:layout_width="@dimen/voip_floating_button_size"
-                android:layout_height="@dimen/voip_floating_button_size"
-                android:layout_margin="10dp"
                 android:padding="5dp"
-                android:background="@drawable/button_round_background"
-                android:src="@drawable/icon_call_add"
-                android:contentDescription="@string/cancel"/>
+                android:src="@drawable/icon_call_add" />
 
             <ImageView
-                android:onClick="@{() -> conferenceViewModel.addCallsToConference()}"
+                android:layout_width="@dimen/voip_floating_button_size"
+                android:layout_height="@dimen/voip_floating_button_size"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_round_background"
+                android:contentDescription="@string/cancel"
                 android:enabled="@{callsViewModel.callsData.size() >= 2 &amp;&amp; conferenceViewModel.isMeAdmin}"
-                android:visibility="@{conferenceViewModel.conferenceExists ? View.VISIBLE : View.GONE, default=gone}"
-                android:layout_width="@dimen/voip_floating_button_size"
-                android:layout_height="@dimen/voip_floating_button_size"
-                android:layout_margin="10dp"
-                android:background="@drawable/button_round_background"
+                android:onClick="@{() -> conferenceViewModel.addCallsToConference()}"
                 android:src="@drawable/icon_merge_calls_local_conference"
-                android:contentDescription="@string/cancel"/>
+                android:visibility="@{conferenceViewModel.conferenceExists ? View.VISIBLE : View.GONE, default=gone}" />
 
             <ImageView
-                android:onClick="@{() -> callsViewModel.mergeCallsIntoConference()}"
-                android:enabled="@{callsViewModel.callsData.size() >= 2}"
-                android:visibility="@{conferenceViewModel.conferenceExists ? View.GONE : View.VISIBLE}"
                 android:layout_width="@dimen/voip_floating_button_size"
                 android:layout_height="@dimen/voip_floating_button_size"
                 android:layout_margin="10dp"
                 android:background="@drawable/button_round_background"
+                android:contentDescription="@string/cancel"
+                android:enabled="@{callsViewModel.callsData.size() >= 2}"
+                android:onClick="@{() -> callsViewModel.mergeCallsIntoConference()}"
                 android:src="@drawable/icon_merge_calls_local_conference"
-                android:contentDescription="@string/cancel"/>
+                android:visibility="@{conferenceViewModel.conferenceExists ? View.GONE : View.VISIBLE}" />
 
         </LinearLayout>
 
-        <org.linphone.activities.voip.views.RoundCornersTextureView
+        <com.vsphone.activities.voip.views.RoundCornersTextureView
             android:id="@+id/local_preview_video_surface"
             android:layout_width="0dp"
             android:layout_height="0dp"

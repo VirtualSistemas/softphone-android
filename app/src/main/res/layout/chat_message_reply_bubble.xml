@@ -3,24 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
+
         <variable
             name="data"
-            type="org.linphone.activities.main.chat.data.ChatMessageData" />
+            type="com.vsphone.activities.main.chat.data.ChatMessageData" />
     </data>
 
     <LinearLayout
-        android:background="@drawable/chat_bubble_reply_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        android:onClick="@{clickListener}">
+        android:layout_marginRight="10dp"
+        android:background="@drawable/chat_bubble_reply_background"
+        android:onClick="@{clickListener}"
+        android:orientation="horizontal">
 
         <View
             android:id="@+id/color"
@@ -37,14 +40,14 @@
             <com.google.android.flexbox.FlexboxLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintWidth_max="@dimen/chat_message_content_preview_max_width"
-                app:entries="@{data.contents}"
-                app:layout="@{@layout/chat_message_reply_content_cell}"
-                app:flexWrap="wrap"
                 app:alignItems="center"
-                app:justifyContent="flex_start"/>
+                app:entries="@{data.contents}"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:layout="@{@layout/chat_message_reply_content_cell}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_max="@dimen/chat_message_content_preview_max_width" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -53,24 +56,24 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="10dp"
+            android:orientation="vertical"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:orientation="vertical">
+            android:paddingBottom="10dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 style="@style/chat_message_reply_sender_font"
-                android:text="@{data.contact.name ?? data.displayName, default=Tintin}"/>
-
-            <TextView
-                android:visibility="@{data.text.length() == 0 ? View.GONE : View.VISIBLE}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:singleLine="false"
-                android:layout_marginTop="5dp"
+                android:text="@{data.contact.name ?? data.displayName, default=Tintin}" />
+
+            <TextView
                 style="@style/chat_message_reply_font"
-                android:text="@{data.text, default=`Lorem ipsum`}"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:singleLine="false"
+                android:text="@{data.text, default=`Lorem ipsum`}"
+                android:visibility="@{data.text.length() == 0 ? View.GONE : View.VISIBLE}" />
 
         </LinearLayout>
 

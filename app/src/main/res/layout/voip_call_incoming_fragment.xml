@@ -8,11 +8,11 @@
 
         <variable
             name="callsViewModel"
-            type="org.linphone.activities.voip.viewmodels.CallsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.CallsViewModel" />
 
         <variable
             name="controlsViewModel"
-            type="org.linphone.activities.voip.viewmodels.ControlsViewModel" />
+            type="com.vsphone.activities.voip.viewmodels.ControlsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -121,10 +121,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_max="120dp"
             app:layout_constraintHeight_min="40dp"
-            app:layout_constraintVertical_weight="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/incoming_conference_subject"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintVertical_weight="0.5" />
 
         <LinearLayout
             android:id="@+id/participants_count"
@@ -139,8 +139,8 @@
             app:layout_constraintBottom_toTopOf="@id/participants_list"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_weight="0"
-            app:layout_constraintTop_toBottomOf="@id/conference_avatar">
+            app:layout_constraintTop_toBottomOf="@id/conference_avatar"
+            app:layout_constraintVertical_weight="0">
 
             <TextView
                 style="@style/call_header_title"
@@ -163,11 +163,11 @@
             android:layout_marginBottom="10dp"
             android:fadeScrollbars="false"
             android:scrollbars="vertical"
+            app:layout_constraintBottom_toTopOf="@id/buttons"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_max="400dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/participants_count"
-            app:layout_constraintBottom_toTopOf="@id/buttons"
-            app:layout_constraintHeight_max="400dp"
             app:layout_constraintVertical_weight="2">
 
             <LinearLayout

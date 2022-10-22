@@ -3,16 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="avatarClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="saveChangesClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.contact.viewmodels.ContactEditorViewModel" />
+            type="com.vsphone.activities.main.contact.viewmodels.ContactEditorViewModel" />
     </data>
 
     <RelativeLayout
@@ -28,11 +32,11 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:contentDescription="@string/content_description_discard_changes"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_discard_changes"
                 android:padding="10dp"
                 android:src="@drawable/cancel" />
 
@@ -43,13 +47,13 @@
 
             <ImageView
                 android:id="@+id/ok"
-                android:enabled="@{!viewModel.firstName.empty || !viewModel.lastName.empty}"
-                android:contentDescription="@string/content_description_confirm_contact_edit"
-                android:onClick="@{saveChangesClickListener}"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_confirm_contact_edit"
+                android:enabled="@{!viewModel.firstName.empty || !viewModel.lastName.empty}"
+                android:onClick="@{saveChangesClickListener}"
                 android:padding="18dp"
                 android:src="@drawable/valid" />
 
@@ -63,11 +67,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:paddingTop="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:paddingTop="20dp">
 
                 <FrameLayout
                     android:layout_width="@dimen/contact_avatar_big_size"
@@ -75,17 +79,17 @@
 
                     <ImageView
                         android:id="@+id/avatar"
-                        android:onClick="@{avatarClickListener}"
+                        coilContactBig="@{viewModel}"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        coilContactBig="@{viewModel}"
-                        android:contentDescription="@null" />
+                        android:contentDescription="@null"
+                        android:onClick="@{avatarClickListener}" />
 
                     <ImageView
+                        coilGoneIfError="@{viewModel.tempPicturePath}"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:contentDescription="@string/content_description_change_contact_picture"
-                        coilGoneIfError="@{viewModel.tempPicturePath}"/>
+                        android:contentDescription="@string/content_description_change_contact_picture" />
 
                 </FrameLayout>
 
@@ -95,13 +99,13 @@
                     android:hint="@string/contact_last_name">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:text="@={viewModel.lastName}"
-                        android:imeOptions="actionDone"
-                        android:singleLine="true"
-                        android:inputType="textPersonName|textCapWords"
-                        android:background="@color/transparent_color"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent_color"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPersonName|textCapWords"
+                        android:singleLine="true"
+                        android:text="@={viewModel.lastName}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,38 +115,38 @@
                     android:hint="@string/contact_first_name">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:text="@={viewModel.firstName}"
-                        android:imeOptions="actionDone"
-                        android:singleLine="true"
-                        android:inputType="textPersonName|textCapWords"
-                        android:background="@color/transparent_color"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent_color"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPersonName|textCapWords"
+                        android:singleLine="true"
+                        android:text="@={viewModel.firstName}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:visibility="@{viewModel.displayOrganization ? View.VISIBLE : View.GONE}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/contact_organization">
+                    android:hint="@string/contact_organization"
+                    android:visibility="@{viewModel.displayOrganization ? View.VISIBLE : View.GONE}">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:text="@={viewModel.organization}"
-                        android:imeOptions="actionDone"
-                        android:singleLine="true"
-                        android:inputType="textPersonName|textCapWords"
-                        android:background="@color/transparent_color"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent_color"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPersonName|textCapWords"
+                        android:singleLine="true"
+                        android:text="@={viewModel.organization}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center">
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp">
 
                     <TextView
                         style="@style/contact_edit_form_label_font"
@@ -153,12 +157,12 @@
                         android:textAllCaps="true" />
 
                     <ImageView
-                        android:onClick="@{() -> viewModel.addEmptySipAddress()}"
-                        android:contentDescription="@string/content_description_add_sip_address_field"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
+                        android:contentDescription="@string/content_description_add_sip_address_field"
+                        android:onClick="@{() -> viewModel.addEmptySipAddress()}"
                         android:src="@drawable/field_add" />
 
                 </RelativeLayout>
@@ -168,13 +172,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:entries="@{viewModel.addresses}"
-                    app:layout="@{@layout/contact_number_address_editor_cell}"/>
+                    app:layout="@{@layout/contact_number_address_editor_cell}" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center">
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp">
 
                     <TextView
                         style="@style/contact_edit_form_label_font"
@@ -185,12 +189,12 @@
                         android:textAllCaps="true" />
 
                     <ImageView
-                        android:onClick="@{() -> viewModel.addEmptyPhoneNumber()}"
-                        android:contentDescription="@string/content_description_add_phone_number_field"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
+                        android:contentDescription="@string/content_description_add_phone_number_field"
+                        android:onClick="@{() -> viewModel.addEmptyPhoneNumber()}"
                         android:src="@drawable/field_add" />
 
                 </RelativeLayout>
@@ -200,7 +204,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:entries="@{viewModel.numbers}"
-                    app:layout="@{@layout/contact_number_address_editor_cell}"/>
+                    app:layout="@{@layout/contact_number_address_editor_cell}" />
 
             </LinearLayout>
 

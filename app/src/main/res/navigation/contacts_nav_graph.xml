@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@id/emptyContactFragment">
 
     <fragment
         android:id="@+id/emptyContactFragment"
-        android:name="org.linphone.activities.main.fragments.EmptyFragment"
-        tools:layout="@layout/empty_fragment"
-        android:label="EmptyContactFragment" />
+        android:name="com.vsphone.activities.main.fragments.EmptyFragment"
+        android:label="EmptyContactFragment"
+        tools:layout="@layout/empty_fragment" />
 
-    <action android:id="@+id/action_global_emptyContactFragment"
+    <action
+        android:id="@+id/action_global_emptyContactFragment"
         app:destination="@id/emptyContactFragment" />
 
     <fragment
         android:id="@+id/detailContactFragment"
-        android:name="org.linphone.activities.main.contact.fragments.DetailContactFragment"
-        tools:layout="@layout/contact_detail_fragment"
-        android:label="DetailContactFragment">
+        android:name="com.vsphone.activities.main.contact.fragments.DetailContactFragment"
+        android:label="DetailContactFragment"
+        tools:layout="@layout/contact_detail_fragment">
 
         <action
             android:id="@+id/action_detailContactFragment_to_contactEditorFragment"
@@ -34,9 +35,9 @@
 
     <fragment
         android:id="@+id/contactEditorFragment"
-        android:name="org.linphone.activities.main.contact.fragments.ContactEditorFragment"
-        tools:layout="@layout/contact_editor_fragment"
-        android:label="ContactEditorFragment">
+        android:name="com.vsphone.activities.main.contact.fragments.ContactEditorFragment"
+        android:label="ContactEditorFragment"
+        tools:layout="@layout/contact_editor_fragment">
         <argument
             android:name="SipUri"
             app:argType="string"

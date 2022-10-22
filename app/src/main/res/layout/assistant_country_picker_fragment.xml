@@ -2,17 +2,19 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="cancelClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="?attr/backgroundColor">
+        android:background="?attr/backgroundColor"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,30 +38,30 @@
             android:layout_margin="10dp">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_toLeftOf="@id/clear_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/clear_field"
                 android:hint="@string/assistant_choose_country_title">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/search_country"
-                    android:imeOptions="actionDone"
-                    android:singleLine="true"
-                    android:inputType="textPersonName"
-                    android:background="@color/transparent_color"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent_color"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPersonName"
+                    android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <ImageView
                 android:id="@+id/clear_field"
-                android:onClick="@{() -> searchCountry.setText(``)}"
-                android:contentDescription="@string/content_description_clear_field"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
+                android:contentDescription="@string/content_description_clear_field"
+                android:onClick="@{() -> searchCountry.setText(``)}"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:src="@drawable/field_clean" />
@@ -76,13 +78,13 @@
             android:dividerHeight="1dp" />
 
         <TextView
-            android:onClick="@{cancelClickListener}"
             style="@style/button_font"
-            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/dialog_cancel"
-            android:gravity="right" />
+            android:gravity="right"
+            android:onClick="@{cancelClickListener}"
+            android:padding="10dp"
+            android:text="@string/dialog_cancel" />
 
     </LinearLayout>
 

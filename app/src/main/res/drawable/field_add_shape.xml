@@ -2,24 +2,28 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:bottom="@dimen/field_shape_margin"
-        android:top="@dimen/field_shape_margin"
         android:end="@dimen/field_shape_margin"
-        android:start="@dimen/field_shape_margin">
+        android:start="@dimen/field_shape_margin"
+        android:top="@dimen/field_shape_margin">
         <shape android:shape="line">
-            <stroke android:width="2dp" android:color="@android:color/white" />
+            <stroke
+                android:width="2dp"
+                android:color="@android:color/white" />
         </shape>
     </item>
     <item
         android:bottom="@dimen/field_shape_margin"
-        android:top="@dimen/field_shape_margin"
         android:end="@dimen/field_shape_margin"
-        android:start="@dimen/field_shape_margin">
+        android:start="@dimen/field_shape_margin"
+        android:top="@dimen/field_shape_margin">
         <rotate
             android:fromDegrees="90"
             android:pivotX="50%"
             android:pivotY="50%">
             <shape android:shape="line">
-                <stroke android:width="2dp" android:color="@android:color/white" />
+                <stroke
+                    android:width="2dp"
+                    android:color="@android:color/white" />
             </shape>
         </rotate>
     </item>

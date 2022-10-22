@@ -3,14 +3,18 @@
     xmlns:linphone="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
-        <import type="android.text.InputType"/>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.InputType" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.settings.viewmodels.NetworkSettingsViewModel"/>
+            type="com.vsphone.activities.main.settings.viewmodels.NetworkSettingsViewModel" />
+
         <variable
             name="sharedMainViewModel"
-            type="org.linphone.activities.main.viewmodels.SharedMainViewModel" />
+            type="com.vsphone.activities.main.viewmodels.SharedMainViewModel" />
     </data>
 
     <RelativeLayout
@@ -27,25 +31,25 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
-                android:src="@drawable/back" />
+                android:src="@drawable/back"
+                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}" />
 
             <TextView
                 style="@style/accent_colored_title_font"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:gravity="center"
-                android:singleLine="true"
                 android:ellipsize="end"
+                android:gravity="center"
                 android:padding="15dp"
-                android:text="@string/settings_network_title"/>
+                android:singleLine="true"
+                android:text="@string/settings_network_title" />
 
             <View
                 android:layout_width="0dp"
@@ -67,30 +71,30 @@
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/network_settings_wifi_only_title}"
+                    linphone:checked="@={viewModel.wifiOnly}"
                     linphone:listener="@{viewModel.wifiOnlyListener}"
-                    linphone:checked="@={viewModel.wifiOnly}"/>
+                    linphone:title="@{@string/network_settings_wifi_only_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/network_settings_allow_ipv6_title}"
+                    linphone:checked="@={viewModel.allowIpv6}"
                     linphone:listener="@{viewModel.allowIpv6Listener}"
-                    linphone:checked="@={viewModel.allowIpv6}"/>
+                    linphone:title="@{@string/network_settings_allow_ipv6_title}" />
 
                 <include
                     layout="@layout/settings_widget_switch"
-                    linphone:title="@{@string/network_settings_random_ports_title}"
+                    linphone:checked="@={viewModel.randomPorts}"
                     linphone:listener="@{viewModel.randomPortsListener}"
-                    linphone:checked="@={viewModel.randomPorts}"/>
+                    linphone:title="@{@string/network_settings_random_ports_title}" />
 
                 <include
                     layout="@layout/settings_widget_text"
-                    linphone:title="@{@string/network_settings_sip_port_title}"
-                    linphone:listener="@{viewModel.sipPortListener}"
+                    android:visibility="@{viewModel.randomPorts ? View.GONE : View.VISIBLE}"
                     linphone:defaultValue="@{viewModel.sipPort.toString()}"
-                    linphone:inputType="@{InputType.TYPE_CLASS_NUMBER}"
                     linphone:enabled="@{!viewModel.randomPorts}"
-                    android:visibility="@{viewModel.randomPorts ? View.GONE : View.VISIBLE}"/>
+                    linphone:inputType="@{InputType.TYPE_CLASS_NUMBER}"
+                    linphone:listener="@{viewModel.sipPortListener}"
+                    linphone:title="@{@string/network_settings_sip_port_title}" />
 
             </LinearLayout>
 

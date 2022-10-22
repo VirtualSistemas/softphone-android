@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.files.viewmodels.TextFileViewModel" />
+            type="com.vsphone.activities.main.files.viewmodels.TextFileViewModel" />
     </data>
 
     <RelativeLayout
@@ -17,7 +19,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/top_bar_fragment"
-            android:name="org.linphone.activities.main.files.fragments.TopBarFragment"
+            android:name="com.vsphone.activities.main.files.fragments.TopBarFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -33,14 +35,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:singleLine="false"
-                android:textIsSelectable="true"
-                android:text="@{viewModel.text}"/>
+                android:text="@{viewModel.text}"
+                android:textIsSelectable="true" />
 
         </ScrollView>
 
         <include
             layout="@layout/wait_layout"
-            bind:visibility="@{viewModel.operationInProgress}"/>
+            bind:visibility="@{viewModel.operationInProgress}" />
 
     </RelativeLayout>
 

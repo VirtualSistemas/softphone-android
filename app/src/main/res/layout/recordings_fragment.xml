@@ -3,16 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="editClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="videoTouchListener"
             type="android.view.View.OnTouchListener" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.recordings.viewmodels.RecordingsViewModel" />
+            type="com.vsphone.activities.main.recordings.viewmodels.RecordingsViewModel" />
     </data>
 
     <RelativeLayout
@@ -30,11 +34,11 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
                 android:src="@drawable/back" />
 
@@ -43,20 +47,20 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:gravity="center"
-                android:singleLine="true"
                 android:ellipsize="end"
+                android:gravity="center"
                 android:padding="15dp"
-                android:text="@string/recordings"/>
+                android:singleLine="true"
+                android:text="@string/recordings" />
 
             <ImageView
-                android:onClick="@{editClickListener}"
-                android:enabled="@{!viewModel.recordingsList.empty}"
-                android:contentDescription="@string/content_description_enter_edition_mode"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_enter_edition_mode"
+                android:enabled="@{!viewModel.recordingsList.empty}"
+                android:onClick="@{editClickListener}"
                 android:padding="15dp"
                 android:src="@drawable/delete" />
 
@@ -64,7 +68,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/list_edit_top_bar_fragment"
-            android:name="org.linphone.activities.main.fragments.ListTopBarFragment"
+            android:name="com.vsphone.activities.main.fragments.ListTopBarFragment"
             android:layout_width="match_parent"
             android:layout_height="@dimen/main_activity_top_bar_size"
             android:layout_alignTop="@id/top_bar"
@@ -74,25 +78,25 @@
             android:id="@+id/recordings_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/top_bar"/>
+            android:layout_below="@id/top_bar" />
 
         <TextView
-            android:visibility="@{viewModel.recordingsList.empty ? View.VISIBLE : View.GONE}"
             style="@style/empty_list_font"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:text="@string/recordings_empty_list" />
+            android:text="@string/recordings_empty_list"
+            android:visibility="@{viewModel.recordingsList.empty ? View.VISIBLE : View.GONE}" />
 
         <TextureView
             android:id="@+id/recording_video_surface"
-            android:onTouch="@{videoTouchListener}"
-            android:visibility="@{viewModel.isVideoVisible ? View.VISIBLE : View.GONE, default=gone}"
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true" />
+            android:layout_alignParentBottom="true"
+            android:onTouch="@{videoTouchListener}"
+            android:visibility="@{viewModel.isVideoVisible ? View.VISIBLE : View.GONE, default=gone}" />
 
     </RelativeLayout>
 

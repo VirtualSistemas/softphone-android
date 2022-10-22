@@ -1,57 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="groupInfoListener"
             type="View.OnClickListener" />
+
         <variable
             name="devicesListener"
             type="View.OnClickListener" />
+
         <variable
             name="ephemeralListener"
             type="View.OnClickListener" />
+
         <variable
             name="meetingListener"
             type="View.OnClickListener" />
+
         <variable
             name="editionModeListener"
             type="View.OnClickListener" />
+
         <variable
             name="muteListener"
             type="View.OnClickListener" />
+
         <variable
             name="unmuteListener"
             type="View.OnClickListener" />
+
         <variable
             name="groupInfoHidden"
             type="Boolean" />
+
         <variable
             name="devicesHidden"
             type="Boolean" />
+
         <variable
             name="ephemeralHidden"
             type="Boolean" />
+
         <variable
             name="meetingHidden"
             type="Boolean" />
+
         <variable
             name="muteHidden"
             type="Boolean" />
+
         <variable
             name="unmuteHidden"
             type="Boolean" />
+
         <variable
             name="addToContactsListener"
             type="View.OnClickListener" />
+
         <variable
             name="addToContactsHidden"
             type="Boolean" />
+
         <variable
             name="goToContactListener"
             type="View.OnClickListener" />
+
         <variable
             name="goToContactHidden"
             type="Boolean" />
@@ -60,95 +78,95 @@
     <LinearLayout
         android:layout_width="@dimen/chat_message_popup_width"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="?attr/backgroundColor">
+        android:background="?attr/backgroundColor"
+        android:orientation="vertical">
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_room_popup_item_height"
-            android:visibility="@{addToContactsHidden ? View.GONE : View.VISIBLE}"
             android:background="@drawable/menu_background"
             android:onClick="@{addToContactsListener}"
-            style="@style/popup_item_font"
             android:text="@string/chat_message_context_menu_add_to_contacts"
+            android:visibility="@{addToContactsHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/chat_room_menu_add_contact" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_room_popup_item_height"
-            android:visibility="@{goToContactHidden ? View.GONE : View.VISIBLE}"
             android:background="@drawable/menu_background"
             android:onClick="@{goToContactListener}"
-            style="@style/popup_item_font"
             android:text="@string/chat_room_context_menu_go_to_contact"
+            android:visibility="@{goToContactHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/chat_room_menu_view_contact" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_room_popup_item_height"
-            android:visibility="@{groupInfoHidden ? View.GONE : View.VISIBLE}"
             android:background="@drawable/menu_background"
             android:onClick="@{groupInfoListener}"
-            style="@style/popup_item_font"
             android:text="@string/chat_room_context_menu_group_info"
+            android:visibility="@{groupInfoHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/chat_room_menu_group_info" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_room_popup_item_height"
-            android:visibility="@{devicesHidden ? View.GONE : View.VISIBLE}"
             android:background="@drawable/menu_background"
             android:onClick="@{devicesListener}"
-            style="@style/popup_item_font"
             android:text="@string/chat_room_context_menu_participants_devices"
+            android:visibility="@{devicesHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/chat_room_menu_devices" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_room_popup_item_height"
-            android:visibility="@{ephemeralHidden ? View.GONE : View.VISIBLE}"
             android:background="@drawable/menu_background"
             android:onClick="@{ephemeralListener}"
-            style="@style/popup_item_font"
             android:text="@string/chat_message_context_menu_ephemeral_messages"
+            android:visibility="@{ephemeralHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/chat_room_menu_ephemeral" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_room_popup_item_height"
-            android:visibility="@{meetingHidden ? View.GONE : View.VISIBLE}"
             android:background="@drawable/menu_background"
             android:onClick="@{meetingListener}"
-            style="@style/popup_item_font"
             android:text="@string/conference_schedule_title"
+            android:visibility="@{meetingHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/chat_room_menu_meeting" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_room_popup_item_height"
             android:background="@drawable/menu_background"
-            android:visibility="@{muteHidden ? View.GONE : View.VISIBLE}"
             android:onClick="@{muteListener}"
-            style="@style/popup_item_font"
             android:text="@string/chat_message_context_menu_turn_off_notifications"
+            android:visibility="@{muteHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/chat_room_menu_mute_notifications" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_room_popup_item_height"
             android:background="@drawable/menu_background"
-            android:visibility="@{unmuteHidden ? View.GONE : View.VISIBLE}"
             android:onClick="@{unmuteListener}"
-            style="@style/popup_item_font"
             android:text="@string/chat_message_context_menu_turn_on_notifications"
+            android:visibility="@{unmuteHidden ? View.GONE : View.VISIBLE}"
             app:drawableRightCompat="@drawable/chat_room_menu_unmute_notifications" />
 
         <TextView
+            style="@style/popup_item_font"
             android:layout_width="match_parent"
             android:layout_height="@dimen/chat_room_popup_item_height"
             android:background="@drawable/menu_background"
             android:onClick="@{editionModeListener}"
-            style="@style/popup_item_font"
             android:text="@string/chat_message_context_menu_delete_messages"
             app:drawableRightCompat="@drawable/chat_room_menu_delete" />
 

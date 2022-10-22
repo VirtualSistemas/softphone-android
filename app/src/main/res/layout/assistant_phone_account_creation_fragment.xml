@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="selectCountryClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="infoClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.assistant.viewmodels.PhoneAccountCreationViewModel" />
+            type="com.vsphone.activities.assistant.viewmodels.PhoneAccountCreationViewModel" />
     </data>
 
     <RelativeLayout
@@ -22,16 +26,16 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/top_bar_fragment"
-            android:name="org.linphone.activities.assistant.fragments.TopBarFragment"
+            android:name="com.vsphone.activities.assistant.fragments.TopBarFragment"
             android:layout_width="match_parent"
             android:layout_height="@dimen/main_activity_top_bar_size"
             android:layout_alignParentTop="true"
             tools:layout="@layout/assistant_top_bar_fragment" />
 
         <androidx.core.widget.NestedScrollView
-            android:layout_below="@id/top_bar_fragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@id/top_bar_fragment">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,68 +47,68 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/assistant_create_account"
                     android:paddingTop="10dp"
+                    android:text="@string/assistant_create_account"
                     android:textAllCaps="true" />
 
                 <TextView
                     style="@style/standard_small_text_font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:layout_gravity="top"
+                    android:gravity="center"
                     android:paddingTop="20dp"
                     android:text="@string/assistant_create_account_part_1" />
 
                 <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:paddingRight="30dp"
                     android:paddingLeft="30dp"
                     android:paddingTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:paddingRight="30dp">
 
                     <TextView
                         android:id="@+id/phone_number_label"
-                        android:text="@string/phone_number"
                         style="@style/assistant_input_field_header_font"
-                        android:textAllCaps="true"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:text="@string/phone_number"
+                        android:textAllCaps="true" />
 
                     <ImageView
-                        android:onClick="@{infoClickListener}"
-                        android:contentDescription="@string/content_description_phone_number_use"
-                        android:src="@drawable/info"
-                        android:layout_alignParentRight="true"
                         android:layout_width="20dp"
-                        android:layout_height="20dp"/>
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:contentDescription="@string/content_description_phone_number_use"
+                        android:onClick="@{infoClickListener}"
+                        android:src="@drawable/info" />
 
                     <TextView
                         android:id="@+id/select_country"
                         style="@style/button_font"
-                        android:onClick="@{selectCountryClickListener}"
-                        android:text="@{viewModel.countryName.length > 0 ? viewModel.countryName : @string/select_your_country}"
-                        android:background="@drawable/resizable_assistant_button"
-                        android:textColor="@drawable/assistant_button_text_color"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
+                        android:layout_below="@id/phone_number_label"
                         android:layout_marginTop="5dp"
+                        android:background="@drawable/resizable_assistant_button"
                         android:gravity="center"
-                        android:layout_below="@id/phone_number_label"/>
+                        android:onClick="@{selectCountryClickListener}"
+                        android:padding="10dp"
+                        android:text="@{viewModel.countryName.length > 0 ? viewModel.countryName : @string/select_your_country}"
+                        android:textColor="@drawable/assistant_button_text_color" />
 
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/select_country">
+                        android:layout_below="@id/select_country"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="100dp"
@@ -114,13 +118,13 @@
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     assistantPhoneNumberPrefixValidation="@{true}"
-                                    android:text="@={viewModel.prefix}"
-                                    android:imeOptions="actionNext"
-                                    android:singleLine="true"
-                                    android:inputType="phone"
-                                    android:background="@color/transparent_color"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"/>
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/transparent_color"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="phone"
+                                    android:singleLine="true"
+                                    android:text="@={viewModel.prefix}" />
 
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,13 +136,13 @@
                                 <com.google.android.material.textfield.TextInputEditText
                                     assistantPhoneNumberValidation="@{true}"
                                     errorMessage="@={viewModel.phoneNumberError}"
-                                    android:text="@={viewModel.phoneNumber}"
-                                    android:imeOptions="actionDone"
-                                    android:singleLine="true"
-                                    android:inputType="phone"
-                                    android:background="@color/transparent_color"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"/>
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/transparent_color"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="phone"
+                                    android:singleLine="true"
+                                    android:text="@={viewModel.phoneNumber}" />
 
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,14 +151,14 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
                             android:gravity="center"
+                            android:orientation="horizontal"
                             android:paddingTop="10dp">
 
                             <com.google.android.material.switchmaterial.SwitchMaterial
-                                android:checked="@={viewModel.useUsername}"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:checked="@={viewModel.useUsername}" />
 
                             <TextView
                                 style="@style/standard_small_text_font"
@@ -166,21 +170,21 @@
                         </LinearLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
-                            android:visibility="@{viewModel.useUsername ? View.VISIBLE : View.GONE}"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/username">
+                            android:hint="@string/username"
+                            android:visibility="@{viewModel.useUsername ? View.VISIBLE : View.GONE}">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 assistantUsernameValidation="@{true}"
                                 errorMessage="@={viewModel.usernameError}"
-                                android:text="@={viewModel.username}"
-                                android:imeOptions="actionDone"
-                                android:singleLine="true"
-                                android:inputType="text|textNoSuggestions"
-                                android:background="@color/transparent_color"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparent_color"
+                                android:imeOptions="actionDone"
+                                android:inputType="text|textNoSuggestions"
+                                android:singleLine="true"
+                                android:text="@={viewModel.username}" />
 
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -190,13 +194,13 @@
                             android:hint="@string/assistant_display_name_optional">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:text="@={viewModel.displayName}"
-                                android:imeOptions="actionDone"
-                                android:singleLine="true"
-                                android:inputType="textPersonName"
-                                android:background="@color/transparent_color"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparent_color"
+                                android:imeOptions="actionDone"
+                                android:inputType="textPersonName"
+                                android:singleLine="true"
+                                android:text="@={viewModel.displayName}" />
 
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -205,17 +209,17 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:onClick="@{() ->viewModel.create()}"
-                    android:enabled="@{viewModel.createEnabled, default=false}"
-                    android:text="@string/assistant_create_account"
-                    android:background="@drawable/assistant_button"
-                    android:textColor="@drawable/assistant_button_text_color"
-                    android:layout_gravity="center"
                     style="@style/button_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_margin="20dp"
-                    android:padding="10dp"/>
+                    android:background="@drawable/assistant_button"
+                    android:enabled="@{viewModel.createEnabled, default=false}"
+                    android:onClick="@{() ->viewModel.create()}"
+                    android:padding="10dp"
+                    android:text="@string/assistant_create_account"
+                    android:textColor="@drawable/assistant_button_text_color" />
 
             </LinearLayout>
 
@@ -223,7 +227,7 @@
 
         <include
             layout="@layout/wait_layout"
-            bind:visibility="@{viewModel.waitForServerAnswer}"/>
+            bind:visibility="@{viewModel.waitForServerAnswer}" />
 
     </RelativeLayout>
 

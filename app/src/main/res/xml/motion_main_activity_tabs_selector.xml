@@ -3,28 +3,28 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        motion:constraintSetStart="@+id/dialer"
-        motion:constraintSetEnd="@+id/chat_rooms"/>
+        motion:constraintSetEnd="@+id/chat_rooms"
+        motion:constraintSetStart="@+id/dialer" />
 
     <Transition
-        motion:constraintSetStart="@+id/call_history"
-        motion:constraintSetEnd="@+id/contacts"/>
+        motion:constraintSetEnd="@+id/contacts"
+        motion:constraintSetStart="@+id/call_history" />
 
     <Transition
-        motion:constraintSetStart="@+id/call_history"
-        motion:constraintSetEnd="@+id/dialer"/>
+        motion:constraintSetEnd="@+id/dialer"
+        motion:constraintSetStart="@+id/call_history" />
 
     <Transition
-        motion:constraintSetStart="@+id/call_history"
-        motion:constraintSetEnd="@+id/chat_rooms"/>
+        motion:constraintSetEnd="@+id/chat_rooms"
+        motion:constraintSetStart="@+id/call_history" />
 
     <Transition
-        motion:constraintSetStart="@+id/contacts"
-        motion:constraintSetEnd="@+id/dialer"/>
+        motion:constraintSetEnd="@+id/dialer"
+        motion:constraintSetStart="@+id/contacts" />
 
     <Transition
-        motion:constraintSetStart="@+id/contacts"
-        motion:constraintSetEnd="@+id/chat_rooms"/>
+        motion:constraintSetEnd="@+id/chat_rooms"
+        motion:constraintSetStart="@+id/contacts" />
 
     <ConstraintSet android:id="@+id/call_history">
 

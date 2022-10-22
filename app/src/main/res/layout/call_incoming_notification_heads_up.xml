@@ -11,36 +11,36 @@
 
         <TextView
             android:id="@+id/caller"
+            style="@android:style/TextAppearance.Material.Notification.Title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@android:style/TextAppearance.Material.Notification.Title"/>
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/sip_uri"
+            style="@android:style/TextAppearance.Material.Notification.Line2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/primary_color"
-            style="@android:style/TextAppearance.Material.Notification.Line2"/>
+            android:textColor="@color/primary_color" />
 
         <TextView
             android:id="@+id/incoming_call_info"
+            style="@android:style/TextAppearance.Material.Notification.Info"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@android:style/TextAppearance.Material.Notification.Info"/>
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
     <ImageView
         android:id="@+id/caller_picture"
-        android:contentDescription="@null"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/voip_single_contact_avatar_alt"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginRight="20dp" />
+        android:adjustViewBounds="true"
+        android:contentDescription="@null"
+        android:src="@drawable/voip_single_contact_avatar_alt" />
 
 </RelativeLayout>

@@ -3,19 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="newContactClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="newConferenceClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="transferCallClickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.dialer.viewmodels.DialerViewModel"/>
+            type="com.vsphone.activities.main.dialer.viewmodels.DialerViewModel" />
     </data>
 
     <RelativeLayout
@@ -31,34 +36,34 @@
 
             <ImageView
                 android:id="@+id/erase"
-                android:onClick="@{() -> viewModel.eraseLastChar()}"
-                android:onLongClick="@{() -> viewModel.eraseAll()}"
-                android:contentDescription="@string/content_description_dialer_erase"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
+                android:contentDescription="@string/content_description_dialer_erase"
                 android:focusableInTouchMode="true"
+                android:onClick="@{() -> viewModel.eraseLastChar()}"
+                android:onLongClick="@{() -> viewModel.eraseAll()}"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:src="@drawable/backspace" />
 
             <EditText
                 android:id="@+id/sip_uri_input"
-                android:text="@={viewModel.enteredUri}"
-                android:beforeTextChanged="@{(text, start, count, after) -> viewModel.onBeforeUriChanged(sipUriInput, count, after)}"
-                android:afterTextChanged="@{(text) -> viewModel.onAfterUriChanged(sipUriInput, text)}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@id/erase"
+                android:afterTextChanged="@{(text) -> viewModel.onAfterUriChanged(sipUriInput, text)}"
                 android:background="@color/transparent_color"
                 android:backgroundTint="@color/transparent_color"
+                android:beforeTextChanged="@{(text, start, count, after) -> viewModel.onBeforeUriChanged(sipUriInput, count, after)}"
                 android:ellipsize="start"
                 android:hint="@string/dialer_address_bar_hint"
                 android:inputType="textEmailAddress|textUri"
                 android:paddingLeft="20dp"
                 android:paddingRight="5dp"
+                android:text="@={viewModel.enteredUri}"
                 android:textColorHint="@color/light_grey_color" />
 
         </RelativeLayout>
@@ -70,69 +75,69 @@
             android:layout_alignParentBottom="true">
 
             <ImageView
-                android:onClick="@{newConferenceClickListener}"
-                android:visibility="@{viewModel.scheduleConferenceAvailable ? View.VISIBLE : View.GONE}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="?attr/button_background_drawable"
                 android:contentDescription="@string/content_description_create_conference"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:background="?attr/button_background_drawable"
+                android:onClick="@{newConferenceClickListener}"
                 android:padding="5dp"
-                android:src="@drawable/icon_video_conf_new" />
+                android:src="@drawable/icon_video_conf_new"
+                android:visibility="@{viewModel.scheduleConferenceAvailable ? View.VISIBLE : View.GONE}" />
 
             <ImageView
-                android:onClick="@{newContactClickListener}"
-                android:visibility="@{viewModel.scheduleConferenceAvailable ? View.GONE : View.VISIBLE, default=gone}"
-                android:enabled="@{viewModel.enteredUri.length() > 0}"
-                android:contentDescription="@string/content_description_add_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_add_contact"
+                android:enabled="@{viewModel.enteredUri.length() > 0}"
+                android:onClick="@{newContactClickListener}"
                 android:padding="15dp"
-                android:src="@drawable/contact_add" />
+                android:src="@drawable/contact_add"
+                android:visibility="@{viewModel.scheduleConferenceAvailable ? View.GONE : View.VISIBLE, default=gone}" />
 
             <ImageView
-                android:onClick="@{() -> viewModel.startCall()}"
-                android:visibility="@{viewModel.atLeastOneCall ? View.GONE : View.VISIBLE}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/call"
                 android:contentDescription="@string/content_description_start_call"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/call"
-                android:padding="12dp"
-                android:src="@{viewModel.autoInitiateVideoCalls ? @drawable/call_video_start : @drawable/call_audio_start, default=@drawable/call_audio_start}" />
-
-            <ImageView
                 android:onClick="@{() -> viewModel.startCall()}"
-                android:visibility="@{viewModel.atLeastOneCall &amp;&amp; !viewModel.transferVisibility ? View.VISIBLE : View.GONE, default=gone}"
-                android:contentDescription="@string/content_description_add_call"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/call"
                 android:padding="12dp"
-                android:src="@drawable/call_add" />
+                android:src="@{viewModel.autoInitiateVideoCalls ? @drawable/call_video_start : @drawable/call_audio_start, default=@drawable/call_audio_start}"
+                android:visibility="@{viewModel.atLeastOneCall ? View.GONE : View.VISIBLE}" />
 
             <ImageView
-                android:onClick="@{transferCallClickListener}"
-                android:visibility="@{viewModel.atLeastOneCall &amp;&amp; viewModel.transferVisibility ? View.VISIBLE : View.GONE, default=gone}"
-                android:contentDescription="@string/content_description_transfer_call"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/call"
+                android:contentDescription="@string/content_description_add_call"
+                android:onClick="@{() -> viewModel.startCall()}"
                 android:padding="12dp"
-                android:src="@drawable/call_transfer" />
+                android:src="@drawable/call_add"
+                android:visibility="@{viewModel.atLeastOneCall &amp;&amp; !viewModel.transferVisibility ? View.VISIBLE : View.GONE, default=gone}" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/call"
+                android:contentDescription="@string/content_description_transfer_call"
+                android:onClick="@{transferCallClickListener}"
+                android:padding="12dp"
+                android:src="@drawable/call_transfer"
+                android:visibility="@{viewModel.atLeastOneCall &amp;&amp; viewModel.transferVisibility ? View.VISIBLE : View.GONE, default=gone}" />
 
         </LinearLayout>
 
         <include
             layout="@layout/numpad"
-            android:layout_above="@id/controls"
-            android:layout_below="@id/address_bar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@id/controls"
+            android:layout_below="@id/address_bar"
             app:keyListener="@{viewModel.onKeyClick}" />
 
     </RelativeLayout>

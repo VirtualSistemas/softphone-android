@@ -4,27 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <import type="android.view.View" />
+
         <import type="android.view.Gravity" />
+
         <import type="com.google.android.flexbox.JustifyContent" />
+
         <variable
             name="contextMenuClickListener"
             type="android.view.View.OnLongClickListener" />
+
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
+
         <variable
             name="replyClickListener"
             type="android.view.View.OnClickListener" />
+
         <variable
             name="position"
             type="Integer" />
+
         <variable
             name="data"
-            type="org.linphone.activities.main.chat.data.ChatMessageData" />
+            type="com.vsphone.activities.main.chat.data.ChatMessageData" />
+
         <variable
             name="selectionListViewModel"
-            type="org.linphone.activities.main.viewmodels.ListTopBarViewModel" />
+            type="com.vsphone.activities.main.viewmodels.ListTopBarViewModel" />
     </data>
 
     <RelativeLayout
@@ -62,14 +71,14 @@
 
         <ImageView
             android:id="@+id/avatar"
+            coilContact="@{data}"
             android:layout_width="@dimen/contact_avatar_size"
             android:layout_height="@dimen/contact_avatar_size"
-            android:contentDescription="@null"
-            coilContact="@{data}"
             android:layout_below="@id/time"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:contentDescription="@null"
             android:gravity="center"
             android:visibility="@{data.chatMessage.outgoing || selectionListViewModel.isEditionEnabled ? View.GONE : (data.hideAvatar ? View.INVISIBLE : View.VISIBLE)}" />
 
@@ -95,8 +104,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
                 android:drawablePadding="3dp"
                 android:gravity="center_vertical"
                 android:text="@string/chat_message_forwarded"
@@ -109,8 +118,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
                 android:drawablePadding="3dp"
                 android:gravity="center_vertical"
                 android:text="@string/chat_message_replied"
@@ -144,7 +153,7 @@
                 app:layout="@{@layout/chat_message_content_cell}"
                 app:onLongClick="@{contextMenuClickListener}" />
 
-            <org.linphone.activities.main.chat.views.MultiLineWrapContentWidthTextView
+            <com.vsphone.activities.main.chat.views.MultiLineWrapContentWidthTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="@{data.chatMessage.outgoing ? Gravity.RIGHT : Gravity.LEFT}"

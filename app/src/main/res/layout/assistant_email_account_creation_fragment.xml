@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:bind="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.assistant.viewmodels.EmailAccountCreationViewModel" />
+            type="com.vsphone.activities.assistant.viewmodels.EmailAccountCreationViewModel" />
     </data>
 
     <RelativeLayout
@@ -17,39 +19,39 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/top_bar_fragment"
-            android:name="org.linphone.activities.assistant.fragments.TopBarFragment"
+            android:name="com.vsphone.activities.assistant.fragments.TopBarFragment"
             android:layout_width="match_parent"
             android:layout_height="@dimen/main_activity_top_bar_size"
             android:layout_alignParentTop="true"
             tools:layout="@layout/assistant_top_bar_fragment" />
 
         <androidx.core.widget.NestedScrollView
-            android:layout_below="@id/top_bar_fragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@id/top_bar_fragment">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingRight="30dp"
+                android:orientation="vertical"
                 android:paddingLeft="30dp"
-                android:orientation="vertical">
+                android:paddingRight="30dp">
 
                 <TextView
                     style="@style/standard_text_font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/assistant_create_account"
                     android:paddingTop="10dp"
+                    android:text="@string/assistant_create_account"
                     android:textAllCaps="true" />
 
                 <TextView
                     style="@style/standard_small_text_font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:layout_gravity="top"
+                    android:gravity="center"
                     android:paddingTop="20dp"
                     android:text="@string/assistant_create_account_part_email" />
 
@@ -61,13 +63,13 @@
                     <com.google.android.material.textfield.TextInputEditText
                         assistantUsernameValidation="@{true}"
                         errorMessage="@={viewModel.usernameError}"
-                        android:text="@={viewModel.username}"
-                        android:imeOptions="actionNext"
-                        android:singleLine="true"
-                        android:inputType="text|textNoSuggestions"
-                        android:background="@color/transparent_color"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent_color"
+                        android:imeOptions="actionNext"
+                        android:inputType="text|textNoSuggestions"
+                        android:singleLine="true"
+                        android:text="@={viewModel.username}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,53 +79,53 @@
                     android:hint="@string/email">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        errorMessage="@={viewModel.emailError}"
                         emailConfirmationValidation="@{true}"
-                        android:text="@={viewModel.email}"
-                        android:imeOptions="actionNext"
-                        android:singleLine="true"
-                        android:inputType="text|textEmailAddress"
-                        android:background="@color/transparent_color"
+                        errorMessage="@={viewModel.emailError}"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent_color"
+                        android:imeOptions="actionNext"
+                        android:inputType="text|textEmailAddress"
+                        android:singleLine="true"
+                        android:text="@={viewModel.email}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:endIconMode="password_toggle"
-                    android:hint="@string/password">
+                    android:hint="@string/password"
+                    app:endIconMode="password_toggle">
 
                     <com.google.android.material.textfield.TextInputEditText
                         errorMessage="@={viewModel.passwordError}"
                         passwordConfirmationValidation="@{passwordConfirmation}"
-                        android:text="@={viewModel.password}"
-                        android:imeOptions="actionNext"
-                        android:singleLine="true"
-                        android:inputType="textPassword"
-                        android:background="@color/transparent_color"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent_color"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:text="@={viewModel.password}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:endIconMode="password_toggle"
-                    android:hint="@string/assistant_confirm_password">
+                    android:hint="@string/assistant_confirm_password"
+                    app:endIconMode="password_toggle">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/password_confirmation"
                         errorMessage="@={viewModel.passwordConfirmationError}"
-                        android:text="@={viewModel.passwordConfirmation}"
-                        android:imeOptions="actionDone"
-                        android:singleLine="true"
-                        android:inputType="textPassword"
-                        android:background="@color/transparent_color"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent_color"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:text="@={viewModel.passwordConfirmation}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -133,28 +135,28 @@
                     android:hint="@string/assistant_display_name_optional">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:text="@={viewModel.displayName}"
-                        android:imeOptions="actionDone"
-                        android:singleLine="true"
-                        android:inputType="textPersonName"
-                        android:background="@color/transparent_color"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent_color"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPersonName"
+                        android:singleLine="true"
+                        android:text="@={viewModel.displayName}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
-                    android:onClick="@{() -> viewModel.create()}"
-                    android:enabled="@{viewModel.createEnabled, default=false}"
-                    android:text="@string/assistant_create_account"
-                    android:background="@drawable/assistant_button"
-                    android:textColor="@drawable/assistant_button_text_color"
-                    android:layout_gravity="center"
                     style="@style/button_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_margin="20dp"
-                    android:padding="10dp"/>
+                    android:background="@drawable/assistant_button"
+                    android:enabled="@{viewModel.createEnabled, default=false}"
+                    android:onClick="@{() -> viewModel.create()}"
+                    android:padding="10dp"
+                    android:text="@string/assistant_create_account"
+                    android:textColor="@drawable/assistant_button_text_color" />
 
             </LinearLayout>
 
@@ -162,7 +164,7 @@
 
         <include
             layout="@layout/wait_layout"
-            bind:visibility="@{viewModel.waitForServerAnswer}"/>
+            bind:visibility="@{viewModel.waitForServerAnswer}" />
 
     </RelativeLayout>
 

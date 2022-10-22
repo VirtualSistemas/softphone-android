@@ -3,14 +3,18 @@
     xmlns:linphone="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
-        <import type="android.text.InputType"/>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.InputType" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.settings.viewmodels.ConferencesSettingsViewModel"/>
+            type="com.vsphone.activities.main.settings.viewmodels.ConferencesSettingsViewModel" />
+
         <variable
             name="sharedMainViewModel"
-            type="org.linphone.activities.main.viewmodels.SharedMainViewModel" />
+            type="com.vsphone.activities.main.viewmodels.SharedMainViewModel" />
     </data>
 
     <RelativeLayout
@@ -27,25 +31,25 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
-                android:src="@drawable/back" />
+                android:src="@drawable/back"
+                android:visibility="@{sharedMainViewModel.isSlidingPaneSlideable ? View.VISIBLE : View.GONE}" />
 
             <TextView
                 style="@style/accent_colored_title_font"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:gravity="center"
-                android:singleLine="true"
                 android:ellipsize="end"
+                android:gravity="center"
                 android:padding="15dp"
-                android:text="@string/settings_conferences_title"/>
+                android:singleLine="true"
+                android:text="@string/settings_conferences_title" />
 
             <View
                 android:layout_width="0dp"
@@ -67,10 +71,10 @@
 
                 <include
                     layout="@layout/settings_widget_list"
-                    linphone:title="@{@string/conferences_settings_layout_title}"
+                    linphone:labels="@{viewModel.layoutLabels}"
                     linphone:listener="@{viewModel.layoutListener}"
                     linphone:selectedIndex="@{viewModel.layoutIndex}"
-                    linphone:labels="@{viewModel.layoutLabels}"/>
+                    linphone:title="@{@string/conferences_settings_layout_title}" />
 
             </LinearLayout>
 

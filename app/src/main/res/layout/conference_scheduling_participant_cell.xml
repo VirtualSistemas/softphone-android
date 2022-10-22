@@ -2,10 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="data"
-            type="org.linphone.activities.main.conference.data.ConferenceSchedulingParticipantData" />
+            type="com.vsphone.activities.main.conference.data.ConferenceSchedulingParticipantData" />
     </data>
 
     <RelativeLayout
@@ -18,8 +20,8 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:orientation="horizontal"
-            android:baselineAligned="false">
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
             <RelativeLayout
                 android:id="@+id/avatar"
@@ -36,13 +38,13 @@
                     android:contentDescription="@null" />
 
                 <ImageView
-                    android:visibility="@{data.showLimeBadge ? View.VISIBLE : View.GONE, default=gone}"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:contentDescription="@string/content_description_contact_can_do_encryption"
-                    android:src="@drawable/security_toggle_icon_green" />
+                    android:src="@drawable/security_toggle_icon_green"
+                    android:visibility="@{data.showLimeBadge ? View.VISIBLE : View.GONE, default=gone}" />
 
             </RelativeLayout>
 

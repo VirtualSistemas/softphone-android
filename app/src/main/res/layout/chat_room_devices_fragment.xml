@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
-            type="org.linphone.activities.main.chat.viewmodels.DevicesListViewModel" />
+            type="com.vsphone.activities.main.chat.viewmodels.DevicesListViewModel" />
     </data>
 
     <RelativeLayout
@@ -22,11 +24,11 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:contentDescription="@string/content_description_go_back"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:background="?attr/button_background_drawable"
+                android:contentDescription="@string/content_description_go_back"
                 android:padding="18dp"
                 android:src="@drawable/back" />
 
@@ -35,9 +37,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.8"
+                android:ellipsize="end"
                 android:gravity="center"
                 android:padding="15dp"
-                android:ellipsize="end"
                 android:singleLine="true"
                 android:text="@string/chat_room_devices_fragment_title" />
 
