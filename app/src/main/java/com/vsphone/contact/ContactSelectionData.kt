@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -40,7 +40,7 @@ class ContactSelectionData(private val searchResult: SearchResult) : ContactData
         MutableLiveData<Boolean>()
     }
 
-    val isLinphoneUser: Boolean by lazy {
+    val isVSPhoneUser: Boolean by lazy {
         searchResult.friend?.getPresenceModelForUriOrTel(
             searchResult.phoneNumber ?: searchResult.address?.asStringUriOnly() ?: ""
         )?.basicStatus == PresenceBasicStatus.Open

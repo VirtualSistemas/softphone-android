@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ import com.vsphone.VSPhoneApplication.Companion.corePreferences
 
 class WelcomeViewModel : ViewModel() {
     val showCreateAccount: Boolean = corePreferences.showCreateAccount
-    val showLinphoneLogin: Boolean = corePreferences.showLinphoneLogin
+    val showVSPhoneLogin: Boolean = corePreferences.showVSPhoneLogin
     val showGenericLogin: Boolean = corePreferences.showGenericLogin
     val showRemoteProvisioning: Boolean = corePreferences.showRemoteProvisioning
 

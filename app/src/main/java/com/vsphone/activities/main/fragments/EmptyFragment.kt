@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.transition.MaterialSharedAxis
-import org.linphone.R
+import com.vsphone.R
 
 class EmptyFragment : Fragment() {
     override fun onCreateView(

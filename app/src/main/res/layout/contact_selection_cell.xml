@@ -91,7 +91,7 @@
                 android:contentDescription="@string/content_description_linphone_user"
                 android:paddingRight="10dp"
                 android:src="@drawable/linphone_logo_tinted"
-                android:visibility="@{data.linphoneUser ? View.VISIBLE : View.INVISIBLE}" />
+                android:visibility="@{data.VSPhoneUser ? View.VISIBLE : View.INVISIBLE}" />
 
             <ImageView
                 android:id="@+id/contact_is_select"

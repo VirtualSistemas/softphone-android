@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,6 +20,7 @@
 package com.vsphone.activities.main.history.viewmodels
 
 import androidx.lifecycle.MutableLiveData
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.main.conference.data.ConferenceSchedulingParticipantData
@@ -30,7 +31,6 @@ import com.vsphone.utils.TimestampUtils
 import com.vsphone.utils.VSPhoneUtils
 import java.text.SimpleDateFormat
 import java.util.*
-import org.linphone.R
 import org.linphone.core.*
 import org.linphone.core.tools.Log
 

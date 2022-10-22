@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,13 +23,13 @@ import android.Manifest
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.activities.voip.data.CallData
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.Event
 import com.vsphone.utils.FileUtils
 import com.vsphone.utils.PermissionHelper
-import org.linphone.R
 import org.linphone.core.*
 import org.linphone.core.tools.Log
 

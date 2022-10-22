@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,11 +24,11 @@ import android.os.SystemClock
 import android.view.View
 import android.widget.Chronometer
 import androidx.navigation.navGraphViewModels
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.activities.navigateToActiveCall
 import com.vsphone.activities.voip.viewmodels.CallsViewModel
 import com.vsphone.activities.voip.viewmodels.ControlsViewModel
-import org.linphone.R
 import org.linphone.databinding.VoipCallOutgoingFragmentBinding
 
 class OutgoingCallFragment : GenericVideoPreviewFragment<VoipCallOutgoingFragmentBinding>() {
@@ -70,7 +70,7 @@ class OutgoingCallFragment : GenericVideoPreviewFragment<VoipCallOutgoingFragmen
             if (it != null) {
                 val timer = binding.root.findViewById<Chronometer>(R.id.outgoing_call_timer)
                 timer.base =
-                    SystemClock.elapsedRealtime() - (1000 * it.call.duration) // Linphone timestamps are in seconds
+                    SystemClock.elapsedRealtime() - (1000 * it.call.duration) // VSPhone timestamps are in seconds
                 timer.start()
             }
         }

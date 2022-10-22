@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -29,6 +29,7 @@ import android.view.View
 import androidx.core.content.FileProvider
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.main.MainActivity
@@ -39,7 +40,6 @@ import com.vsphone.utils.FileUtils
 import com.vsphone.utils.PermissionHelper
 import java.io.File
 import kotlinx.coroutines.launch
-import org.linphone.R
 import org.linphone.core.tools.Log
 import org.linphone.databinding.ContactEditorFragmentBinding
 

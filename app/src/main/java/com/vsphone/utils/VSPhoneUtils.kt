@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,17 +24,17 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.telephony.TelephonyManager.*
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
-import org.linphone.R
 import org.linphone.core.*
 import org.linphone.core.tools.Log
 
 /**
- * Various utility methods for Linphone SDK
+ * Various utility methods for VSPhone SDK
  */
 class VSPhoneUtils {
     companion object {
@@ -175,7 +175,7 @@ class VSPhoneUtils {
             for (content in chatMessage.contents) {
                 val filePath = content.filePath
                 if (filePath != null && filePath.isNotEmpty()) {
-                    Log.i("[Linphone Utils] Deleting file $filePath")
+                    Log.i("[VSPhone Utils] Deleting file $filePath")
                     FileUtils.deleteFile(filePath)
                 }
             }

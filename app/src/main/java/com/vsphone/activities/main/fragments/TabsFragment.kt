@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,11 +25,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.findNavController
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.*
 import com.vsphone.activities.main.viewmodels.TabsViewModel
 import com.vsphone.utils.Event
-import org.linphone.R
 import org.linphone.databinding.TabsFragmentBinding
 
 class TabsFragment :

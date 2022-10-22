@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,11 +28,11 @@ import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.main.conference.viewmodels.ConferenceSchedulingViewModel
 import com.vsphone.activities.navigateToParticipantsList
-import org.linphone.R
 import org.linphone.core.Factory
 import org.linphone.core.tools.Log
 import org.linphone.databinding.ConferenceSchedulingFragmentBinding

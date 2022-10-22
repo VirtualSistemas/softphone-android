@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -40,6 +40,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.*
@@ -57,7 +58,6 @@ import com.vsphone.utils.*
 import com.vsphone.utils.Event
 import java.io.File
 import kotlinx.coroutines.*
-import org.linphone.R
 import org.linphone.core.*
 import org.linphone.core.tools.Log
 import org.linphone.databinding.ChatRoomDetailFragmentBinding

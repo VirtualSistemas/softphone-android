@@ -1,1 +1,1 @@
-Linphone - open source SIP client
+VSPhone - open source SIP client

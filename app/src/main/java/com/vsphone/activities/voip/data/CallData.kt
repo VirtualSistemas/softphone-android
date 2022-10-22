@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,13 +22,13 @@ package com.vsphone.activities.voip.data
 import android.view.View
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.compatibility.Compatibility
 import com.vsphone.contact.GenericContactData
 import com.vsphone.utils.VSPhoneUtils
 import java.util.*
 import kotlinx.coroutines.*
-import org.linphone.R
 import org.linphone.core.Call
 import org.linphone.core.CallListenerStub
 import org.linphone.core.ChatRoom

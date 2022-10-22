@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -33,12 +33,12 @@ import android.util.Patterns
 import androidx.core.app.Person
 import androidx.core.graphics.drawable.IconCompat
 import androidx.lifecycle.MutableLiveData
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.utils.ImageUtils
 import com.vsphone.utils.PermissionHelper
 import java.io.IOException
-import org.linphone.R
 import org.linphone.core.*
 import org.linphone.core.tools.Log
 
@@ -292,7 +292,7 @@ class ContactsManager(private val context: Context) {
         for (phoneNumber in friend.phoneNumbers) {
             val sipAddress = friend.getContactForPhoneNumberOrAddress(phoneNumber)
             if (sipAddress != null) {
-                Log.d("[Contacts Manager] Found presence information to store in native contact $friend under Linphone sync account")
+                Log.d("[Contacts Manager] Found presence information to store in native contact $friend under VSPhone sync account")
                 contactEditor.setPresenceInformation(
                     phoneNumber,
                     sipAddress

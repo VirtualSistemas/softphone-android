@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,12 +23,12 @@ package com.vsphone.activities.assistant.fragments
 import android.content.pm.PackageManager
 import androidx.databinding.ViewDataBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.vsphone.R
 import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.assistant.viewmodels.AbstractPhoneViewModel
 import com.vsphone.compatibility.Compatibility
 import com.vsphone.utils.PermissionHelper
 import com.vsphone.utils.PhoneNumberUtils
-import org.linphone.R
 import org.linphone.core.tools.Log
 
 abstract class AbstractPhoneFragment<T : ViewDataBinding> : GenericFragment<T>() {

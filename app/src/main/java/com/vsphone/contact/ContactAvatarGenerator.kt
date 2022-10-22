@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2022 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,8 +25,8 @@ import android.graphics.drawable.BitmapDrawable
 import android.text.TextPaint
 import android.util.TypedValue
 import androidx.core.content.ContextCompat
+import com.vsphone.R
 import com.vsphone.utils.AppUtils
-import org.linphone.R
 
 class ContactAvatarGenerator(private val context: Context) {
     private var textSize: Float

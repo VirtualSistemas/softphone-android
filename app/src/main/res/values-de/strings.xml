@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Linphone">]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "VSPhone">]>
 <resources>
     <string name="service_description">Dies ist erforderlich um Anrufe im Hintergrund anzunehmen</string>
     <string name="sync_account_name">&appName; Kontakte</string>

@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -521,7 +521,7 @@ class CorePreferences constructor(private val context: Context) {
     val showCreateAccount: Boolean
         get() = config.getBool("app", "assistant_create_account", true)
 
-    val showLinphoneLogin: Boolean
+    val showVSPhoneLogin: Boolean
         get() = config.getBool("app", "assistant_linphone_login", true)
 
     val showGenericLogin: Boolean
@@ -639,14 +639,14 @@ class CorePreferences constructor(private val context: Context) {
         if (outFile.exists()) {
             if (!overrideIfExists) {
                 android.util.Log.i(
-                    context.getString(org.linphone.R.string.app_name),
+                    context.getString(com.vsphone.R.string.app_name),
                     "[Preferences] File $to already exists"
                 )
                 return
             }
         }
         android.util.Log.i(
-            context.getString(org.linphone.R.string.app_name),
+            context.getString(com.vsphone.R.string.app_name),
             "[Preferences] Overriding $to by $from asset"
         )
 
@@ -671,7 +671,7 @@ class CorePreferences constructor(private val context: Context) {
         if (inFile.exists()) {
             if (outFile.exists() && !overrideIfExists) {
                 android.util.Log.w(
-                    context.getString(org.linphone.R.string.app_name),
+                    context.getString(com.vsphone.R.string.app_name),
                     "[Preferences] Can't move [$from] to [$to], destination file already exists"
                 )
             } else {
@@ -690,13 +690,13 @@ class CorePreferences constructor(private val context: Context) {
 
                 inFile.delete()
                 android.util.Log.i(
-                    context.getString(org.linphone.R.string.app_name),
+                    context.getString(com.vsphone.R.string.app_name),
                     "[Preferences] Successfully moved [$from] to [$to]"
                 )
             }
         } else {
             android.util.Log.w(
-                context.getString(org.linphone.R.string.app_name),
+                context.getString(com.vsphone.R.string.app_name),
                 "[Preferences] Can't move [$from] to [$to], source file doesn't exists"
             )
         }

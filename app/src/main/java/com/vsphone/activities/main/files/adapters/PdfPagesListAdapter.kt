@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,8 +23,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.vsphone.R
 import com.vsphone.activities.main.files.viewmodels.PdfFileViewModel
-import org.linphone.R
 
 class PdfPagesListAdapter(private val pdfViewModel: PdfFileViewModel) :
     RecyclerView.Adapter<PdfPagesListAdapter.PdfPageViewHolder>() {

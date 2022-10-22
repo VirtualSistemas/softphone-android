@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -36,6 +36,7 @@ import androidx.emoji.text.EmojiCompat
 import androidx.lifecycle.*
 import androidx.loader.app.LoaderManager
 import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.compatibility.Compatibility
 import com.vsphone.compatibility.PhoneStateInterface
@@ -59,7 +60,6 @@ import javax.crypto.SecretKey
 import javax.crypto.spec.GCMParameterSpec
 import kotlin.math.abs
 import kotlinx.coroutines.*
-import org.linphone.R
 import org.linphone.core.*
 import org.linphone.core.tools.Log
 import org.linphone.mediastream.Version
@@ -292,7 +292,7 @@ class CoreContext(
         _lifecycleRegistry.currentState = Lifecycle.State.INITIALIZED
 
         Log.i("=========================================")
-        Log.i("==== Linphone-android information dump ====")
+        Log.i("==== VSPhone-android information dump ====")
         Log.i("VERSION=${org.linphone.BuildConfig.VERSION_NAME} / ${org.linphone.BuildConfig.VERSION_CODE}")
         Log.i("PACKAGE=${org.linphone.BuildConfig.APPLICATION_ID}")
         Log.i("BUILD TYPE=${org.linphone.BuildConfig.BUILD_TYPE}")
@@ -470,7 +470,7 @@ class CoreContext(
         val deviceName: String = corePreferences.deviceName
         val appName: String = context.resources.getString(R.string.user_agent_app_name)
         val androidVersion = org.linphone.BuildConfig.VERSION_NAME
-        val userAgent = "$appName/$androidVersion ($deviceName) LinphoneSDK"
+        val userAgent = "$appName/$androidVersion ($deviceName) VSPhoneSDK"
         val sdkVersion = context.getString(R.string.linphone_sdk_version)
         val sdkBranch = context.getString(R.string.linphone_sdk_branch)
         val sdkUserAgent = "$sdkVersion ($sdkBranch)"
@@ -498,10 +498,10 @@ class CoreContext(
         }
     }
 
-    fun newAccountConfigured(isLinphoneAccount: Boolean) {
-        Log.i("[Context] A new ${if (isLinphoneAccount) AppUtils.getString(R.string.app_name) else "third-party"} account has been configured")
+    fun newAccountConfigured(isVSPhoneAccount: Boolean) {
+        Log.i("[Context] A new ${if (isVSPhoneAccount) AppUtils.getString(R.string.app_name) else "third-party"} account has been configured")
 
-        if (isLinphoneAccount) {
+        if (isVSPhoneAccount) {
             core.config.setString("sip", "rls_uri", corePreferences.defaultRlsUri)
             val rlsAddress = core.interpretUrl(corePreferences.defaultRlsUri, false)
             if (rlsAddress != null) {

@@ -7,7 +7,7 @@ dependencyResolutionManagement {
 
         maven {
             name "local linphone-sdk maven repository"
-            url file(LinphoneSdkBuildDir + '/maven_repository/')
+            url file(VSPhoneSdkBuildDir + '/maven_repository/')
             content {
                 includeGroup "org.linphone"
             }

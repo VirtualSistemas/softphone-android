@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -62,7 +62,7 @@ class PhoneAccountValidationViewModel(val accountCreator: AccountCreator) : View
             status: AccountCreator.Status,
             response: String?
         ) {
-            Log.i("[Assistant] [Phone Account Validation] onLoginLinphoneAccount status is $status")
+            Log.i("[Assistant] [Phone Account Validation] onLoginVSPhoneAccount status is $status")
             waitForServerAnswer.value = false
 
             if (status == AccountCreator.Status.RequestOk) {

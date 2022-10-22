@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -26,6 +26,7 @@ import android.view.MotionEvent
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.vsphone.R
 import com.vsphone.activities.main.fragments.MasterFragment
 import com.vsphone.activities.main.recordings.adapters.RecordingsListAdapter
 import com.vsphone.activities.main.recordings.data.RecordingData
@@ -33,7 +34,6 @@ import com.vsphone.activities.main.recordings.viewmodels.RecordingsViewModel
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.FileUtils
 import com.vsphone.utils.RecyclerViewHeaderDecoration
-import org.linphone.R
 import org.linphone.core.tools.Log
 import org.linphone.databinding.RecordingsFragmentBinding
 

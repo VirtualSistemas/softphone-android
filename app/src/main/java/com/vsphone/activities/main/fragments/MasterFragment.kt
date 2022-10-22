@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,13 +27,13 @@ import androidx.core.view.doOnPreDraw
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import androidx.slidingpanelayout.widget.SlidingPaneLayout
+import com.vsphone.R
 import com.vsphone.activities.main.adapters.SelectionListAdapter
 import com.vsphone.activities.main.viewmodels.DialogViewModel
 import com.vsphone.activities.main.viewmodels.ListTopBarViewModel
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.DialogUtils
 import com.vsphone.utils.hideKeyboard
-import org.linphone.R
 import org.linphone.core.tools.Log
 
 /**

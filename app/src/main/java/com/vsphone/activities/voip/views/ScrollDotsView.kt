@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -30,10 +30,10 @@ import android.view.View.OnScrollChangeListener
 import android.widget.FrameLayout
 import android.widget.HorizontalScrollView
 import android.widget.ScrollView
+import com.vsphone.R
 import com.vsphone.utils.AppUtils
 import kotlin.math.ceil
 import kotlin.math.roundToInt
-import org.linphone.R
 import org.linphone.core.tools.Log
 
 class ScrollDotsView : View {

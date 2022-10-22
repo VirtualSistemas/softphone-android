@@ -31,7 +31,7 @@
             app:nullable="true" />
         <deepLink
             android:autoVerify="true"
-            app:uri="linphone-android://chat-room/{LocalSipUri}/{RemoteSipUri}" />
+            app:uri="vsphone-android://chat-room/{LocalSipUri}/{RemoteSipUri}" />
     </fragment>
     <action
         android:id="@+id/action_global_masterChatRoomsFragment"
@@ -52,13 +52,13 @@
             app:destination="@id/masterChatRoomsFragment" />
         <deepLink
             android:autoVerify="true"
-            app:uri="linphone-android://contact/view/{id}" />
+            app:uri="vsphone-android://contact/view/{id}" />
         <deepLink
             android:autoVerify="true"
-            app:uri="linphone-android://contact/view-friend/{address}" />
+            app:uri="vsphone-android://contact/view-friend/{address}" />
         <deepLink
             android:autoVerify="true"
-            app:uri="linphone-android://contact/new/{sipUri}" />
+            app:uri="vsphone-android://contact/new/{sipUri}" />
     </fragment>
     <action
         android:id="@+id/action_global_masterContactsFragment"
@@ -126,7 +126,7 @@
         tools:layout="@layout/settings_fragment">
         <deepLink
             android:autoVerify="true"
-            app:uri="linphone-android://settings/{Identity}" />
+            app:uri="vsphone-android://settings/{Identity}" />
     </fragment>
     <action
         android:id="@+id/action_global_settingsFragment"

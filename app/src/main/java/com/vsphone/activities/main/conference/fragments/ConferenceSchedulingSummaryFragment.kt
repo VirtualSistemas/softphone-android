@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,12 +22,12 @@ package com.vsphone.activities.main.conference.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.navGraphViewModels
+import com.vsphone.R
 import com.vsphone.activities.GenericFragment
 import com.vsphone.activities.main.MainActivity
 import com.vsphone.activities.main.conference.viewmodels.ConferenceSchedulingViewModel
 import com.vsphone.activities.navigateToDialer
 import com.vsphone.activities.navigateToScheduledConferences
-import org.linphone.R
 import org.linphone.databinding.ConferenceSchedulingSummaryFragmentBinding
 
 class ConferenceSchedulingSummaryFragment :

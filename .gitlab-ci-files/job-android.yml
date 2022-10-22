@@ -2,7 +2,7 @@ job-android:
 
   stage: build
   tags: [ "docker-android" ]
-  image: gitlab.linphone.org:4567/bc/public/linphone-android/bc-dev-android:20220609_android_33
+  image: gitlab.linphone.org:4567/bc/public/vsphone-android/bc-dev-android:20220609_android_33
 
   before_script:
     - if ! [ -z ${SCP_PRIVATE_KEY+x} ]; then eval $(ssh-agent -s); fi
@@ -23,8 +23,8 @@ job-android:
 
   artifacts:
     paths:
-      - ./app/build/outputs/apk/debug/linphone-android-debug-*.apk
-      - ./app/build/outputs/apk/release/linphone-android-release-*.apk
+      - ./app/build/outputs/apk/debug/vsphone-android-debug-*.apk
+      - ./app/build/outputs/apk/release/vsphone-android-release-*.apk
     when: always
     expire_in: 1 week
 

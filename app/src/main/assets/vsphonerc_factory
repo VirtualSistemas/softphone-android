@@ -2,7 +2,7 @@
 ## Start of factory rc
 
 # This file shall not contain path referencing package name, in order to be portable when app is renamed.
-# Paths to resources must be set from LinphoneManager, after creating LinphoneCore.
+# Paths to resources must be set from VSPhoneManager, after creating VSPhoneCore.
 
 [net]
 mtu=1300
@@ -20,7 +20,7 @@ chat_messages_aggregation_delay=1000
 chat_messages_aggregation=1
 
 [sound]
-#remove this property for any application that is not Linphone public version itself
+#remove this property for any application that is not VSPhone public version itself
 ec_calibrator_cool_tones=1
 
 [video]

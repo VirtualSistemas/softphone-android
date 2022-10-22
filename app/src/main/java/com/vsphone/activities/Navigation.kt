@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -29,6 +29,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.slidingpanelayout.widget.SlidingPaneLayout
+import com.vsphone.R
 import com.vsphone.activities.assistant.fragments.*
 import com.vsphone.activities.main.MainActivity
 import com.vsphone.activities.main.chat.fragments.ChatRoomCreationFragment
@@ -52,7 +53,6 @@ import com.vsphone.activities.main.settings.fragments.SettingsFragment
 import com.vsphone.activities.main.sidemenu.fragments.SideMenuFragment
 import com.vsphone.activities.voip.CallActivity
 import com.vsphone.activities.voip.fragments.*
-import org.linphone.R
 
 internal fun Fragment.findMasterNavController(): NavController {
     return parentFragment?.parentFragment?.findNavController() ?: findNavController()
@@ -87,7 +87,7 @@ internal fun MainActivity.navigateToChatRooms(args: Bundle? = null) {
 }
 
 internal fun MainActivity.navigateToChatRoom(localAddress: String?, peerAddress: String?) {
-    val deepLink = "linphone-android://chat-room/$localAddress/$peerAddress"
+    val deepLink = "vsphone-android://chat-room/$localAddress/$peerAddress"
     findNavController(R.id.nav_host_fragment).navigate(
         Uri.parse(deepLink),
         popupTo(R.id.masterChatRoomsFragment, true)
@@ -95,7 +95,7 @@ internal fun MainActivity.navigateToChatRoom(localAddress: String?, peerAddress:
 }
 
 internal fun MainActivity.navigateToContact(contactId: String?) {
-    val deepLink = "linphone-android://contact/view/$contactId"
+    val deepLink = "vsphone-android://contact/view/$contactId"
     findNavController(R.id.nav_host_fragment).navigate(
         Uri.parse(deepLink),
         popupTo(R.id.masterContactsFragment, true)
@@ -163,7 +163,7 @@ internal fun TabsFragment.navigateToChatRooms() {
 /* Dialer related */
 
 internal fun DialerFragment.navigateToContacts(uriToAdd: String?) {
-    val deepLink = "linphone-android://contact/new/$uriToAdd"
+    val deepLink = "vsphone-android://contact/new/$uriToAdd"
     findNavController().navigate(
         Uri.parse(deepLink),
         popupTo(R.id.masterContactsFragment, true)
@@ -304,12 +304,12 @@ internal fun MasterChatRoomsFragment.clearDisplayedChatRoom() {
 }
 
 internal fun DetailChatRoomFragment.navigateToContacts(sipUriToAdd: String) {
-    val deepLink = "linphone-android://contact/new/$sipUriToAdd"
+    val deepLink = "vsphone-android://contact/new/$sipUriToAdd"
     findMasterNavController().navigate(Uri.parse(deepLink))
 }
 
 internal fun DetailChatRoomFragment.navigateToContact(id: String) {
-    val deepLink = "linphone-android://contact/view/$id"
+    val deepLink = "vsphone-android://contact/view/$id"
     findMasterNavController().navigate(Uri.parse(deepLink))
 }
 
@@ -609,12 +609,12 @@ internal fun MasterCallLogsFragment.navigateToConferenceWaitingRoom(
 }
 
 internal fun DetailCallLogFragment.navigateToContacts(sipUriToAdd: String) {
-    val deepLink = "linphone-android://contact/new/$sipUriToAdd"
+    val deepLink = "vsphone-android://contact/new/$sipUriToAdd"
     findMasterNavController().navigate(Uri.parse(deepLink))
 }
 
 internal fun DetailCallLogFragment.navigateToContact(id: String) {
-    val deepLink = "linphone-android://contact/view/$id"
+    val deepLink = "vsphone-android://contact/view/$id"
     findMasterNavController().navigate(Uri.parse(deepLink))
 }
 
@@ -812,7 +812,7 @@ internal fun ContactsSettingsFragment.navigateToLdapSettings(configIndex: Int) {
 /* Side menu related */
 
 internal fun SideMenuFragment.navigateToAccountSettings(identity: String) {
-    val deepLink = "linphone-android://settings/$identity"
+    val deepLink = "vsphone-android://settings/$identity"
     findNavController().navigate(Uri.parse(deepLink))
 }
 

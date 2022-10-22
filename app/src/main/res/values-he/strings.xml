@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Linphone">]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "VSPhone">]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="sync_account_name">אנשי קשר</string>
     <string name="about_privacy_policy">קבל מידע אודות הסכם הפרטיות שלנו</string>

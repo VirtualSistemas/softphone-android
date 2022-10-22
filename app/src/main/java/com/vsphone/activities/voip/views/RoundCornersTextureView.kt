@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewOutlineProvider
-import org.linphone.R
+import com.vsphone.R
 import org.linphone.mediastream.video.capture.CaptureTextureView
 
 class RoundCornersTextureView : CaptureTextureView {

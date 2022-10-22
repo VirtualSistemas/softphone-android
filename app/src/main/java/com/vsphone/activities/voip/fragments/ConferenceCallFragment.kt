@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2022 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -35,6 +35,7 @@ import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
 import androidx.window.layout.FoldingFeature
 import com.google.android.material.snackbar.Snackbar
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.*
@@ -45,7 +46,6 @@ import com.vsphone.activities.voip.viewmodels.ConferenceViewModel
 import com.vsphone.activities.voip.viewmodels.ControlsViewModel
 import com.vsphone.activities.voip.viewmodels.StatisticsListViewModel
 import com.vsphone.activities.voip.views.RoundCornersTextureView
-import org.linphone.R
 import org.linphone.core.Conference
 import org.linphone.core.StreamType
 import org.linphone.core.tools.Log
@@ -312,7 +312,7 @@ class ConferenceCallFragment : GenericFragment<VoipConferenceCallFragmentBinding
 
         val conference = conferenceViewModel.conference.value
         if (conference != null) {
-            val duration = 1000 * conference.duration // Linphone timestamps are in seconds
+            val duration = 1000 * conference.duration // VSPhone timestamps are in seconds
             timer.base = SystemClock.elapsedRealtime() - duration
         } else {
             Log.e("[Conference Call] Conference not found, timer will have no base")

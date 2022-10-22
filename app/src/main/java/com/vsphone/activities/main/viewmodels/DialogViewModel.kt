@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,8 +21,8 @@ package com.vsphone.activities.main.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.vsphone.R
 import com.vsphone.utils.AppUtils
-import org.linphone.R
 
 class DialogViewModel(val message: String, val title: String = "") : ViewModel() {
     var showDoNotAskAgain: Boolean = false

@@ -4,7 +4,7 @@ lang_map = fr_CA:fr-rCA,pt_BR:pt-rBR,zh_CN:zh-rCN,zh_HK:zh-rHK,zh_TW:zh-rTW,da_D
 minimum_perc = 1
 type = ANDROID
 
-[linphone-android.stringsxml]
+[vsphone-android.stringsxml]
 file_filter = app/src/main/res/values-<lang>/strings.xml
 source_file = app/src/main/res/values/strings.xml
 source_lang = en

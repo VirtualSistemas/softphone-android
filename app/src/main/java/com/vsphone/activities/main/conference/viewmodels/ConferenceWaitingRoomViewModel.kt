@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,13 +22,13 @@ package com.vsphone.activities.main.conference.viewmodels
 import android.Manifest
 import android.animation.ValueAnimator
 import androidx.lifecycle.MutableLiveData
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.main.viewmodels.MessageNotifierViewModel
 import com.vsphone.activities.voip.ConferenceDisplayMode
 import com.vsphone.utils.*
 import com.vsphone.utils.Event
-import org.linphone.R
 import org.linphone.core.*
 import org.linphone.core.tools.Log
 

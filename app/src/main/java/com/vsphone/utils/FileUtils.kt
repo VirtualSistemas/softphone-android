@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -29,6 +29,7 @@ import android.os.Environment
 import android.provider.OpenableColumns
 import android.webkit.MimeTypeMap
 import androidx.core.content.FileProvider
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import java.io.*
 import java.text.SimpleDateFormat
@@ -37,7 +38,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
-import org.linphone.R
 import org.linphone.core.tools.Log
 
 class FileUtils {

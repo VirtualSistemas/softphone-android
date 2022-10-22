@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,11 +24,11 @@ import androidx.annotation.StringRes
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.GenericActivity
 import com.vsphone.activities.SnackBarActivity
 import com.vsphone.activities.assistant.viewmodels.SharedAssistantViewModel
-import org.linphone.R
 
 class AssistantActivity : GenericActivity(), SnackBarActivity {
     private lateinit var sharedViewModel: SharedAssistantViewModel

@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -127,7 +127,7 @@ class ScheduledConferencesViewModel : ViewModel() {
 
         val conferencesList = arrayListOf<ScheduledConferenceData>()
 
-        val now = System.currentTimeMillis() / 1000 // Linphone uses time_t in seconds
+        val now = System.currentTimeMillis() / 1000 // VSPhone uses time_t in seconds
 
         if (showTerminated.value == true) {
             for (conferenceInfo in coreContext.core.conferenceInformationList) {

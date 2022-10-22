@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,6 +25,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.main.contact.data.ContactNumberOrAddressClickListener
@@ -37,7 +38,6 @@ import com.vsphone.utils.Event
 import com.vsphone.utils.PhoneNumberUtils
 import com.vsphone.utils.VSPhoneUtils
 import kotlinx.coroutines.CoroutineScope
-import org.linphone.R
 import org.linphone.core.*
 import org.linphone.core.tools.Log
 

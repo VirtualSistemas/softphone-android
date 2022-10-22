@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -26,6 +26,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.contact.getThumbnailUri
@@ -33,7 +34,6 @@ import com.vsphone.notifications.Notifiable
 import com.vsphone.notifications.NotificationsManager
 import com.vsphone.utils.ImageUtils
 import com.vsphone.utils.VSPhoneUtils
-import org.linphone.R
 import org.linphone.core.Call
 import org.linphone.core.Friend
 import org.linphone.core.tools.Log

@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,11 +25,11 @@ import android.net.Uri
 import android.provider.ContactsContract
 import android.provider.ContactsContract.CommonDataKinds
 import android.provider.ContactsContract.RawContacts
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.activities.main.contact.data.NumberOrAddressEditorData
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.PermissionHelper
-import org.linphone.R
 import org.linphone.core.Friend
 import org.linphone.core.tools.Log
 
@@ -232,14 +232,14 @@ class NativeContactEditor(val friend: Friend) {
                 sipAddress.toRemove.value == true -> {
                     // Existing address to remove
                     removeCount++
-                    removeLinphoneOrSipAddress(sipAddress.currentValue)
+                    removeVSPhoneOrSipAddress(sipAddress.currentValue)
                 }
                 sipAddress.currentValue != sipAddress.newValue.value -> {
                     // Existing address to update
                     val address = sipAddress.newValue.value.orEmpty()
                     if (address.isNotEmpty()) {
                         editCount++
-                        updateLinphoneOrSipAddress(sipAddress.currentValue, address)
+                        updateVSPhoneOrSipAddress(sipAddress.currentValue, address)
                     }
                 }
             }
@@ -284,7 +284,7 @@ class NativeContactEditor(val friend: Friend) {
         }
 
         if (syncAccountRawId == null) {
-            Log.w("[Native Contact Editor] Linphone raw id not found")
+            Log.w("[Native Contact Editor] VSPhone raw id not found")
             val insert = ContentProviderOperation.newInsert(RawContacts.CONTENT_URI)
                 .withValue(RawContacts.ACCOUNT_NAME, AppUtils.getString(R.string.sync_account_name))
                 .withValue(RawContacts.ACCOUNT_TYPE, AppUtils.getString(R.string.sync_account_type))
@@ -308,12 +308,12 @@ class NativeContactEditor(val friend: Friend) {
         }
 
         if (syncAccountRawId == null) {
-            Log.e("[Native Contact Editor] Can't add presence to contact in Linphone sync account, no raw id")
+            Log.e("[Native Contact Editor] Can't add presence to contact in VSPhone sync account, no raw id")
             return this
         }
 
         Log.d("[Native Contact Editor] Trying to add presence information to contact")
-        setPresenceLinphoneSipAddressForPhoneNumber(sipAddress, phoneNumber)
+        setPresenceVSPhoneSipAddressForPhoneNumber(sipAddress, phoneNumber)
         return this
     }
 
@@ -413,7 +413,7 @@ class NativeContactEditor(val friend: Friend) {
         addChanges(insert)
     }
 
-    private fun updateLinphoneOrSipAddress(currentValue: String, sipAddress: String) {
+    private fun updateVSPhoneOrSipAddress(currentValue: String, sipAddress: String) {
         val updateLegacy = ContentProviderOperation.newUpdate(contactUri)
             .withSelection(
                 "${ContactsContract.Data.CONTACT_ID} =? AND ${ContactsContract.Data.MIMETYPE} =? AND data1=?",
@@ -444,7 +444,7 @@ class NativeContactEditor(val friend: Friend) {
         addChanges(update)
     }
 
-    private fun removeLinphoneOrSipAddress(sipAddress: String) {
+    private fun removeVSPhoneOrSipAddress(sipAddress: String) {
         val delete = ContentProviderOperation.newDelete(contactUri)
             .withSelection(
                 "${ContactsContract.Data.CONTACT_ID} =? AND (${ContactsContract.Data.MIMETYPE} =? OR ${ContactsContract.Data.MIMETYPE} =?) AND data1=?",
@@ -459,7 +459,7 @@ class NativeContactEditor(val friend: Friend) {
         addChanges(delete)
     }
 
-    private fun setPresenceLinphoneSipAddressForPhoneNumber(
+    private fun setPresenceVSPhoneSipAddressForPhoneNumber(
         sipAddress: String,
         phoneNumber: String
     ) {
@@ -493,18 +493,18 @@ class NativeContactEditor(val friend: Friend) {
 
         if (count == 0) {
             Log.i("[Native Contact Editor] No existing presence information found for this phone number ($phoneNumber) & SIP address ($address), let's add it")
-            addPresenceLinphoneSipAddressForPhoneNumber(address, phoneNumber)
+            addPresenceVSPhoneSipAddressForPhoneNumber(address, phoneNumber)
         } else {
             if (data1 != null && data1 == address) {
                 Log.d("[Native Contact Editor] There is already an entry for this phone number and SIP address, skipping")
             } else {
                 Log.w("[Native Contact Editor] There is already an entry for this phone number ($phoneNumber) but not for the same SIP address ($data1 != $address)")
-                updatePresenceLinphoneSipAddressForPhoneNumber(address, phoneNumber)
+                updatePresenceVSPhoneSipAddressForPhoneNumber(address, phoneNumber)
             }
         }
     }
 
-    private fun addPresenceLinphoneSipAddressForPhoneNumber(address: String, detail: String) {
+    private fun addPresenceVSPhoneSipAddressForPhoneNumber(address: String, detail: String) {
         val insert = ContentProviderOperation.newInsert(contactUri)
             .withValue(ContactsContract.Data.RAW_CONTACT_ID, syncAccountRawId)
             .withValue(
@@ -518,7 +518,7 @@ class NativeContactEditor(val friend: Friend) {
         addChanges(insert)
     }
 
-    private fun updatePresenceLinphoneSipAddressForPhoneNumber(
+    private fun updatePresenceVSPhoneSipAddressForPhoneNumber(
         sipAddress: String,
         phoneNumber: String
     ) {

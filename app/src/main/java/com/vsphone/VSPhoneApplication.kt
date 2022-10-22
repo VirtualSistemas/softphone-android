@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -69,7 +69,7 @@ class VSPhoneApplication : Application(), ImageLoaderFactory {
             )
             com.vsphone.VSPhoneApplication.Companion.corePreferences.config = config
 
-            val appName = context.getString(org.linphone.R.string.app_name)
+            val appName = context.getString(com.vsphone.R.string.app_name)
             Factory.instance().setLoggerDomain(appName)
             Factory.instance()
                 .enableLogcatLogs(com.vsphone.VSPhoneApplication.Companion.corePreferences.logcatLogsOutput)
@@ -109,7 +109,7 @@ class VSPhoneApplication : Application(), ImageLoaderFactory {
 
     override fun onCreate() {
         super.onCreate()
-        val appName = getString(org.linphone.R.string.app_name)
+        val appName = getString(com.vsphone.R.string.app_name)
         android.util.Log.i("[$appName]", "Application is being created")
         com.vsphone.VSPhoneApplication.Companion.createConfig(applicationContext)
         Log.i("[Application] Created")

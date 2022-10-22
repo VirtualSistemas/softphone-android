@@ -1,7 +1,7 @@
 
-[![pipeline status](https://gitlab.linphone.org/BC/public/linphone-android/badges/master/pipeline.svg)](https://gitlab.linphone.org/BC/public/linphone-android/commits/master) [![weblate status](https://weblate.linphone.org/widgets/linphone/-/linphone-android/svg-badge.svg)](https://weblate.linphone.org/engage/linphone/?utm_source=widget)
+[![pipeline status](https://gitlab.linphone.org/BC/public/vsphone-android/badges/master/pipeline.svg)](https://gitlab.linphone.org/BC/public/vsphone-android/commits/master) [![weblate status](https://weblate.linphone.org/widgets/linphone/-/vsphone-android/svg-badge.svg)](https://weblate.linphone.org/engage/linphone/?utm_source=widget)
 
-Linphone is an open source softphone for voice and video over IP calling and instant messaging.
+VSPhone is an open source softphone for voice and video over IP calling and instant messaging.
 
 It is fully SIP-based, for all calling, presence and IM features.
 
@@ -17,7 +17,7 @@ You can also download APKs signed with our key from [our website](https://downlo
 
 Copyright © Belledonne Communications
 
-Linphone is dual licensed, and is available either :
+VSPhone is dual licensed, and is available either :
 
  - under a [GNU/GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html), for free (open source). Please make sure that you understand and agree with the terms  of this license before using it (see LICENSE file for details).
 
@@ -27,7 +27,7 @@ Linphone is dual licensed, and is available either :
 
 - Supported features and RFCs : https://www.linphone.org/technical-corner/linphone/features
 
-- Linphone public wiki : https://wiki.linphone.org/xwiki/wiki/public/view/Linphone/
+- VSPhone public wiki : https://wiki.linphone.org/xwiki/wiki/public/view/VSPhone/
 
 - Tutorials : https://gitlab.linphone.org/BC/public/tutorials/-/tree/master/android/kotlin
 
@@ -35,7 +35,7 @@ Linphone is dual licensed, and is available either :
 
 App has been totally rewritten in Kotlin using modern components such as Navigation, Data Binding, View Models, coroutines, etc...  
 Check the [CHANGELOG](./CHANGELOG.md) file for a more detailed list.
-The first linphone-android release that will be based on this will be 4.5.0, using 5.0.0 SDK.
+The first vsphone-android release that will be based on this will be 4.5.0, using 5.0.0 SDK.
 
 We're also taking a fresh start regarding translations so less languages will be available for a while.  
 If you want to contribute, you are welcome to do so, check the [Translations](#Translations) section below.
@@ -76,7 +76,7 @@ git clone https://gitlab.linphone.org/BC/public/linphone-sdk.git --recursive
 
 3. Create or edit the gradle.properties file in $GRADLE_USER_HOME (usually ~/.gradle/) and add the absolute path to your linphone-sdk build directory, for example:
 ```
-LinphoneSdkBuildDir=/home/<username>/linphone-sdk/build/
+VSPhoneSdkBuildDir=/home/<username>/linphone-sdk/build/
 ```
 
 4. Rebuild the app in Android Studio.
@@ -106,7 +106,7 @@ Also check you have built the SDK for the right CPU architecture using the `-DLI
 
 ### Behavior issue
 
-When submitting an issue on our [Github repository](https://github.com/BelledonneCommunications/linphone-android), please follow the template and attach the matching library logs:
+When submitting an issue on our [Github repository](https://github.com/BelledonneCommunications/vsphone-android), please follow the template and attach the matching library logs:
 
 1. To enable them, go to Settings -> Advanced and toggle `Debug Mode`. If they are already enabled, clear them first using the `Reset logs` button on the About page.
 
@@ -120,7 +120,7 @@ First of all, to be able to get a symbolized stack trace, you need the debug ver
 
 If you haven't built the SDK locally (see [building a local SDK](#BuildingalocalSDK)), here's how to get them:
 
-1. Go to our [maven repository](https://download.linphone.org/maven_repository/org/linphone/linphone-sdk-android-debug/), in the linphone-android-debug directory.
+1. Go to our [maven repository](https://download.linphone.org/maven_repository/org/linphone/linphone-sdk-android-debug/), in the vsphone-android-debug directory.
 
 2. Download the AAR file with **the exact same version** as the AAR that was used to generate the crash's stacktrace.
 
@@ -158,7 +158,7 @@ If you build the app as release, the package name will be ```org.linphone```.
 Now that Google Cloud Messaging has been deprecated and will be completely removed on April 11th 2019, the only official way of using push notifications is through Firebase.
 
 However to make Firebase push notifications work, the project needs to have a ```app/google-services.json``` file that contains the configuration.  
-We have archived our own, so you can build your linphone-android application and still receive push notifications from our free SIP service (sip.linphone.org).
+We have archived our own, so you can build your vsphone-android application and still receive push notifications from our free SIP service (sip.linphone.org).
 If you delete it, you won't receive any push notification.
 
 If you have your own push server, replace this file by yours.

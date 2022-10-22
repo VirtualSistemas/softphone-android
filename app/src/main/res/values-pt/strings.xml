@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Linphone">]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "VSPhone">]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="service_description">Isso é necessário para receber chamadas em segundo plano</string>
     <string name="sync_account_name">contactos</string>
@@ -412,7 +412,7 @@
     <string name="content_description_disable_speaker">Rotear áudio para o fone de ouvido</string>
     <string name="account_settings_password_title">Senha</string>
     <string name="account_settings_password_summary">Você deve redigitar sua senha se editar seu nome de usuário e/ou o domínio</string>
-    <string name="about_weblate_translation">Ajude-nos a traduzir Linphone</string>
+    <string name="about_weblate_translation">Ajude-nos a traduzir VSPhone</string>
     <string name="assistant_generic_account_warning">Alguns recursos exigem um &appName; conta, como mensagens de grupo ou mensagens efêmeras.\n\nEsses recursos estão ocultos quando você se registra com uma conta SIP de terceiros.\n\nPara habilitar em um projeto comercial, entre em contato conosco.</string>
     <string name="account_settings_domain_summary">Exemplo: sip.example.org se sua conta é joao@sip.example.org</string>
     <string name="account_settings_outbound_proxy_summary">Encaminhe todas as chamadas através do proxy SIP acima</string>

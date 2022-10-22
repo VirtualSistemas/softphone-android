@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,12 +23,12 @@ import android.os.CountDownTimer
 import android.text.Spannable
 import android.util.Patterns
 import androidx.lifecycle.MutableLiveData
+import com.vsphone.R
 import com.vsphone.contact.GenericContactData
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.PatternClickableSpan
 import com.vsphone.utils.TimestampUtils
 import java.util.regex.Pattern
-import org.linphone.R
 import org.linphone.core.ChatMessage
 import org.linphone.core.ChatMessageListenerStub
 import org.linphone.core.tools.Log

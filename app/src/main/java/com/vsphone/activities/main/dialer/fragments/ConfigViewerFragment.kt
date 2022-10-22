@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,9 +24,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import com.vsphone.R
 import com.vsphone.activities.main.dialer.viewmodels.ConfigFileViewModel
 import com.vsphone.activities.main.fragments.SecureFragment
-import org.linphone.R
 import org.linphone.core.tools.Log
 import org.linphone.databinding.FileConfigViewerFragmentBinding
 

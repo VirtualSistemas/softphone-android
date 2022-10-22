@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,13 +24,13 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.vsphone.R
 import com.vsphone.activities.main.chat.adapters.ImdnAdapter
 import com.vsphone.activities.main.chat.viewmodels.ImdnViewModel
 import com.vsphone.activities.main.chat.viewmodels.ImdnViewModelFactory
 import com.vsphone.activities.main.fragments.SecureFragment
 import com.vsphone.utils.AppUtils
 import com.vsphone.utils.RecyclerViewHeaderDecoration
-import org.linphone.R
 import org.linphone.core.tools.Log
 import org.linphone.databinding.ChatRoomImdnFragmentBinding
 

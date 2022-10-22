@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2021 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,6 +21,7 @@ package com.vsphone.activities.main.conference.viewmodels
 
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.coreContext
 import com.vsphone.activities.main.conference.data.ConferenceSchedulingParticipantData
 import com.vsphone.activities.main.conference.data.Duration
@@ -30,7 +31,6 @@ import com.vsphone.utils.Event
 import com.vsphone.utils.TimestampUtils
 import com.vsphone.utils.VSPhoneUtils
 import java.util.*
-import org.linphone.R
 import org.linphone.core.*
 import org.linphone.core.tools.Log
 
@@ -323,6 +323,6 @@ class ConferenceSchedulingViewModel : ContactsSelectionViewModel() {
         calendar.timeInMillis = dateTimestamp
         calendar.set(Calendar.HOUR_OF_DAY, hour)
         calendar.set(Calendar.MINUTE, minutes)
-        return calendar.timeInMillis / 1000 // Linphone expects a time_t (so in seconds)
+        return calendar.timeInMillis / 1000 // VSPhone expects a time_t (so in seconds)
     }
 }

@@ -427,10 +427,10 @@ This version is a full rewrite of the app in kotlin, using modern Android compon
 - Enhanced call and IM notifications, so that it is possible to answer, decline, reply or mark as read directly from them.
 - Setting to request attachments to be automatically downloaded, unconditionnally or based on their size.
 - Possibility to send multiple attachments (images, documents) in a same message.
-- Possibility to share multiple images through Linphone from an external application (ex: photo app)
+- Possibility to share multiple images through VSPhone from an external application (ex: photo app)
 - Rich input from keyboard (images, animated gifs...) when composing messages.
 - Rendering of animated gifs in conversations.
-- Button to invite contacts to use Linphone by sending them a SMS.
+- Button to invite contacts to use VSPhone by sending them a SMS.
 - Possibility to record calls (audio only), and replay them from the "Recordings" menu.
 - Remote provisioning from a QR code providing the http(s) url of a provisioning server.
 - Option for a dark theme
@@ -468,10 +468,10 @@ This version is a full rewrite of the app in kotlin, using modern Android compon
 ### Added
 - Group chat between linphone.org SIP accounts.
 - new JAVA/JNI wrapper. This new wrapper is automatically generated from liblinphone C API. It breaks compatibility with previous, hand-made wrapper.
-  (more information about new wrapper [here.](https://wiki.linphone.org/xwiki/wiki/public/view/Lib/Linphone%20%28Android%29%20Java%20wrapper/) )
+  (more information about new wrapper [here.](https://wiki.linphone.org/xwiki/wiki/public/view/Lib/VSPhone%20%28Android%29%20Java%20wrapper/) )
 
 ### Deprecated
-- hand-made java API in submodules/linphone/java is deprecated. However it is still possible to use it by checking out the 3.4.x branch of linphone-android.
+- hand-made java API in submodules/linphone/java is deprecated. However it is still possible to use it by checking out the 3.4.x branch of vsphone-android.
 
 ### Fixed
 - issue with changing push notification token not passed to library, possibly resulting in a loss of incoming calls.
@@ -512,7 +512,7 @@ This version is a full rewrite of the app in kotlin, using modern Android compon
 - Doze mode(energy saving) button in Network settings
 
 ### Changed
-- Migrate Linphone build from ANT to gradle
+- Migrate VSPhone build from ANT to gradle
 - No pause VOIP Call on incoming GSM call until we off hook this
 - Subscription friends list enabled by default only for linphone domain
 
@@ -520,7 +520,7 @@ This version is a full rewrite of the app in kotlin, using modern Android compon
 - Rotation after screen locking
 - Contacts background task
 - No more asking phone number for non-linphone domain
-- Bug with Linphone credential login
+- Bug with VSPhone credential login
 
 ## [Unreleased]
 

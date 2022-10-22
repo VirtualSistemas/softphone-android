@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2010-2020 Belledonne Communications SARL.
  *
- * This file is part of linphone-android
+ * This file is part of vsphone-android
  * (see https://www.linphone.org).
  *
  * This program is free software: you can redistribute it and/or modify
@@ -26,13 +26,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.slidingpanelayout.widget.SlidingPaneLayout
 import com.google.android.material.transition.MaterialSharedAxis
+import com.vsphone.R
 import com.vsphone.VSPhoneApplication.Companion.corePreferences
 import com.vsphone.activities.*
 import com.vsphone.activities.main.fragments.MasterFragment
 import com.vsphone.activities.main.fragments.SecureFragment
 import com.vsphone.activities.main.settings.SettingListenerStub
 import com.vsphone.activities.main.settings.viewmodels.SettingsViewModel
-import org.linphone.R
 import org.linphone.core.tools.Log
 import org.linphone.databinding.SettingsFragmentBinding
 
