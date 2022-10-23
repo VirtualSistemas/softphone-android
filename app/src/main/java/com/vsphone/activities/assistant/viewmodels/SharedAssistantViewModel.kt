@@ -35,7 +35,7 @@ class SharedAssistantViewModel : ViewModel() {
 
     init {
         Log.i("[Assistant] Loading linphone default values")
-        coreContext.core.loadConfigFromXml(corePreferences.linphoneDefaultValuesPath)
+        coreContext.core.loadConfigFromXml(corePreferences.vsphoneDefaultValuesPath)
         accountCreator = coreContext.core.createAccountCreator(corePreferences.xmlRpcServerUrl)
         accountCreator.language = Locale.getDefault().language
     }
@@ -50,7 +50,7 @@ class SharedAssistantViewModel : ViewModel() {
                 coreContext.core.loadConfigFromXml(corePreferences.defaultValuesPath)
             } else {
                 Log.i("[Assistant] Loading linphone default values")
-                coreContext.core.loadConfigFromXml(corePreferences.linphoneDefaultValuesPath)
+                coreContext.core.loadConfigFromXml(corePreferences.vsphoneDefaultValuesPath)
             }
             useGenericSipAccount = genericAccountCreator
         }

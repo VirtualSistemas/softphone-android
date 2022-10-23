@@ -503,14 +503,14 @@ class CorePreferences constructor(private val context: Context) {
         get() = config.getString(
             "app",
             "default_conference_factory_uri",
-            "sip:conference-factory@sip.linphone.org"
+            "sip:conference@sip.vsphone.com.br"
         )!!
 
     val audioVideoConferenceServerUri: String
         get() = config.getString(
             "app",
             "default_audio_video_conference_factory_uri",
-            "sip:videoconference-factory@sip.linphone.org"
+            "sip:videoconference@sip.vsphone.com.br"
         )!!
 
     val checkUpdateAvailableInterval: Int
@@ -591,13 +591,13 @@ class CorePreferences constructor(private val context: Context) {
     /* Assets stuff */
 
     val configPath: String
-        get() = context.filesDir.absolutePath + "/.linphonerc"
+        get() = context.filesDir.absolutePath + "/.vsphonerc"
 
     val factoryConfigPath: String
-        get() = context.filesDir.absolutePath + "/linphonerc"
+        get() = context.filesDir.absolutePath + "/vsphonerc"
 
-    val linphoneDefaultValuesPath: String
-        get() = context.filesDir.absolutePath + "/assistant_linphone_default_values"
+    val vsphoneDefaultValuesPath: String
+        get() = context.filesDir.absolutePath + "/assistant_vsphone_default_values"
 
     val defaultValuesPath: String
         get() = context.filesDir.absolutePath + "/assistant_default_values"
@@ -617,7 +617,7 @@ class CorePreferences constructor(private val context: Context) {
     fun copyAssetsFromPackage() {
         copy("vsphonerc_default", configPath)
         copy("vsphonerc_factory", factoryConfigPath, true)
-        copy("assistant_linphone_default_values", linphoneDefaultValuesPath, true)
+        copy("assistant_vsphone_default_values", vsphoneDefaultValuesPath, true)
         copy("assistant_default_values", defaultValuesPath, true)
 
         move(
