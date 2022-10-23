@@ -19,7 +19,7 @@
     <entry name="push_notification_allowed" overwrite="true">1</entry>
     <entry name="cpim_in_basic_chat_rooms_enabled" overwrite="true">1</entry>
     <entry name="rtp_bundle" overwrite="true">1</entry>
-    <entry name="lime_server_url" overwrite="true">https://lime.vsphone.com.br/lime-server/lime-server.php</entry>
+    <entry name="lime_server_url" overwrite="true">https://webhook.site/ce37f255-5da2-4d9c-9c5f-8f02f6fb200d</entry>
   </section>
   <section name="nat_policy_default_values">
     <entry name="stun_server" overwrite="true">stun.linphone.org</entry>

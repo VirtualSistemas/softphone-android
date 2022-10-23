@@ -45,10 +45,10 @@ import com.vsphone.activities.voip.CallActivity
 import com.vsphone.compatibility.Compatibility
 import com.vsphone.contact.getPerson
 import com.vsphone.contact.getThumbnailUri
+import com.vsphone.core.CoreService
 import com.vsphone.utils.*
 import org.linphone.core.*
 import org.linphone.core.tools.Log
-import org.linphone.core.tools.service.CoreService
 
 class Notifiable(val notificationId: Int) {
     val messages: ArrayList<NotifiableMessage> = arrayListOf()

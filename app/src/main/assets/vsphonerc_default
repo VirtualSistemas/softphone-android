@@ -29,15 +29,15 @@ host=
 port=443
 
 [misc]
-log_collection_upload_server_url=https://www.vsphone.com.br:444/lft.php
-file_transfer_server_url=https://www.vsphone.com.br:444/lft.php
-version_check_url_root=https://www.vsphone.com.br/releases
+log_collection_upload_server_url=https://webhook.site/ce37f255-5da2-4d9c-9c5f-8f02f6fb200d
+file_transfer_server_url=https://webhook.site/ce37f255-5da2-4d9c-9c5f-8f02f6fb200d
+version_check_url_root=https://webhook.site/ce37f255-5da2-4d9c-9c5f-8f02f6fb200d
 max_calls=10
 history_max_size=100
 conference_layout=1
 
 [in-app-purchase]
-server_url=https://subscribe.vsphone.com.br:444/inapp.php
+server_url=https://webhook.site/ce37f255-5da2-4d9c-9c5f-8f02f6fb200d
 purchasable_items_ids=test_account_subscription
 
 ## End of default rc

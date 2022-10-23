@@ -6,21 +6,21 @@
     <string name="app_name" translatable="false">&appName;</string>
     <string name="app_name_debug" translatable="false">&appName; (debug)</string>
     <string name="user_agent_app_name" translatable="false">&appName;Android</string>
-    <string name="service_name">&appName; Service</string>
-    <string name="service_auto_start_description">&appName; has been started automatically</string>
-    <string name="service_description">This is required to receive calls while in background</string>
-    <string name="sync_account_name">&appName; contacts</string>
+    <string name="service_name">&appName; BackService</string>
+    <string name="service_auto_start_description">&appName; foi iniciado automaticamente</string>
+    <string name="service_description">Serviço requerido para chamadas em Backgroud</string>
+    <string name="sync_account_name">&appName; contatos</string>
 
     <!-- About screen -->
-    <string name="about_link" translatable="false">https://linphone.org</string>
-    <string name="about_privacy_policy_link" translatable="false">https://www.linphone.org/privacy-policy</string>
+    <string name="about_link" translatable="false">https://www.vsphone.com.br</string>
+    <string name="about_privacy_policy_link" translatable="false">https://www.vsphone.com.br</string>
     <string name="about_license_link" translatable="false">https://www.gnu.org/licenses/gpl-3.0.html</string>
     <string name="about_version" translatable="false">&appName; Android %s</string>
     <string name="about_liblinphone_sdk_version" translatable="false">&appName; SDK %s</string>
-    <string name="about_privacy_policy">Visit our privacy policy</string>
-    <string name="about_text" translatable="false">GNU General Public License v3.0\n © 2010–2022 Belledonne Communications</string>
-    <string name="about_weblate_link" translatable="false">https://weblate.linphone.org/projects/linphone/</string>
-    <string name="about_weblate_translation">Help us translate &appName;</string>
+    <string name="about_privacy_policy">Visite nossa politica de Privacidade</string>
+    <string name="about_text" translatable="false">GNU General Public License v3.0\n © 2022 Virtual Sistemas</string>
+    <string name="about_weblate_link" translatable="false">https://vsphone.com.br/</string>
+    <string name="about_weblate_translation">Ajude a Traduzir &appName;</string>
 
     <!-- Logs -->
     <string name="logs_upload_failure">Failed to upload logs!</string>
@@ -893,4 +893,5 @@
     <string name="content_description_toggle_conference_info_details">Toggle meeting information details visibility</string>
     <string name="content_description_conference_participants">Group call participants</string>
     <string name="content_description_recording_export">Export recording</string>
+    <string name="default_notification_channel_id">com.vsphone</string>
 </resources>
