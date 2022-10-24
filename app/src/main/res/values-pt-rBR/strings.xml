@@ -28,7 +28,7 @@
     <string name="transport_udp">UDP</string>
     <string name="transport_tcp">TCP</string>
     <string name="transport_tls">TLS</string>
-    <string name="app_description">o <i>libre</i> Cliente SIP</string>
+    <string name="app_description">Cliente SIP</string>
     <string name="status_connected">Conectado</string>
     <string name="status_not_connected">Não conectado</string>
     <string name="status_in_progress">Conexão em andamento</string>
@@ -172,7 +172,7 @@
         conta.\n\nSe você já tiver ligado seu número a uma outra conta, mas você preferir usar esta, basta ligar agora e seu número será automaticamente movido para esta conta.</string>
     <string name="assistant_general_terms">termos de uso</string>
     <string name="assistant_privacy_policy">política de privacidade</string>
-    <string name="assistant_read_and_agree_terms">Eu aceito Belledonne Communications\' %1$s e %2$s</string>
+    <string name="assistant_read_and_agree_terms">Eu aceito os %1$s e %2$s da Virtual Sistemas\'</string>
     <string name="assistant_error_phone_number_invalid_characters">Apenas os dígitos são esperados aqui</string>
     <string name="assistant_error_username_already_exists">Nome de usuário já em uso</string>
     <string name="assistant_error_phone_number_already_exists">Já existe uma conta usando este número</string>
@@ -412,7 +412,7 @@
     <string name="account_settings_password_title">Senha</string>
     <string name="account_settings_password_summary">Você deve redigitar sua senha se editar seu nome de usuário e/ou o domínio</string>
     <string name="about_weblate_translation">Ajude-nos a traduzir VSPhone</string>
-    <string name="assistant_generic_account_warning">Alguns recursos exigem um &appName; conta, como mensagens de grupo ou mensagens efêmeras.\n\nEsses recursos estão ocultos quando você se registra com uma conta SIP de terceiros.\n\nPara habilitar em um projeto comercial, entre em contato conosco.</string>
+    <string name="assistant_generic_account_warning">Alguns recursos exigem uma conta &appName;, como mensagens de grupo ou mensagens efêmeras.\n\nEsses recursos estão ocultos quando você se registra com uma conta SIP de terceiros.\n\nPara habilitar em seu sistema, entre em contato conosco.</string>
     <string name="account_settings_domain_summary">Exemplo: sip.vsphone.com.br se sua conta é joao@sip.vsphone.com.br</string>
     <string name="account_settings_outbound_proxy_summary">Encaminhe todas as chamadas através do proxy SIP acima</string>
     <string name="account_settings_apply_prefix_for_calls_summary">Se um número for inserido, aplique o prefixo ao número</string>
@@ -426,7 +426,7 @@
     <string name="content_description_toggle_participant_devices_list">Mostrar ou esconder os dispositivos participantes</string>
     <string name="account_settings_ice_title">Habilitar ICE</string>
     <string name="content_description_go_back">Voltar</string>
-    <string name="assistant_generic_account_warning_continue_button_text">Compreendo</string>
+    <string name="assistant_generic_account_warning_continue_button_text">Entendido</string>
     <string name="account_settings_domain_title">Domínio</string>
     <string name="account_settings_display_name_title">Nome de exibição</string>
     <string name="account_settings_manage_title">Gerenciar</string>

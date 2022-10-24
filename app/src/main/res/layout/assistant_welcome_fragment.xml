@@ -108,7 +108,8 @@
                         android:padding="10dp"
                         android:text="@string/assistant_create_account"
                         android:textColor="@drawable/assistant_button_text_color"
-                        android:visibility="@{viewModel.showCreateAccount ? View.VISIBLE : View.GONE}" />
+                        android:visibility="@{viewModel.showCreateAccount ? View.VISIBLE : View.GONE}"
+                        />
 
                     <TextView
                         android:id="@+id/account_connection"
@@ -124,7 +125,8 @@
                         android:padding="10dp"
                         android:text="@string/assistant_login_linphone"
                         android:textColor="@drawable/assistant_button_text_color"
-                        android:visibility="@{viewModel.showVSPhoneLogin ? View.VISIBLE : View.GONE}" />
+                        android:visibility="@{viewModel.showVSPhoneLogin ? View.VISIBLE : View.GONE}"
+                        />
 
                     <TextView
                         android:id="@+id/generic_connection"
